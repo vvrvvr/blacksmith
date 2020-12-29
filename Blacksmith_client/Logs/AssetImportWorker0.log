@@ -1,109 +1,122 @@
 Using pre-set license
 Built from '2020.2/release' branch; Version is '2020.2.1f1 (270dd8c3da1c) revision 2559448'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10  (10.0.0) 64bit' Language: 'ru' Physical Memory: 16321 MB
+OS: 'Windows 10  (10.0.0) 64bit' Language: 'ru' Physical Memory: 8124 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-D:\UNITY\2020.2.1f1\Editor\Unity.exe
+C:\Unity\2020.2.1f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/git_repositories/blacksmith/Blacksmith_client
+C:/Users/Admin/Desktop/SkillBox/Blacksmith/blacksmith/Blacksmith_client
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57449
-Successfully changed project path to: D:/git_repositories/blacksmith/Blacksmith_client
-D:/git_repositories/blacksmith/Blacksmith_client
+60225
+Successfully changed project path to: C:/Users/Admin/Desktop/SkillBox/Blacksmith/blacksmith/Blacksmith_client
+C:/Users/Admin/Desktop/SkillBox/Blacksmith/blacksmith/Blacksmith_client
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 23.58 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 37.51 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
-[Subsystems] Discovering subsystems at path D:/UNITY/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/git_repositories/blacksmith/Blacksmith_client/Assets
+[Subsystems] Discovering subsystems at path C:/Unity/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Admin/Desktop/SkillBox/Blacksmith/blacksmith/Blacksmith_client/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 750M (ID=0xfe4)
     Vendor:   
-    VRAM:     4043 MB
-    Driver:   27.21.14.6079
+    VRAM:     2009 MB
+    Driver:   25.21.14.2531
 Initialize mono
-Mono path[0] = 'D:/UNITY/2020.2.1f1/Editor/Data/Managed'
-Mono path[1] = 'D:/UNITY/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'D:/UNITY/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56892
+Mono path[0] = 'C:/Unity/2020.2.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56724
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/UNITY/2020.2.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: D:/UNITY/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001300 seconds.
+Register platform support module: C:/Unity/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.076878 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 23.40 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 29.54 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.872 seconds
+- Completed reload, in  4.120 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000750 seconds.
+Registered in 0.040961 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.47 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.887 seconds
+- Completed reload, in  1.528 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1081 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 55.9 MB.
-System memory in use after: 56.0 MB.
+System memory in use before: 55.4 MB.
+System memory in use after: 55.4 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1524.
-Total: 2.391200 ms (FindLiveObjects: 0.175900 ms CreateObjectMapping: 0.141200 ms MarkObjects: 2.000600 ms  DeleteObjects: 0.072300 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1521.
+Total: 2.290300 ms (FindLiveObjects: 0.175000 ms CreateObjectMapping: 0.057700 ms MarkObjects: 1.993200 ms  DeleteObjects: 0.062500 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1723cb65c9e41aacfdd200172ed74494') in 0.018363 seconds
-  Import took 0.020522 seconds .
+  path: Assets/Materials/red.mat
+  artifactKey: Guid(bf1f9cc48a2d1f14e9299e168bb52110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/red.mat using Guid(bf1f9cc48a2d1f14e9299e168bb52110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f52ea8f4019d9df5019f914d5477d32f') in 0.959104 seconds
+  Import took 0.962500 seconds .
 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000657 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.931 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1075 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 55.9 MB.
-System memory in use after: 56.0 MB.
+Received Import Request.
+  Time since last request: 0.995349 seconds.
+  path: Assets/Materials/green.mat
+  artifactKey: Guid(9a8fd4ab1e7b92342a24fa0d811892ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/green.mat using Guid(9a8fd4ab1e7b92342a24fa0d811892ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c6eb34e7dcd7d5bc3161373e1b0ce2a') in 0.035747 seconds
+  Import took 0.038470 seconds .
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1526.
-Total: 1.882100 ms (FindLiveObjects: 0.173400 ms CreateObjectMapping: 0.082900 ms MarkObjects: 1.595300 ms  DeleteObjects: 0.029600 ms)
+========================================================================
+Received Import Request.
+  Time since last request: 0.000359 seconds.
+  path: Assets/Materials/grid.mat
+  artifactKey: Guid(a530a90b961ab014aae14cffa4c06d44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/grid.mat using Guid(a530a90b961ab014aae14cffa4c06d44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caa206e60aad93eed59bbe8725eda486') in 0.310478 seconds
+  Import took 0.313679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.941556 seconds.
+  path: Assets/заметки (2).docx
+  artifactKey: Guid(4c98af55f47e37545a86137fd7eab989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/заметки (2).docx using Guid(4c98af55f47e37545a86137fd7eab989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fb0ea5641560b49d0d3c0a8f02a4a16') in 0.010936 seconds
+  Import took 0.013714 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.034192 seconds.
+  path: Assets/заметки (2).docx
+  artifactKey: Guid(4c98af55f47e37545a86137fd7eab989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/заметки (2).docx using Guid(4c98af55f47e37545a86137fd7eab989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fb0ea5641560b49d0d3c0a8f02a4a16') in 0.004184 seconds
+  Import took 0.006995 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.946221 seconds.
+  path: Assets/Заметки.docx
+  artifactKey: Guid(4c98af55f47e37545a86137fd7eab989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Заметки.docx using Guid(4c98af55f47e37545a86137fd7eab989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffa1ffcf2285f5fc20d169285cac34c5') in 0.004900 seconds
+  Import took 0.007930 seconds .
 

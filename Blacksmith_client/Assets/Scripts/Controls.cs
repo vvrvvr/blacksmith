@@ -9,7 +9,6 @@ public class Controls : MonoBehaviour
     [SerializeField] private LayerMask cubesLayer;
     public GameObject ObjectToControl;
     private Vector3 halfCubeDimensions = new Vector3(0.49f, 0.49f, 0.49f);
-    private Ray[] rays = new Ray[6];
     private Vector3 vectorW = new Vector3(0, 0, 1);
     private Vector3 vectorS = new Vector3(0, 0, -1);
     private Vector3 vectorA = new Vector3(-1, 0, 0);
@@ -38,30 +37,34 @@ public class Controls : MonoBehaviour
             }
             #endregion
         }
+    }
 
-        void CheckAndMove(Vector3 direction)
+    /// <summary>
+    /// check if ObjectToControl can move to choosen direction
+    /// </summary>
+    /// <param name="direction"></param>
+    void CheckAndMove(Vector3 direction)
+    {
+
+        if (!Physics.CheckBox((ObjectToControl.transform.position + new Vector3(0, 1, 0)), halfCubeDimensions, Quaternion.identity, cubesLayer)) //execute only if there are no other cubes above ObjectToControl
         {
-
-            if (!Physics.CheckBox((ObjectToControl.transform.position + new Vector3(0, 1, 0)), halfCubeDimensions, Quaternion.identity, cubesLayer)) //execute only if there are no other cubes above ObjectToControl
+            Vector3 placeToCheck = ObjectToControl.transform.position + direction;
+            if (!Physics.CheckBox(placeToCheck, halfCubeDimensions, Quaternion.identity, cubesLayer)) //if place to move not occupied by another cube
             {
-                Vector3 placeToCheck = ObjectToControl.transform.position + direction;
-                if (!Physics.CheckBox(placeToCheck, halfCubeDimensions, Quaternion.identity, cubesLayer)) //if place to move not occupied by another cube
+                Vector3 underplaceToCheck = placeToCheck + new Vector3(0, -1, 0);
+                while (!Physics.CheckBox(underplaceToCheck, halfCubeDimensions, Quaternion.identity, cubesLayer) && underplaceToCheck.y >= minYCoord) // find  lowest cube, or floor (minYcoord) 
                 {
-                    Vector3 underplaceToCheck = placeToCheck + new Vector3(0, -1, 0);
-                    while (!Physics.CheckBox(underplaceToCheck, halfCubeDimensions, Quaternion.identity, cubesLayer) && underplaceToCheck.y >= minYCoord) // find  lowest cube, or floor (minYcoord) 
-                    {
-                        underplaceToCheck += new Vector3(0, -1, 0);
-                    }
-                    underplaceToCheck += new Vector3(0, 1, 0);
-                    ObjectToControl.transform.position = underplaceToCheck; // change ObjectToControl positon
+                    underplaceToCheck += new Vector3(0, -1, 0);
                 }
-                else //if place occupied by another cube - try to place ObjectToControl above
+                underplaceToCheck += new Vector3(0, 1, 0);
+                ObjectToControl.transform.position = underplaceToCheck; // change ObjectToControl positon
+            }
+            else //if place occupied by another cube - try to place ObjectToControl above
+            {
+                Vector3 aboveplaceToCheck = placeToCheck + new Vector3(0, 1, 0);
+                if (!Physics.CheckBox(aboveplaceToCheck, halfCubeDimensions, Quaternion.identity, cubesLayer))
                 {
-                    Vector3 aboveplaceToCheck = placeToCheck + new Vector3(0, 1, 0);
-                    if (!Physics.CheckBox(aboveplaceToCheck, halfCubeDimensions, Quaternion.identity, cubesLayer))
-                    {
-                        ObjectToControl.transform.position = aboveplaceToCheck; // change ObjectToControl positon 
-                    }
+                    ObjectToControl.transform.position = aboveplaceToCheck; // change ObjectToControl positon 
                 }
             }
         }

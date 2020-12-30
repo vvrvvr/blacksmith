@@ -24,7 +24,10 @@ public class ChooseCube : MonoBehaviour
                 if (currentCube != rayHit.collider.gameObject)
                 {
                     if (currentCube != null)
+                    {
                         currentCube.GetComponent<Cube>().TurnRed();
+                        controlScript.ClickCounter = 0;
+                    }
                     currentCube = rayHit.collider.gameObject;
                     currentCube.GetComponent<Cube>().TurnGreen();
                     controlScript.ObjectToControl = currentCube;

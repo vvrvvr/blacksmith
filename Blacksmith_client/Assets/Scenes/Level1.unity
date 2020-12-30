@@ -2605,6 +2605,8 @@ MonoBehaviour:
   - {fileID: 100725929}
   - {fileID: 1051302509}
   - {fileID: 2031470474}
+  FilledFrames: 0
+  EmptyFrames: 0
 --- !u!4 &957829202
 Transform:
   m_ObjectHideFlags: 0
@@ -3563,7 +3565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1238552396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4815,7 +4817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc63b4358617214aa848b0156b6f306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minZCoord: 0
+  minYCoord: 0
   cubesLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -6482,10 +6484,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: cube
       objectReference: {fileID: 0}
-    - target: {fileID: 4873220282975107576, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
-      propertyPath: m_TagString
-      value: cube
-      objectReference: {fileID: 0}
     - target: {fileID: 4873220282975107580, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6530,14 +6528,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8541054797517889735, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
-      propertyPath: red
-      value: 
-      objectReference: {fileID: 2100000, guid: bf1f9cc48a2d1f14e9299e168bb52110, type: 2}
-    - target: {fileID: 8541054797517889735, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
-      propertyPath: green
-      value: 
-      objectReference: {fileID: 2100000, guid: 9a8fd4ab1e7b92342a24fa0d811892ab, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
 --- !u!4 &4873220283824250897 stripped

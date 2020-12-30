@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Material red;
+    [SerializeField] private Material green;
+    private MeshRenderer myRend;
+
     void Start()
     {
-        
+        myRend = GetComponent<MeshRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// change cube color when selected
+    /// </summary>
+    public void TurnGreen()
     {
-        
+        myRend.material = green;
+    }
+
+    /// <summary>
+    /// return default cube color
+    /// </summary>
+    public void TurnRed()
+    {
+        myRend.material = red;
     }
 }

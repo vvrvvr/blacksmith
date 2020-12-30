@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Click : MonoBehaviour
+public class ChooseCube : MonoBehaviour
 {
     [SerializeField] LayerMask clickableLayer;
     [SerializeField] GameObject PlayerController;
@@ -24,9 +24,9 @@ public class Click : MonoBehaviour
                 if (currentCube != rayHit.collider.gameObject)
                 {
                     if(currentCube != null)
-                        currentCube.GetComponent<CkickOn>().TurnRed();
+                        currentCube.GetComponent<Cube>().TurnRed();
                     currentCube = rayHit.collider.gameObject;
-                    currentCube.GetComponent<CkickOn>().TurnGreen();
+                    currentCube.GetComponent<Cube>().TurnGreen();
                     PlayerController.GetComponent<Controls>().objectToControl = currentCube;
                 }
             }

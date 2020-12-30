@@ -5,36 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class Controls : MonoBehaviour
 {
-    [SerializeField] private float minZCoord;
+    [SerializeField] private float minYCoord;
     [SerializeField] private LayerMask cubesLayer;
-
     public GameObject objectToControl;
     private Vector3 halfCubeDimensions = new Vector3(0.4f, 0.4f, 0.4f);
     private Ray[] rays = new Ray[6]; 
 
     void Update()
     {
-        if (objectToControl != null)
+        if (objectToControl != null && objectToControl.transform.position.y > minYCoord)
         {
             #region input
             if (Input.GetKeyDown(KeyCode.W))
             {
-                if (ConnectedWithOnterCubes(objectToControl.transform.position))
+               // if (ConnectedWithOnterCubes(objectToControl.transform.position))
                     CheckAndMove(new Vector3(0, 0, 1));
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
-                if (ConnectedWithOnterCubes(objectToControl.transform.position))
+               // if (ConnectedWithOnterCubes(objectToControl.transform.position))
                     CheckAndMove(new Vector3(0, 0, -1));
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
-                if (ConnectedWithOnterCubes(objectToControl.transform.position))
+               // if (ConnectedWithOnterCubes(objectToControl.transform.position))
                     CheckAndMove(new Vector3(1, 0, 0));
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
-                if (ConnectedWithOnterCubes(objectToControl.transform.position))
+               // if (ConnectedWithOnterCubes(objectToControl.transform.position))
                     CheckAndMove(new Vector3(-1, 0, 0));
             }
             #endregion
@@ -48,7 +47,7 @@ public class Controls : MonoBehaviour
             {
                 Vector3 underCube = placeToCheck + new Vector3(0, -1, 0);
                 print(underCube);
-                while (!Physics.CheckBox(underCube, halfCubeDimensions, Quaternion.identity, cubesLayer) && underCube.y >= minZCoord)
+                while (!Physics.CheckBox(underCube, halfCubeDimensions, Quaternion.identity, cubesLayer) && underCube.y >= minYCoord)
                 {
                     underCube += new Vector3(0, -1, 0);
                 }
@@ -94,11 +93,17 @@ public class Controls : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// restart game button
+    /// </summary>
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    /// <summary>
+    /// quit game button
+    /// </summary>
     public void QuitGame()
     {
         Application.Quit();

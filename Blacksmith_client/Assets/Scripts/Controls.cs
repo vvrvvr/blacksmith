@@ -53,43 +53,17 @@ public class Controls : MonoBehaviour
                         underplaceToCheck += new Vector3(0, -1, 0);
                     }
                     underplaceToCheck += new Vector3(0, 1, 0);
-                    if (ConnectedWithOnterCubes(underplaceToCheck))
-                        ObjectToControl.transform.position = underplaceToCheck; // change ObjectToControl positon
+                    ObjectToControl.transform.position = underplaceToCheck; // change ObjectToControl positon
                 }
                 else //if place occupied by another cube - try to place ObjectToControl above
                 {
                     Vector3 aboveplaceToCheck = placeToCheck + new Vector3(0, 1, 0);
                     if (!Physics.CheckBox(aboveplaceToCheck, halfCubeDimensions, Quaternion.identity, cubesLayer))
                     {
-                        if (ConnectedWithOnterCubes(aboveplaceToCheck))
-                            ObjectToControl.transform.position = aboveplaceToCheck; // change ObjectToControl positon 
+                        ObjectToControl.transform.position = aboveplaceToCheck; // change ObjectToControl positon 
                     }
                 }
             }
-        }
-
-        bool ConnectedWithOnterCubes(Vector3 position)
-        {
-            bool isConnected = false;
-            rays[0] = new Ray(position, new Vector3(0, 0, 1));
-            rays[1] = new Ray(position, new Vector3(0, 0, -1));
-            rays[2] = new Ray(position, new Vector3(1, 0, 0));
-            rays[3] = new Ray(position, new Vector3(-1, 0, 0));
-            rays[4] = new Ray(position, new Vector3(0, 1, 0));
-            rays[5] = new Ray(position, new Vector3(0, -1, 0));
-            RaycastHit rayHit;
-            for (int i = 0; i < rays.Length; i++)
-            {
-                if (Physics.Raycast(rays[i], out rayHit, 1.0f, cubesLayer))
-                {
-                    if (rayHit.collider.gameObject.CompareTag("cube") && rayHit.collider.gameObject != ObjectToControl)
-                    {
-                        isConnected = true;
-                        break;
-                    }
-                }
-            }
-            return isConnected;
         }
     }
 

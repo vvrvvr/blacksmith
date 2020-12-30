@@ -5,16 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Controls : MonoBehaviour
 {
+    [SerializeField] private float minZCoord;
+    [SerializeField] private LayerMask cubesLayer;
+
     public GameObject objectToControl;
     private Vector3 halfCubeDimensions = new Vector3(0.4f, 0.4f, 0.4f);
     private Ray[] rays = new Ray[6]; 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
 
-    }
-    // Update is called once per frame
     void Update()
     {
         if (objectToControl != null)
@@ -42,32 +39,36 @@ public class Controls : MonoBehaviour
             }
             #endregion
         }
+
         void CheckAndMove(Vector3 direction)
         {
             //чекнуть нижний слой
             Vector3 placeToCheck = objectToControl.transform.position + direction;
-            if (!Physics.CheckBox(placeToCheck, halfCubeDimensions))
+            if (!Physics.CheckBox(placeToCheck, halfCubeDimensions, Quaternion.identity, cubesLayer))
             {
                 Vector3 underCube = placeToCheck + new Vector3(0, -1, 0);
-                while (!Physics.CheckBox(underCube, halfCubeDimensions))
+                print(underCube);
+                while (!Physics.CheckBox(underCube, halfCubeDimensions, Quaternion.identity, cubesLayer) && underCube.y >= minZCoord)
                 {
                     underCube += new Vector3(0, -1, 0);
                 }
                 underCube += new Vector3(0, 1, 0);
+                print(underCube);
                 if (ConnectedWithOnterCubes(underCube))
                     objectToControl.transform.position = underCube; // change positon с перемещением вниз
             }
             else
             {
                 Vector3 aboveCube = placeToCheck + new Vector3(0, 1, 0);
-                if (!Physics.CheckBox(aboveCube, halfCubeDimensions)
-                    && !Physics.CheckBox((objectToControl.transform.position + new Vector3(0, 1, 0)), halfCubeDimensions)) // шоб над кубом небыло другого куба
+                if (!Physics.CheckBox(aboveCube, halfCubeDimensions, Quaternion.identity, cubesLayer)
+                    && !Physics.CheckBox((objectToControl.transform.position + new Vector3(0, 1, 0)), halfCubeDimensions, Quaternion.identity, cubesLayer)) // шоб над кубом небыло другого куба
                 { // дописать правило, чтоб нельзя было двигать куб, если над ним другой куб
                     if (ConnectedWithOnterCubes(aboveCube))
                         objectToControl.transform.position = aboveCube; // change positon 
                 }
             }
         }
+
         bool ConnectedWithOnterCubes(Vector3 position)
         {
             bool isConnected = false;
@@ -80,7 +81,7 @@ public class Controls : MonoBehaviour
             RaycastHit rayHit;
             for(int i = 0; i <rays.Length; i++)
             {
-                if (Physics.Raycast(rays[i], out rayHit, 1.0f))
+                if (Physics.Raycast(rays[i], out rayHit, 1.0f, cubesLayer))
                 {
                     if (rayHit.collider.gameObject.CompareTag("cube") && rayHit.collider.gameObject != objectToControl)
                     {
@@ -92,10 +93,12 @@ public class Controls : MonoBehaviour
             return isConnected;
         }
     }
+
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
     public void QuitGame()
     {
         Application.Quit();

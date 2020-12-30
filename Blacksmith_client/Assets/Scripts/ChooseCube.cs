@@ -7,11 +7,7 @@ public class ChooseCube : MonoBehaviour
     [SerializeField] LayerMask clickableLayer;
     [SerializeField] GameObject PlayerController;
     private GameObject currentCube;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -27,7 +23,7 @@ public class ChooseCube : MonoBehaviour
                         currentCube.GetComponent<Cube>().TurnRed();
                     currentCube = rayHit.collider.gameObject;
                     currentCube.GetComponent<Cube>().TurnGreen();
-                    PlayerController.GetComponent<Controls>().objectToControl = currentCube;
+                    PlayerController.GetComponent<Controls>().ObjectToControl = currentCube;
                 }
             }
         }

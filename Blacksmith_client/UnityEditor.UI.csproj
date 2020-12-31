@@ -70,8 +70,8 @@
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Editor\UI\LayoutElementEditor.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Editor\UI\MenuOptions.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Editor\UI\ToggleEditor.cs" />
-    <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Editor\UI\PropertyDrawers\FontDataDrawer.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Editor\UI\DropdownEditor.cs" />
+    <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Editor\UI\PropertyDrawers\FontDataDrawer.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Editor\UI\ButtonEditor.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Editor\EventSystem\Physics2DRaycasterEditor.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Editor\UI\SelfControllerEditor.cs" />

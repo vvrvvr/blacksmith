@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\WireframeBlank.cs" />
     <Compile Include="Assets\Scripts\ChooseCube.cs" />
     <Compile Include="Assets\Scripts\Wireframe.cs" />
+    <Compile Include="Assets\Scripts\IngotDragAndDrop.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

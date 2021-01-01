@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 37057580}
   - component: {fileID: 37057579}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,7 +216,7 @@ Transform:
   m_LocalScale: {x: 30, y: 5, z: 30}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &93839026
 GameObject:
@@ -1183,7 +1183,7 @@ GameObject:
   - component: {fileID: 957829202}
   - component: {fileID: 957829201}
   m_Layer: 0
-  m_Name: Wireframe Blank
+  m_Name: Wireframe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1248,7 +1248,7 @@ Transform:
   - {fileID: 1895058791}
   - {fileID: 1251429259}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -2514,6 +2514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1667282628}
   - component: {fileID: 1667282629}
+  - component: {fileID: 1667282630}
   - component: {fileID: 1667282627}
   m_Layer: 8
   m_Name: Ingot
@@ -2531,14 +2532,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1667282626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bd0e7162f2361544a12a2bf5d7391c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2065e411f827d654eaeb139f119f4f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 3
-  length: 6
-  height: 3
-  cubePrefab: {fileID: 6658731334641806482, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
   mainCamera: {fileID: 963194227}
+  ingot: {fileID: 1667282630}
   colliderPlane: {fileID: 232578629}
   colliderPlaneLayer:
     serializedVersion: 2
@@ -2558,7 +2556,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1667282629
 BoxCollider:
@@ -2573,6 +2571,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1667282630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667282626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd0e7162f2361544a12a2bf5d7391c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 3
+  length: 6
+  height: 3
+  cubePrefab: {fileID: 6658731334641806482, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
 --- !u!1 &1684829434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2603,7 +2617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc63b4358617214aa848b0156b6f306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minYCoord: 0
+  MinYCoord: 0
   cubesLayer:
     serializedVersion: 2
     m_Bits: 64

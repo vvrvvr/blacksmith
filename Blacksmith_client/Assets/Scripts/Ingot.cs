@@ -10,9 +10,8 @@ public class Ingot : MonoBehaviour
 
     [Header("Prefabs")]
     [SerializeField] private Cube cubePrefab;
-
     private BoxCollider boxCollider;
-    private List<Cube> cubes = new List<Cube>();
+    public List<Cube> Cubes { get; private set; } = new List<Cube>();
 
     private void Start()
     {
@@ -31,7 +30,7 @@ public class Ingot : MonoBehaviour
                 for (int l = 0; l < length; l++)
                 {
                     Cube cube = Instantiate(cubePrefab, transform.position + new Vector3(w, h, l), Quaternion.identity, transform);
-                    cubes.Add(cube);
+                    Cubes.Add(cube);
                 }
             }
         }
@@ -40,9 +39,9 @@ public class Ingot : MonoBehaviour
     public void InitCubes()
     {
         boxCollider.enabled = false;
-        foreach (Cube cube in cubes)
-        {
+        foreach (Cube cube in Cubes)
             cube.Init();
-        }
+        foreach (Cube cube in Cubes)
+            cube.UpdateMoveState();
     }
 }

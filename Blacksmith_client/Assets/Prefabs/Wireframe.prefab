@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9182612556966176683}
   - component: {fileID: 9182612556966176680}
   - component: {fileID: 1361211198643212322}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wireframe
   m_TagString: Untagged
   m_Icon: {fileID: 0}

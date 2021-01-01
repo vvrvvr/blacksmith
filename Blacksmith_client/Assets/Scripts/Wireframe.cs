@@ -13,4 +13,20 @@ public class Wireframe : MonoBehaviour
         IsFilled = setFilled;
         OnStateChange?.Invoke(this);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Cube cube))
+        {
+            SetState(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out Cube cube))
+        {
+            SetState(false);
+        }
+    }
 }

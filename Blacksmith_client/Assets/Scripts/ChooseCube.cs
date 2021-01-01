@@ -30,13 +30,12 @@ public class ChooseCube : MonoBehaviour
                     }
                     currentCube = rayHit.collider.gameObject;
                     currentCube.GetComponent<Cube>().TurnGreen();
-                    controlScript.ObjectToControl = currentCube;
-                    if (currentCube.transform.position.y > controlScript.MinYCoord)
-                        controlScript.ClickCounter++; //double tap functionality
+                    controlScript.ObjectToControl = currentCube.GetComponent<Cube>();
+                    controlScript.ClickCounter++; //double tap functionality
                 }
                 else
                 {
-                    if (currentCube != null && currentCube.transform.position.y > controlScript.MinYCoord)
+                    if (currentCube != null)
                         controlScript.ClickCounter++; //double tap functionality
                 }
             }

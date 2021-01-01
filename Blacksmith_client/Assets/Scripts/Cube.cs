@@ -66,6 +66,7 @@ public class Cube : MonoBehaviour
         transform.position = position;
         UpdateMoveState();
         UpdateCubeAt(prevPos + Vector3.down);
+        UpdateCubeAt(transform.position + Vector3.down);
     }
 
     private void UpdateCubeAt(Vector3 position)

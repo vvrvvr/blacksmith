@@ -30,6 +30,7 @@ public class Cube : MonoBehaviour
     /// </summary>
     public void Kill()
     {
+        UpdateCubeAt(transform.position + Vector3.down);
         transform.position = new Vector3(-10000f, -10000f, -10000f);
         StartCoroutine(LateDestroy());
     }

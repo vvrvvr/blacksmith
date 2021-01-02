@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\Controls.cs" />
     <Compile Include="Assets\Scripts\Ingot.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
@@ -64,7 +65,6 @@
     <Compile Include="Assets\Scripts\ChooseCube.cs" />
     <Compile Include="Assets\Scripts\IngotDragAndDrop.cs" />
     <Compile Include="Assets\Scripts\Wireframe.cs" />
-    <Compile Include="Assets\Scripts\UIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

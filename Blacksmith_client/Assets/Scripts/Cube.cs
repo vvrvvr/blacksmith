@@ -27,9 +27,13 @@ public class Cube : MonoBehaviour
 
     private void OnDestroy()
     {
-        SetState(false);
-        UpdateCubeAt(transform.position + Vector3.down);
-        OnDestroyEvent?.Invoke();
+        // Check scene changing
+        if (gameObject.scene.isLoaded)
+        {
+            SetState(false);
+            UpdateCubeAt(transform.position + Vector3.down);
+            OnDestroyEvent?.Invoke();
+        }
     }
 
     public void Init()

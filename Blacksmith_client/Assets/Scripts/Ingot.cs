@@ -11,7 +11,13 @@ public class Ingot : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private Cube cubePrefab;
     private BoxCollider boxCollider;
+    public bool IsInit { get; private set; }
     public List<Cube> Cubes { get; private set; } = new List<Cube>();
+
+    private void Awake()
+    {
+        IsInit = false;
+    }
 
     private void Start()
     {
@@ -43,5 +49,6 @@ public class Ingot : MonoBehaviour
             cube.Init();
         foreach (Cube cube in Cubes)
             cube.UpdateMoveState();
+        IsInit = true;
     }
 }

@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -36,20 +37,33 @@ public class GameManager : MonoBehaviour
     private void OnCubeDestroy()
     {
         CubesAmount--;
+        CheckWinLoseConditions();
     }
 
     private void OnCubeStateChange(bool canMove)
     {
         CubesCanMove = canMove ? CubesCanMove + 1 : CubesCanMove - 1;
+        CheckWinLoseConditions();
     }
 
     private void OnWireframeStateChange(Wireframe frame)
     {
         FilledFrames = frame.IsFilled ? FilledFrames + 1 : FilledFrames - 1;
+        CheckWinLoseConditions();
     }
 
     private void CheckWinLoseConditions()
     {
-
+        if (FilledFrames == FramesAmount && CubesAmount == FramesAmount)
+        {
+            UIManager.Singleton.EnableVictoryPanel();
+            return;
+        }
+        if (CubesCanMove == 0 && FilledFrames != FramesAmount
+            || CubesAmount < FramesAmount)
+        {
+            UIManager.Singleton.EnableLosePanel();
+            return;
+        }
     }
 }

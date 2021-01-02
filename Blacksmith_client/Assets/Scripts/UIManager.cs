@@ -5,6 +5,7 @@ public class UIManager : MonoBehaviour
 {
     [Header("Panels")]
     [SerializeField] private GameObject LosePanel;
+    [SerializeField] private GameObject VictoryPanel;
 
     public static UIManager Singleton;
 
@@ -18,6 +19,11 @@ public class UIManager : MonoBehaviour
     public void EnableLosePanel()
     {
         LosePanel.SetActive(true);
+    }
+
+    public void EnableVictoryPanel()
+    {
+        VictoryPanel.SetActive(true);
     }
 
     public void RestartGame()

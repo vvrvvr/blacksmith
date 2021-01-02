@@ -8,9 +8,11 @@ public class Ingot : MonoBehaviour
     [SerializeField] private int length;
     [SerializeField] private int height;
 
-    [Header("Prefabs")]
+    [Header("Settings")]
     [SerializeField] private Cube cubePrefab;
+    [SerializeField] private LayerMask cubeLayer;
     private BoxCollider boxCollider;
+    private int OverlappedCubes = 0;
     public bool IsInit { get; private set; }
     public List<Cube> Cubes { get; private set; } = new List<Cube>();
 
@@ -22,7 +24,7 @@ public class Ingot : MonoBehaviour
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
-        boxCollider.size = new Vector3(width, height, length);
+        boxCollider.size = new Vector3(width - 0.1f, height - 0.1f, length - 0.1f);
         SpawnCubes();
         boxCollider.center = new Vector3((width - 1) * 0.5f, (height - 1) * 0.5f, (length - 1) * 0.5f);
     }
@@ -42,13 +44,41 @@ public class Ingot : MonoBehaviour
         }
     }
 
-    public void InitCubes()
+    public bool InitCubes()
     {
+        if (OverlappedCubes == 0)
+            return false;
         boxCollider.enabled = false;
         foreach (Cube cube in Cubes)
             cube.Init();
         foreach (Cube cube in Cubes)
             cube.UpdateMoveState();
         IsInit = true;
+        return true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == LayerMaskToLayer(cubeLayer))
+            OverlappedCubes++;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMaskToLayer(cubeLayer))
+            OverlappedCubes--;
+    }
+
+    // Duplicated function....
+    private int LayerMaskToLayer(LayerMask layerMask)
+    {
+        int layerNumber = 0;
+        int layer = layerMask.value;
+        while (layer > 0)
+        {
+            layer = layer >> 1;
+            layerNumber++;
+        }
+        return layerNumber - 1;
     }
 }

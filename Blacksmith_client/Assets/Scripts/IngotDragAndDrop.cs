@@ -28,8 +28,8 @@ public class IngotDragAndDrop : MonoBehaviour
         {
             if (doubleClickTime <= DoubleClickSpeed)
             {
-                ingot.InitCubes();
-                enabled = false;
+                if(ingot.InitCubes())
+                    enabled = false;
             }
             doubleClickTime = 0f;
         }

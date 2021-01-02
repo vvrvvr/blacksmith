@@ -25,6 +25,21 @@ public class Cube : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
     }
 
+    /// <summary>
+    /// Use it instead of Destroy()
+    /// </summary>
+    public void Kill()
+    {
+        transform.position = new Vector3(-10000f, -10000f, -10000f);
+        StartCoroutine(LateDestroy());
+    }
+
+    private IEnumerator LateDestroy()
+    {
+        yield return new WaitForFixedUpdate();
+        Destroy(gameObject);
+    }
+
     private void OnDestroy()
     {
         // Check scene changing

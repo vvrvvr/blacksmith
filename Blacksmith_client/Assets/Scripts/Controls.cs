@@ -81,7 +81,7 @@ public class Controls : MonoBehaviour
             if (ClickCounter == 2)
             {
                 if (!ObjectToControl.CheckCubeAt(ObjectToControl.transform.position + Vector3.up))
-                    Destroy(ObjectToControl.gameObject);
+                    ObjectToControl.Kill();
                 break;
             }
             yield return new WaitForEndOfFrame();

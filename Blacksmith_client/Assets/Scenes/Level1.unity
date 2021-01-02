@@ -3142,7 +3142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 3
-  length: 5
+  length: 6
   height: 3
   cubePrefab: {fileID: 6658731334641806482, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
 --- !u!1 &1684829434

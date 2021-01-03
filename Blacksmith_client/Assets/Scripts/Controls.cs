@@ -47,7 +47,7 @@ public class Controls : MonoBehaviour
     /// check if ObjectToControl can move to choosen direction
     /// </summary>
     /// <param name="direction"></param>
-    void CheckAndMove(Vector3 direction)
+    public void CheckAndMove(Vector3 direction)
     {
         if(ObjectToControl.CanMove)
         {

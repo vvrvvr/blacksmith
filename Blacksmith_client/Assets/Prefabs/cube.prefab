@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5057370476173994770}
   - component: {fileID: 6658731334641806482}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: cube
   m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,4 +130,12 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 64
+  clickableLayer:
+    serializedVersion: 2
+    m_Bits: 64
   MinYCoord: 0
+  colliderPlane: {fileID: 0}
+  colliderPlaneLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  direction: {x: 0, y: 0, z: 0}

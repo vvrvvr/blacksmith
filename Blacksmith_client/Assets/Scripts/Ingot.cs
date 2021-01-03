@@ -50,7 +50,7 @@ public class Ingot : MonoBehaviour
             return false;
         boxCollider.enabled = false;
         foreach (Cube cube in Cubes)
-            cube.Init();
+            cube.Init(GetComponent<IngotDragAndDrop>().colliderPlane);
         foreach (Cube cube in Cubes)
             cube.UpdateMoveState();
         IsInit = true;

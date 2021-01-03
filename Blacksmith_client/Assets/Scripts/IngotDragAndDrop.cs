@@ -5,7 +5,7 @@ public class IngotDragAndDrop : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Ingot ingot;
-    [SerializeField] private Transform colliderPlane;
+    public Transform colliderPlane;
     [SerializeField] private LayerMask colliderPlaneLayer;
     [SerializeField] private LayerMask ingotLayer;
 

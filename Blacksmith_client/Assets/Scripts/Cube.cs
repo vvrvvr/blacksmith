@@ -7,6 +7,7 @@ public class Cube : MonoBehaviour
     [SerializeField] private Material red;
     [SerializeField] private Material green;
     [SerializeField] private LayerMask layer;
+    [SerializeField] LayerMask clickableLayer;
     public float MinYCoord = 0f;
     private MeshRenderer myRend;
     private BoxCollider boxCollider;
@@ -18,6 +19,15 @@ public class Cube : MonoBehaviour
 
     [HideInInspector]
     public bool isInitialized { get; private set; } = false;
+
+    [SerializeField] private Transform colliderPlane;
+    [SerializeField] private LayerMask colliderPlaneLayer;
+    #region vectors
+    private Vector3 firstDragPos = Vector3.zero;
+    private Vector3 currentPoint;
+    private Vector3 baseIngotPos;
+    public Vector3 direction;
+    #endregion
 
     private void Start()
     {
@@ -52,12 +62,13 @@ public class Cube : MonoBehaviour
         }
     }
 
-    public void Init()
+    public void Init(Transform cPlane)
     {
         isInitialized = true;
         gameObject.layer = LayerMaskToLayer(layer);
         boxCollider.enabled = true;
         TurnRed();
+        colliderPlane = cPlane;
     }
 
     public void SetState(bool canMove)
@@ -149,6 +160,54 @@ public class Cube : MonoBehaviour
     {
         if(isInitialized)
             myRend.material = red;
+    }
+
+    
+    private void OnMouseDown()
+    {
+
+        RaycastHit rayHit;
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, clickableLayer))
+        {
+            colliderPlane.position = transform.position;
+            firstDragPos = transform.position;
+            colliderPlane.position = firstDragPos;
+            colliderPlane.gameObject.SetActive(true);
+        }
+    }
+
+    private void OnMouseDrag()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, colliderPlaneLayer))
+        {
+            currentPoint = hit.point;
+            direction = currentPoint - firstDragPos;
+            //direction.x = Mathf.Round(direction.x);
+            direction.y = 0f;
+            //direction.z = Mathf.Round(direction.z);
+            Debug.Log("x=" + direction.x.ToString() + " z=" + direction.z.ToString());
+            if(Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
+            {
+                direction = new Vector3(Mathf.Sign(direction.x), 0, 0);
+            }
+            else
+                direction = new Vector3(0, 0, Mathf.Sign(direction.z));
+            //direction = direction.normalized;
+            
+            //if (direction.magnitude > 1.0f)
+            //    return;
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        Vector3 pos = transform.position + direction;
+        MoveTo(pos);
+        firstDragPos = Vector3.zero;
+        direction = Vector3.zero;
+        colliderPlane.gameObject.SetActive(false);
+
     }
 
 }

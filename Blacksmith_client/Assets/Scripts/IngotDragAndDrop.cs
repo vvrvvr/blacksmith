@@ -15,9 +15,9 @@ public class IngotDragAndDrop : MonoBehaviour
     #endregion
 
     #region Dragging
-    private Vector3 lastDragPos = Vector3.zero;
+    private Vector3 firstDragPos = Vector3.zero;
     private Vector3 currentPoint;
-    private float dragDistance = 0f;
+    private Vector3 baseIngotPos;
     #endregion
 
     private void Update()
@@ -42,7 +42,8 @@ public class IngotDragAndDrop : MonoBehaviour
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, ingotLayer))
         {
-            lastDragPos = hit.point;
+            baseIngotPos = transform.position;
+            firstDragPos = hit.point;
             colliderPlane.position = hit.point;
             colliderPlane.gameObject.SetActive(true);
         }
@@ -56,29 +57,21 @@ public class IngotDragAndDrop : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, colliderPlaneLayer))
         {
             currentPoint = hit.point;
-            Vector3 direction = currentPoint - lastDragPos;
-            dragDistance += direction.magnitude;
-            if (dragDistance >= 1f)
-            {
-                dragDistance = 0f;
-                Vector3 projection1 = Vector3.Project(direction, Vector3.forward);
-                Vector3 projection2 = Vector3.Project(direction, Vector3.right);
-                float diff = Mathf.Abs(projection1.magnitude - projection2.magnitude);
-                if(diff > 0f && diff <= 0.3f)
-                    transform.position += (projection1.normalized + projection2.normalized).normalized;
-                else
-                if (projection1.magnitude > projection2.magnitude)
-                    transform.position += projection1.normalized;
-                else
-                    transform.position += projection2.normalized;
-            }
-            lastDragPos = currentPoint;
+            Vector3 direction = currentPoint - firstDragPos;
+            Vector3 newPos = baseIngotPos + direction;
+
+            newPos.x = Mathf.Round(newPos.x);
+            newPos.y = Mathf.Round(newPos.y);
+            newPos.z = Mathf.Round(newPos.z);
+
+            transform.position = newPos;
         }
     }
 
     private void OnMouseUp()
     {
         if (!enabled) return;
+        firstDragPos = Vector3.zero;
         colliderPlane.gameObject.SetActive(false);
     }
 

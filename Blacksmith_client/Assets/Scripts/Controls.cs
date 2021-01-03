@@ -27,11 +27,13 @@ public class Controls : MonoBehaviour
     {
         if (ObjectToControl != null)
         {
+            #region double click
             if (ClickCounter == 1 && coroutineAllowed)
             {
                 firstClickTime = Time.time;
                 StartCoroutine(DoubleClickDetection());
             }
+            #endregion
             #region input
             if (Input.GetKeyDown(KeyCode.W))
             {
@@ -53,10 +55,6 @@ public class Controls : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// check if ObjectToControl can move to choosen direction
-    /// </summary>
-    /// <param name="direction"></param>
     public void CheckAndMove(Vector3 direction)
     {
         if(ObjectToControl.CanMove)

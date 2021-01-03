@@ -3203,7 +3203,7 @@ MonoBehaviour:
     m_Bits: 512
   ObjectToControl: {fileID: 0}
   ClickCounter: 0
-  TimeBetweenClicks: 0.5
+  TimeBetweenClicks: 0.2
 --- !u!4 &1684829436
 Transform:
   m_ObjectHideFlags: 0

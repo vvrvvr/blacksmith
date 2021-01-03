@@ -7,7 +7,7 @@ public class Cube : MonoBehaviour
     [SerializeField] private Material red;
     [SerializeField] private Material green;
     [SerializeField] private LayerMask layer;
-    [SerializeField] LayerMask clickableLayer;
+    //[SerializeField] LayerMask clickableLayer;
     public float MinYCoord = 0f;
     private MeshRenderer myRend;
     private BoxCollider boxCollider;
@@ -149,7 +149,7 @@ public class Cube : MonoBehaviour
     /// </summary>
     public void TurnGreen()
     {
-        if(isInitialized)
+        if (isInitialized)
             myRend.material = green;
     }
 
@@ -158,16 +158,16 @@ public class Cube : MonoBehaviour
     /// </summary>
     public void TurnRed()
     {
-        if(isInitialized)
+        if (isInitialized)
             myRend.material = red;
     }
 
-    
+
     private void OnMouseDown()
     {
 
         RaycastHit rayHit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, clickableLayer))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, layer))
         {
             colliderPlane.position = transform.position;
             firstDragPos = transform.position;
@@ -183,20 +183,20 @@ public class Cube : MonoBehaviour
         {
             currentPoint = hit.point;
             direction = currentPoint - firstDragPos;
-            //direction.x = Mathf.Round(direction.x);
             direction.y = 0f;
-            //direction.z = Mathf.Round(direction.z);
-            Debug.Log("x=" + direction.x.ToString() + " z=" + direction.z.ToString());
-            if(Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
+            if (direction.magnitude > 0.6f)
             {
-                direction = new Vector3(Mathf.Sign(direction.x), 0, 0);
+                if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
+                {
+                    direction = new Vector3(Mathf.Sign(direction.x), 0, 0);
+                }
+                else
+                    direction = new Vector3(0, 0, Mathf.Sign(direction.z));
             }
             else
-                direction = new Vector3(0, 0, Mathf.Sign(direction.z));
-            //direction = direction.normalized;
-            
-            //if (direction.magnitude > 1.0f)
-            //    return;
+            {
+                direction = Vector3.zero;
+            }
         }
     }
 

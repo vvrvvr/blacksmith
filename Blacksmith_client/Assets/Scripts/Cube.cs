@@ -7,6 +7,7 @@ public class Cube : MonoBehaviour
     [SerializeField] private Material red;
     [SerializeField] private Material green;
     [SerializeField] private LayerMask layer;
+    [SerializeField] private float deadZone = 0.6f;
     //[SerializeField] LayerMask clickableLayer;
     public float MinYCoord = 0f;
     private MeshRenderer myRend;
@@ -15,6 +16,7 @@ public class Cube : MonoBehaviour
 
     public static Action OnDestroyEvent;
     public static Action<bool> OnStateChange;
+    public static Action<Vector3> OnMouseMoving;
     private Vector3 halfCubeDimensions = new Vector3(0.49f, 0.49f, 0.49f);
 
     [HideInInspector]
@@ -184,7 +186,7 @@ public class Cube : MonoBehaviour
             currentPoint = hit.point;
             direction = currentPoint - firstDragPos;
             direction.y = 0f;
-            if (direction.magnitude > 0.6f)
+            if (direction.magnitude > deadZone)
             {
                 if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
                 {
@@ -202,8 +204,8 @@ public class Cube : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Vector3 pos = transform.position + direction;
-        MoveTo(pos);
+        if (direction != Vector3.zero)
+            OnMouseMoving?.Invoke(direction);
         firstDragPos = Vector3.zero;
         direction = Vector3.zero;
         colliderPlane.gameObject.SetActive(false);

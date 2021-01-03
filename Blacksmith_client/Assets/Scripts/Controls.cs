@@ -13,6 +13,16 @@ public class Controls : MonoBehaviour
     public float TimeBetweenClicks;
     private bool coroutineAllowed = true;
 
+    private void OnEnable()
+    {
+        Cube.OnMouseMoving += CheckAndMove;
+    }
+
+    private void OnDisable()
+    {
+        Cube.OnMouseMoving -= CheckAndMove;
+    }
+
     void Update()
     {
         if (ObjectToControl != null)

@@ -63,6 +63,10 @@ public class IngotDragAndDrop : MonoBehaviour
                 dragDistance = 0f;
                 Vector3 projection1 = Vector3.Project(direction, Vector3.forward);
                 Vector3 projection2 = Vector3.Project(direction, Vector3.right);
+                float diff = Mathf.Abs(projection1.magnitude - projection2.magnitude);
+                if(diff > 0f && diff <= 0.3f)
+                    transform.position += (projection1.normalized + projection2.normalized).normalized;
+                else
                 if (projection1.magnitude > projection2.magnitude)
                     transform.position += projection1.normalized;
                 else

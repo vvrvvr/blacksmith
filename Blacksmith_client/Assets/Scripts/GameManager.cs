@@ -1,5 +1,5 @@
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -56,13 +56,15 @@ public class GameManager : MonoBehaviour
     {
         if (FilledFrames == FramesAmount && CubesAmount == FramesAmount)
         {
-            UIManager.Singleton.EnableVictoryPanel();
+            // Victory
+            MenuManager.Singleton.EnablePanel("Victory Panel");
             return;
         }
         if (CubesCanMove == 0 && FilledFrames != FramesAmount
             || CubesAmount < FramesAmount)
         {
-            UIManager.Singleton.EnableLosePanel();
+            // Lose
+            MenuManager.Singleton.EnablePanel("Lose Panel");
             return;
         }
     }

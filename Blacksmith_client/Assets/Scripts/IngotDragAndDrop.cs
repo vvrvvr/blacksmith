@@ -1,3 +1,4 @@
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class IngotDragAndDrop : MonoBehaviour
@@ -38,6 +39,7 @@ public class IngotDragAndDrop : MonoBehaviour
     private void OnMouseDown()
     {
         if (!enabled) return;
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, ingotLayer))
@@ -52,6 +54,7 @@ public class IngotDragAndDrop : MonoBehaviour
     private void OnMouseDrag()
     {
         if (!enabled) return;
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, colliderPlaneLayer))
@@ -71,6 +74,8 @@ public class IngotDragAndDrop : MonoBehaviour
     private void OnMouseUp()
     {
         if (!enabled) return;
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         firstDragPos = Vector3.zero;
         colliderPlane.gameObject.SetActive(false);
     }

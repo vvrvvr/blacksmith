@@ -19,10 +19,6 @@ public class Ingot : MonoBehaviour
     private void Awake()
     {
         IsInit = false;
-    }
-
-    private void Start()
-    {
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.size = new Vector3(width - 0.1f, height - 0.1f, length - 0.1f);
         SpawnCubes();

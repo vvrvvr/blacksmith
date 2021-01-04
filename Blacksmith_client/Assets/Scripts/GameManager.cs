@@ -9,9 +9,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int CubesCanMove;
     [SerializeField] private int FilledFrames;
 
-    [Header("References")]
-    [SerializeField] private Ingot ingot;
-    [SerializeField] private WireframeBlank wireframeBlank;
+    public static GameManager Singleton { get; private set; }
+
+    public void SetLevelStats(Level level)
+    {
+        CubesAmount = level.Ingot.Cubes.Count;
+        CubesCanMove = CubesAmount;
+        FramesAmount = level.WireframeBlank.Wireframes.Count;
+    }
 
     private void OnEnable()
     {
@@ -27,11 +32,9 @@ public class GameManager : MonoBehaviour
         Cube.OnStateChange -= OnCubeStateChange;
     }
 
-    private void Start()
+    private void Awake()
     {
-        CubesAmount = ingot.Cubes.Count;
-        CubesCanMove = CubesAmount;
-        FramesAmount = wireframeBlank.Wireframes.Count;
+        Singleton = this;
     }
 
     private void OnCubeDestroy()

@@ -4,11 +4,11 @@ using UnityEngine;
 public class IngotDragAndDrop : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private Camera mainCamera;
     [SerializeField] private Ingot ingot;
-    [SerializeField] private Transform colliderPlane;
     [SerializeField] private LayerMask colliderPlaneLayer;
     [SerializeField] private LayerMask ingotLayer;
+    private Transform colliderPlane;
+    private Camera mainCamera;
 
     #region DoubleClick
     private const float DoubleClickSpeed = 0.25f;
@@ -20,6 +20,12 @@ public class IngotDragAndDrop : MonoBehaviour
     private Vector3 currentPoint;
     private Vector3 baseIngotPos;
     #endregion
+
+    public void Init(Transform _colliderPlane)
+    {
+        colliderPlane = _colliderPlane;
+        mainCamera = Camera.main;
+    }
 
     private void Update()
     {

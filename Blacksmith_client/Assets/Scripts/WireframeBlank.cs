@@ -5,7 +5,7 @@ public class WireframeBlank : MonoBehaviour
 {
     public List<Transform> Wireframes { get; private set; } = new List<Transform>();
 
-    private void Start()
+    private void Awake()
     {
         InitWireframes();
     }

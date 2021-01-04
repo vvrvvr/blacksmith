@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using System;
 
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int FramesAmount;
     [SerializeField] private int CubesCanMove;
     [SerializeField] private int FilledFrames;
+
+    private bool NeedCheckConditions = false;
 
     public static GameManager Singleton { get; private set; }
 
@@ -37,6 +40,23 @@ public class GameManager : MonoBehaviour
         Singleton = this;
     }
 
+    private IEnumerator LateCheckConditions()
+    {
+        yield return new WaitForFixedUpdate();
+        NeedCheckConditions = false;
+        if (FilledFrames == FramesAmount && CubesAmount == FramesAmount)
+        {
+            // Victory
+            PlayerStats.Singleton.SaveLevelProgress(1);
+            MenuManager.Singleton.EnablePanel("Victory Panel");
+        }
+        else if (CubesCanMove == 0 && FilledFrames != FramesAmount || CubesAmount < FramesAmount)
+        {
+            // Lose
+            MenuManager.Singleton.EnablePanel("Lose Panel");
+        }
+    }
+
     private void OnCubeDestroy()
     {
         CubesAmount--;
@@ -57,18 +77,9 @@ public class GameManager : MonoBehaviour
 
     private void CheckWinLoseConditions()
     {
-        if (FilledFrames == FramesAmount && CubesAmount == FramesAmount)
-        {
-            // Victory
-            PlayerStats.Singleton.SaveLevelProgress(1);
-            MenuManager.Singleton.EnablePanel("Victory Panel");
+        if (NeedCheckConditions)
             return;
-        }
-        if (CubesCanMove == 0 && FilledFrames != FramesAmount || CubesAmount < FramesAmount)
-        {
-            // Lose
-            MenuManager.Singleton.EnablePanel("Lose Panel");
-            return;
-        }
+        NeedCheckConditions = true;
+        StartCoroutine(LateCheckConditions());
     }
 }

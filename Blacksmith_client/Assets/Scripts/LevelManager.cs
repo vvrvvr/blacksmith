@@ -17,12 +17,12 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(int index)
     {
-        currentLevel = Instantiate(levelPrefabs[index]);
+        currentLevel = Instantiate(levelPrefabs[Mathf.Min(index, levelPrefabs.Count - 1)]);
         currentLevel.IngotDrag.Init(colliderPlane);
         currentIngot = currentLevel.Ingot;
         currentWireframe = currentLevel.WireframeBlank;
 
-        PlayerStats.Singleton.LoadedLevel = index;
+        PlayerStats.Singleton.LoadedLevel = Mathf.Min(index, levelPrefabs.Count - 1);
         GameManager.Singleton.SetLevelStats(currentLevel);
     }
 }

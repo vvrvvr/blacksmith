@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VSCode.Editor", "Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Rider.Editor", "Unity.Rider.Editor.csproj", "{90B385FB-92F1-3D40-CAD7-8E5509C5BE3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{DDC29A39-B1CD-DD69-8865-C383D2660FB0}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.Player.csproj", "{84F1C23E-87B9-DF61-CF6F-1788DA55A99F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.Player.csproj", "{9BF38FBC-1ABE-55CC-AF3C-2D85E198B7D1}"
@@ -95,6 +97,10 @@ Global
 		{90B385FB-92F1-3D40-CAD7-8E5509C5BE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90B385FB-92F1-3D40-CAD7-8E5509C5BE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90B385FB-92F1-3D40-CAD7-8E5509C5BE3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDC29A39-B1CD-DD69-8865-C383D2660FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDC29A39-B1CD-DD69-8865-C383D2660FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDC29A39-B1CD-DD69-8865-C383D2660FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDC29A39-B1CD-DD69-8865-C383D2660FB0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{84F1C23E-87B9-DF61-CF6F-1788DA55A99F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{84F1C23E-87B9-DF61-CF6F-1788DA55A99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84F1C23E-87B9-DF61-CF6F-1788DA55A99F}.Release|Any CPU.ActiveCfg = Release|Any CPU

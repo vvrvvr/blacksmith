@@ -36,14 +36,16 @@ public class PlayerStats : MonoBehaviour
 
     public void SaveProgress(int progress)
     {
-        Progress = progress;
+        if(progress > Progress)
+            Progress = progress;
         PlayerPrefs.SetInt(LEVEL_SAVE_KEY, progress);
         PlayerPrefs.Save();
     }
 
     public void SaveLevelProgress(int modifier = 0)
     {
-        Progress = LoadedLevel + modifier;
+        if (LoadedLevel + modifier > Progress)
+            Progress = LoadedLevel + modifier;
         PlayerPrefs.SetInt(LEVEL_SAVE_KEY, Progress);
         PlayerPrefs.Save();
     }

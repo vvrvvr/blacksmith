@@ -15,7 +15,7 @@ public class Cube : MonoBehaviour
     public static Action OnDestroyEvent;
     public static Action<bool> OnStateChange;
     private Vector3 halfCubeDimensions = new Vector3(0.49f, 0.49f, 0.49f);
-
+     
     [HideInInspector]
     public bool isInitialized { get; private set; } = false;
 

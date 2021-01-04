@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        LoadLevel(Mathf.Min(PlayerStats.Singleton.SavedLevel, levelPrefabs.Count - 1));
+        LoadLevel(Mathf.Min(PlayerStats.Singleton.LevelToLoad, levelPrefabs.Count - 1));
     }
 
     public void LoadLevel(int index)

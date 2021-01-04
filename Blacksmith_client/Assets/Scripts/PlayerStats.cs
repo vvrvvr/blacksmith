@@ -8,7 +8,9 @@ public class PlayerStats : MonoBehaviour
     private bool isSaveActive = false;
 
     #region Stats
-    public int SavedLevel;
+    [HideInInspector] public string MenuToLoad;
+    public int LevelToLoad;
+    public int Progress;
     #endregion
 
     private void Awake()
@@ -21,14 +23,14 @@ public class PlayerStats : MonoBehaviour
         isSaveActive = true;
         Singleton = this;
         DontDestroyOnLoad(gameObject);
-        SavedLevel = PlayerPrefs.GetInt(LEVEL_SAVE_KEY, 0);
+        Progress = PlayerPrefs.GetInt(LEVEL_SAVE_KEY, 0);
     }
 
     private void OnDestroy()
     {
         if (!isSaveActive)
             return;
-        PlayerPrefs.SetInt(LEVEL_SAVE_KEY, SavedLevel);
+        PlayerPrefs.SetInt(LEVEL_SAVE_KEY, Progress);
         PlayerPrefs.Save();
     }
 }

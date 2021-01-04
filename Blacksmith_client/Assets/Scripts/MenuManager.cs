@@ -13,6 +13,17 @@ public class MenuManager : MonoBehaviour
     public void LoadScene(string name) => SceneManager.LoadScene(name);
     public void RestartScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
+    private void Start()
+    {
+        if (PlayerStats.Singleton.MenuToLoad != "")
+            EnablePanel(PlayerStats.Singleton.MenuToLoad);
+    }
+
+    public void SetMenuToLoad(string menuName)
+    {
+        PlayerStats.Singleton.MenuToLoad = menuName;
+    }
+
     public void EnablePanel(GameObject panel)
     {
         DisableAllPanel();

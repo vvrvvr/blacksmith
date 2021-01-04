@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour
         currentIngot = currentLevel.Ingot;
         currentWireframe = currentLevel.WireframeBlank;
 
+        PlayerStats.Singleton.LoadedLevel = index;
         GameManager.Singleton.SetLevelStats(currentLevel);
     }
 }

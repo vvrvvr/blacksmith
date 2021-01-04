@@ -41,7 +41,7 @@ public class MenuManager : MonoBehaviour
                 return;
             }
         }
-        Debug.LogError($"Panel [{name}] not registered!");
+        Debug.LogWarning($"Panel [{name}] not registered!");
     }
 
     private void DisableAllPanel()

@@ -60,11 +60,11 @@ public class GameManager : MonoBehaviour
         if (FilledFrames == FramesAmount && CubesAmount == FramesAmount)
         {
             // Victory
+            PlayerStats.Singleton.SaveLevelProgress(1);
             MenuManager.Singleton.EnablePanel("Victory Panel");
             return;
         }
-        if (CubesCanMove == 0 && FilledFrames != FramesAmount
-            || CubesAmount < FramesAmount)
+        if (CubesCanMove == 0 && FilledFrames != FramesAmount || CubesAmount < FramesAmount)
         {
             // Lose
             MenuManager.Singleton.EnablePanel("Lose Panel");

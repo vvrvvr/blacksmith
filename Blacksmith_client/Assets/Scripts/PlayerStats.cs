@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
 
     #region Stats
     [HideInInspector] public string MenuToLoad;
+    [HideInInspector] public int LoadedLevel;
     public int LevelToLoad;
     public int Progress;
     #endregion
@@ -30,7 +31,26 @@ public class PlayerStats : MonoBehaviour
     {
         if (!isSaveActive)
             return;
+        SaveProgress(Progress);
+    }
+
+    public void SaveProgress(int progress)
+    {
+        Progress = progress;
+        PlayerPrefs.SetInt(LEVEL_SAVE_KEY, progress);
+        PlayerPrefs.Save();
+    }
+
+    public void SaveLevelProgress(int modifier = 0)
+    {
+        Progress = LoadedLevel + modifier;
         PlayerPrefs.SetInt(LEVEL_SAVE_KEY, Progress);
         PlayerPrefs.Save();
+    }
+
+    public void SetLevelToLoad(int levelIndex)
+    {
+        LevelToLoad = levelIndex;
+        LoadedLevel = levelIndex;
     }
 }

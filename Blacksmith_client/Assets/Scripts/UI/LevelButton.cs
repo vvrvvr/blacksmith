@@ -12,12 +12,14 @@ public class LevelButton : MonoBehaviour
     [SerializeField] private GameObject textObject;
     [SerializeField] private GameObject closedImage;
     [SerializeField] private Button button;
+    private PlayerStats playerStats;
 
     public void LoadScene(string name) => SceneManager.LoadScene(name);
 
     private void Start()
     {
-        if(PlayerStats.Singleton.Progress >= StageForOpen)
+        playerStats = PlayerStats.Singleton;
+        if (playerStats.Progress >= StageForOpen)
         {
             button.interactable = true;
             closedImage.SetActive(false);
@@ -26,6 +28,7 @@ public class LevelButton : MonoBehaviour
 
     public void SetLevelToLoad(int levelIndex)
     {
-        PlayerStats.Singleton.LevelToLoad = levelIndex;
+        playerStats.SetLevelToLoad(levelIndex);
+        playerStats.MenuToLoad = "";
     }
 }

@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
 
     private void OnWireframeStateChange(Wireframe frame)
     {
+        Debug.Log("here");
         FilledFrames = frame.IsFilled ? FilledFrames + 1 : FilledFrames - 1;
         CheckWinLoseConditions();
     }

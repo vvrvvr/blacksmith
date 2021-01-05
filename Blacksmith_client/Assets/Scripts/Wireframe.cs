@@ -18,6 +18,7 @@ public class Wireframe : MonoBehaviour
     {
         if (other.TryGetComponent(out Cube cube))
         {
+            Debug.Log("here"); 
             SetState(true);
         }
     }

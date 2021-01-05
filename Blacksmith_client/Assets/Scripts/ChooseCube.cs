@@ -5,8 +5,11 @@ public class ChooseCube : MonoBehaviour
 {
     [SerializeField] LayerMask clickableLayer;
     [SerializeField] GameObject PlayerController;
+    
     private Controls controlScript;
     private GameObject currentCube;
+
+    
 
     private void Start()
     {
@@ -36,9 +39,14 @@ public class ChooseCube : MonoBehaviour
                 else
                 {
                     if (currentCube != null)
+                    {
                         controlScript.ClickCounter++; //double tap functionality
+                        
+                    }
                 }
             }
         }
     }
+
+    
 }

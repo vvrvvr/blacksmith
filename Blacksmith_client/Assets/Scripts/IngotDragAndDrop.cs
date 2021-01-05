@@ -5,6 +5,7 @@ public class IngotDragAndDrop : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private Ingot ingot;
+    public Transform colliderPlane;
     [SerializeField] private LayerMask colliderPlaneLayer;
     [SerializeField] private LayerMask ingotLayer;
     private Transform colliderPlane;

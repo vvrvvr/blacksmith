@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5057370476173994770}
   - component: {fileID: 6658731334641806482}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: cube
   m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   red: {fileID: 2100000, guid: bf1f9cc48a2d1f14e9299e168bb52110, type: 2}
   green: {fileID: 2100000, guid: 9a8fd4ab1e7b92342a24fa0d811892ab, type: 2}
+  deadZone: 1
+  movementSpeed: 0.02
+  MinYCoord: 0
+  colliderPlaneLayer:
+    serializedVersion: 2
+    m_Bits: 128
   layer:
     serializedVersion: 2
     m_Bits: 64
-  MinYCoord: 0

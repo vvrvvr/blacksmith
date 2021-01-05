@@ -99,6 +99,7 @@ public class Cube : MonoBehaviour
         {
             Vector3 prevPos = transform.position;
             Vector3 direction = position - transform.position;
+            boxCollider.enabled = false;
             StartCoroutine(MovingWithSpeed(direction, position, prevPos));
         }
     }
@@ -127,6 +128,7 @@ public class Cube : MonoBehaviour
         UpdateMoveState();
         UpdateCubeAt(prevP + Vector3.down);
         UpdateCubeAt(transform.position + Vector3.down);
+        boxCollider.enabled = true;
         isMovingAllowed = true;
     }
 

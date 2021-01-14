@@ -48,6 +48,8 @@ MonoBehaviour:
   Ingot: {fileID: 4881061150297853866}
   IngotDrag: {fileID: 4881061150297853871}
   WireframeBlank: {fileID: 4881061149048662333}
+  ThreeStarsCubeAmount: 2
+  TwoStarsCubeAmount: 4
 --- !u!1 &4881061149048662332
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +220,7 @@ MonoBehaviour:
   ingotLayer:
     serializedVersion: 2
     m_Bits: 256
+  colliderPlane: {fileID: 0}
 --- !u!1001 &4881061149092622014
 PrefabInstance:
   m_ObjectHideFlags: 0

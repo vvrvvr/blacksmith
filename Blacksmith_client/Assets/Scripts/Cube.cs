@@ -12,7 +12,7 @@ public class Cube : MonoBehaviour
     private MeshRenderer myRend;
     private BoxCollider boxCollider;
     public bool CanMove { get; private set; } = true;
-    public static Action OnDestroyEvent;
+    public static Action<bool> OnDestroyEvent;
     public static Action<bool> OnStateChange;
     public static Action<Vector3> OnMouseMoving;
     private Vector3 halfCubeDimensions = new Vector3(0.2f, 0.2f, 0.2f); // fix this
@@ -27,6 +27,7 @@ public class Cube : MonoBehaviour
     private Vector3 direction;
     #endregion
     private bool isMovingAllowed = true;
+    private bool isCubeRated = false;
 
     private void Start()
     {
@@ -39,6 +40,8 @@ public class Cube : MonoBehaviour
     /// </summary>
     public void Kill()
     {
+        if (transform.position.y <= MinYCoord)
+            isCubeRated = true;
         UpdateCubeAt(transform.position + Vector3.down);
         transform.position = new Vector3(-10000f, -10000f, -10000f);
         StartCoroutine(LateDestroy());
@@ -60,7 +63,7 @@ public class Cube : MonoBehaviour
         {
             SetState(false);
             UpdateCubeAt(transform.position + Vector3.down);
-            OnDestroyEvent?.Invoke();
+            OnDestroyEvent?.Invoke(isCubeRated);
         }
     }
 

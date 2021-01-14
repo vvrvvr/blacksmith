@@ -128,7 +128,7 @@ MonoBehaviour:
   red: {fileID: 2100000, guid: bf1f9cc48a2d1f14e9299e168bb52110, type: 2}
   green: {fileID: 2100000, guid: 9a8fd4ab1e7b92342a24fa0d811892ab, type: 2}
   deadZone: 1
-  movementSpeed: 0.05
+  movementSpeed: 0.1
   MinYCoord: 0
   colliderPlaneLayer:
     serializedVersion: 2

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ChooseCube.cs" />
     <Compile Include="Assets\Scripts\IngotDragAndDrop.cs" />
     <Compile Include="Assets\Scripts\Wireframe.cs" />
+    <Compile Include="Assets\Scripts\UI\ShowRating.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

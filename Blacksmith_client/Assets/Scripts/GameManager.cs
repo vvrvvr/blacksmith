@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int FramesAmount;
     [SerializeField] private int CubesCanMove;
     [SerializeField] private int FilledFrames;
+    [SerializeField] private int CubesRated;
 
+    private int threeStarsRating;
+    private int twoStarsRating;
     private bool NeedCheckConditions = false;
 
     public static GameManager Singleton { get; private set; }
@@ -17,6 +20,8 @@ public class GameManager : MonoBehaviour
     public void SetLevelStats(Level level)
     {
         CubesAmount = level.Ingot.Cubes.Count;
+        threeStarsRating = level.ThreeStarsCubeAmount;
+        twoStarsRating = level.TwoStarsCubeAmount;
         CubesCanMove = CubesAmount;
         FramesAmount = level.WireframeBlank.Wireframes.Count;
     }
@@ -57,9 +62,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnCubeDestroy()
+    private void OnCubeDestroy(bool isRated)
     {
         CubesAmount--;
+        if (isRated)
+            CubesRated++;
         CheckWinLoseConditions();
     }
 
@@ -71,7 +78,6 @@ public class GameManager : MonoBehaviour
 
     private void OnWireframeStateChange(Wireframe frame)
     {
-        Debug.Log("here");
         FilledFrames = frame.IsFilled ? FilledFrames + 1 : FilledFrames - 1;
         CheckWinLoseConditions();
     }
@@ -83,4 +89,17 @@ public class GameManager : MonoBehaviour
         NeedCheckConditions = true;
         StartCoroutine(LateCheckConditions());
     }
+
+    public int CalculateRating()
+    {
+        int rating;
+        if (CubesRated <= threeStarsRating)
+            rating = 3;
+        else if (CubesRated > threeStarsRating && CubesRated <= twoStarsRating)
+            rating = 2;
+        else
+            rating = 1;
+        return rating;
+    }
+
 }

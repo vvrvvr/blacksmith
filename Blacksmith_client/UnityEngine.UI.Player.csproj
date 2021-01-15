@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Button.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Navigation.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Image.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Layout\ContentSizeFitter.cs" />
@@ -134,7 +135,6 @@
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\FontUpdateTracker.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\ToggleGroup.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\EventSystem\RaycastResult.cs" />
-    <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Button.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\EventSystem\InputModules\BaseInputModule.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\UI\Core\Layout\GridLayoutGroup.cs" />
     <Compile Include="C:\Unity\2020.2.1f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime\EventSystem\InputModules\PointerInputModule.cs" />

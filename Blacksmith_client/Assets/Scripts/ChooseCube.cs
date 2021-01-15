@@ -7,16 +7,14 @@ public class ChooseCube : MonoBehaviour
     [SerializeField] GameObject PlayerController;
     
     private Controls controlScript;
-    private GameObject currentCube;
-
-    
+    private Cube currentCube;
 
     private void Start()
     {
         controlScript = PlayerController.GetComponent<Controls>();
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -24,24 +22,24 @@ public class ChooseCube : MonoBehaviour
             RaycastHit rayHit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, clickableLayer))
             {
-                if (currentCube != rayHit.collider.gameObject)
+                if(currentCube == null || currentCube != null && currentCube.gameObject != rayHit.collider.gameObject)
                 {
                     if (currentCube != null)
                     {
-                        currentCube.GetComponent<Cube>().TurnRed();
+                        currentCube.TurnRed();
                         controlScript.ClickCounter = 0;
                     }
-                    currentCube = rayHit.collider.gameObject;
-                    currentCube.GetComponent<Cube>().TurnGreen();
-                    controlScript.ObjectToControl = currentCube.GetComponent<Cube>();
+                    currentCube = rayHit.collider.gameObject.GetComponent<Cube>();
+                    if(currentCube.CanMove)
+                        currentCube.TurnGreen();
+                    controlScript.ObjectToControl = currentCube;
                     controlScript.ClickCounter++; //double tap functionality
                 }
                 else
                 {
-                    if (currentCube != null)
+                    if (currentCube.gameObject != null)
                     {
                         controlScript.ClickCounter++; //double tap functionality
-                        
                     }
                 }
             }

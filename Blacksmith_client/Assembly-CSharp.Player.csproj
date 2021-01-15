@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Level.cs" />
+    <Compile Include="Assets\Scripts\UI\ShowRating.cs" />
     <Compile Include="Assets\Scripts\UI\LevelButton.cs" />
     <Compile Include="Assets\Scripts\Controls.cs" />
     <Compile Include="Assets\Scripts\Ingot.cs" />

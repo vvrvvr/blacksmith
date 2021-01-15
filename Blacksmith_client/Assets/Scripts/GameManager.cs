@@ -1,15 +1,14 @@
 using System.Collections;
 using UnityEngine;
-using System;
 
 public class GameManager : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private int CubesAmount;
-    [SerializeField] private int FramesAmount;
-    [SerializeField] private int CubesCanMove;
-    [SerializeField] private int FilledFrames;
-    [SerializeField] private int CubesRated;
+    [SerializeField, ReadOnly] private int CubesAmount;
+    [SerializeField, ReadOnly] private int FramesAmount;
+    [SerializeField, ReadOnly] private int CubesCanMove;
+    [SerializeField, ReadOnly] private int FilledFrames;
+    [SerializeField, ReadOnly] private int CubesRated;
 
     private int threeStarsRating;
     private int twoStarsRating;

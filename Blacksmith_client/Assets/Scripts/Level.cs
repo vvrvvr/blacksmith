@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    [Header("Rating stats")]
+    public int ThreeStarsCubeAmount;
+    public int TwoStarsCubeAmount;
+
+    [Header("References")]
     public Ingot Ingot;
     public IngotDragAndDrop IngotDrag;
     public WireframeBlank WireframeBlank;
 
-    [Header("Rating stats")]
-    public int ThreeStarsCubeAmount;
-    public int TwoStarsCubeAmount;
+    
 }

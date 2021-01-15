@@ -3,15 +3,13 @@ using UnityEngine;
 
 public class ChooseCube : MonoBehaviour
 {
-    [SerializeField] LayerMask clickableLayer;
-    [SerializeField] GameObject PlayerController;
-    
+    [SerializeField] private LayerMask clickableLayer;
     private Controls controlScript;
     private Cube currentCube;
 
     private void Start()
     {
-        controlScript = PlayerController.GetComponent<Controls>();
+        controlScript = GetComponent<Controls>();
     }
 
     private void Update()

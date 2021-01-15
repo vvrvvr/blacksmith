@@ -4,30 +4,36 @@ using System.Collections;
 
 public class Cube : MonoBehaviour
 {
-    [SerializeField] private Material red;
-    [SerializeField] private Material green;
+    [Header("Settings")]
+    public float MinYCoord = 0f;
+
+    [Header("Drag")]
     [SerializeField] private float deadZone = 0.6f;
     [SerializeField] private float movementSpeed;
-    public float MinYCoord = 0f;
-    private MeshRenderer myRend;
-    private BoxCollider boxCollider;
-    public bool CanMove { get; private set; } = true;
-    public static Action<bool> OnDestroyEvent;
-    public static Action<bool> OnStateChange;
-    public static Action<Vector3> OnMouseMoving;
-    private Vector3 halfCubeDimensions = new Vector3(0.2f, 0.2f, 0.2f); // fix this
-    [HideInInspector]
-    public bool isInitialized { get; private set; } = false;
     private Transform colliderPlane;
-    [SerializeField] private LayerMask colliderPlaneLayer;
-    [SerializeField] private LayerMask layer;
-    #region vectors
     private Vector3 firstDragPos = Vector3.zero;
     private Vector3 currentPoint;
     private Vector3 direction;
-    #endregion
+
+    [Header("References")]
+    [SerializeField] private Material red;
+    [SerializeField] private Material green;
+    [SerializeField] private LayerMask colliderPlaneLayer;
+    [SerializeField] private LayerMask cubesLayer;
+
+    private MeshRenderer myRend;
+    private BoxCollider boxCollider;
+
+    public static Action<bool> OnDestroyEvent;
+    public static Action<bool> OnStateChange;
+    public static Action<Vector3> OnMouseMoving;
+
+    public bool isInitialized { get; private set; } = false;
+    public bool CanMove { get; private set; } = true;
     private bool isMovingAllowed = true;
     private bool isCubeRated = false;
+
+    private Vector3 halfCubeDimensions = new Vector3(0.2f, 0.2f, 0.2f); // fix this
 
     private void Start()
     {
@@ -53,12 +59,10 @@ public class Cube : MonoBehaviour
         colliderPlane.gameObject.SetActive(false);
         StopAllCoroutines();
         Destroy(gameObject);
-
     }
 
     private void OnDestroy()
     {
-        // Check scene changing
         if (gameObject.scene.isLoaded)
         {
             SetState(false);
@@ -70,7 +74,7 @@ public class Cube : MonoBehaviour
     public void Init(Transform cPlane)
     {
         isInitialized = true;
-        gameObject.layer = LayerMaskToLayer(layer);
+        gameObject.layer = LayerMaskToLayer(cubesLayer);
         boxCollider.enabled = true;
         TurnRed();
         colliderPlane = cPlane;
@@ -137,7 +141,7 @@ public class Cube : MonoBehaviour
 
     private void UpdateCubeAt(Vector3 position)
     {
-        if (Physics.Raycast(position + Vector3.up, Vector3.down, out RaycastHit hit, 1f, layer))
+        if (Physics.Raycast(position + Vector3.up, Vector3.down, out RaycastHit hit, 1f, cubesLayer))
         {
             if (hit.transform.TryGetComponent(out Cube cube))
             {
@@ -172,7 +176,7 @@ public class Cube : MonoBehaviour
 
     public bool CheckCubeAt(Vector3 position)
     {
-        if (Physics.CheckBox(position, halfCubeDimensions, Quaternion.identity, layer))
+        if (Physics.CheckBox(position, halfCubeDimensions, Quaternion.identity, cubesLayer))
         {
             return true;
         }
@@ -200,7 +204,7 @@ public class Cube : MonoBehaviour
     private void OnMouseDown()
     {
         RaycastHit rayHit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, layer))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, cubesLayer))
         {
             colliderPlane.position = transform.position;
             firstDragPos = transform.position;

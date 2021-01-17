@@ -91,14 +91,11 @@ public class GameManager : MonoBehaviour
 
     public int CalculateRating()
     {
-        int rating;
         if (CubesRated <= threeStarsRating)
-            rating = 3;
-        else if (CubesRated > threeStarsRating && CubesRated <= twoStarsRating)
-            rating = 2;
-        else
-            rating = 1;
-        return rating;
+            return 3;
+        if (CubesRated > threeStarsRating && CubesRated <= twoStarsRating)
+            return 2;
+        return 1;
     }
 
 }

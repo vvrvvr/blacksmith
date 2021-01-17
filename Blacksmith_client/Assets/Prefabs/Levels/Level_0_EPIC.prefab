@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b843c7b6f30f804d8d19907de37c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ThreeStarsCubeAmount: 3
+  TwoStarsCubeAmount: 4
   Ingot: {fileID: 4881061150297853866}
   IngotDrag: {fileID: 4881061150297853871}
   WireframeBlank: {fileID: 4881061149048662333}
@@ -218,6 +220,7 @@ MonoBehaviour:
   ingotLayer:
     serializedVersion: 2
     m_Bits: 256
+  colliderPlane: {fileID: 0}
 --- !u!1001 &379864272380007688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1433,7 +1436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9182612556966176685, guid: 0aa2a4baf670b334c840a1d9b3f5d70f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 9182612556966176685, guid: 0aa2a4baf670b334c840a1d9b3f5d70f, type: 3}
       propertyPath: m_LocalRotation.w

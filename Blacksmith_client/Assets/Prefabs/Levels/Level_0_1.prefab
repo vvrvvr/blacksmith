@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b843c7b6f30f804d8d19907de37c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ThreeStarsCubeAmount: 0
+  TwoStarsCubeAmount: 1
   Ingot: {fileID: 4881061150297853866}
   IngotDrag: {fileID: 4881061150297853871}
   WireframeBlank: {fileID: 4881061149048662333}
-  ThreeStarsCubeAmount: 0
-  TwoStarsCubeAmount: 0
 --- !u!1 &4881061149048662332
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,8 +185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 2
-  length: 4
-  height: 2
+  length: 3
+  height: 3
   cubePrefab: {fileID: 6658731334641806482, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
   cubeLayer:
     serializedVersion: 2

@@ -1955,6 +1955,8 @@ MonoBehaviour:
   CubesCanMove: 0
   FilledFrames: 0
   CubesRated: 0
+  victoryPanel: {fileID: 1227921261}
+  losePanel: {fileID: 280320510}
 --- !u!1 &513386838
 GameObject:
   m_ObjectHideFlags: 0
@@ -4922,7 +4924,6 @@ MonoBehaviour:
   clickableLayer:
     serializedVersion: 2
     m_Bits: 64
-  PlayerController: {fileID: 1684829434}
 --- !u!1 &1698745926
 GameObject:
   m_ObjectHideFlags: 0
@@ -6149,12 +6150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a02e7757107c7847abed901de676590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panels:
-  - {fileID: 1227921261}
-  - {fileID: 280320510}
-  - {fileID: 1760516589}
-  - {fileID: 1723508063}
-  - {fileID: 1898660855}
 --- !u!4 &2017762614
 Transform:
   m_ObjectHideFlags: 0

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> panels;
-
     public static MenuManager Singleton;
     private void Awake() => Singleton = this;
+
+    private GameObject activePanel = null;
 
     public void ExitGame() => Application.Quit();
     public void LoadScene(string name) => SceneManager.LoadScene(name);
@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         if (PlayerStats.Singleton.MenuToLoad != "")
-            EnablePanel(PlayerStats.Singleton.MenuToLoad);
+            EnablePanel(GameObject.Find(PlayerStats.Singleton.MenuToLoad));
     }
 
     public void SetMenuToLoad(string menuName)
@@ -26,27 +26,11 @@ public class MenuManager : MonoBehaviour
 
     public void EnablePanel(GameObject panel)
     {
-        DisableAllPanel();
-        panel.SetActive(true);
-    }
-
-    public void EnablePanel(string name)
-    {
-        DisableAllPanel();
-        foreach(var p in panels)
+        if (panel != null)
         {
-            if(p.name == name)
-            {
-                p.SetActive(true);
-                return;
-            }
+            activePanel?.SetActive(false);
+            panel.SetActive(true);
+            activePanel = panel;
         }
-        Debug.LogWarning($"Panel [{name}] not registered!");
-    }
-
-    private void DisableAllPanel()
-    {
-        foreach (var p in panels)
-            p.SetActive(false);
     }
 }

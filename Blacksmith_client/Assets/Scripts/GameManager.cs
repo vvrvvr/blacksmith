@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     [SerializeField, ReadOnly] private int FilledFrames;
     [SerializeField, ReadOnly] private int CubesRated;
 
+    [Header("References")]
+    [SerializeField] private GameObject victoryPanel;
+    [SerializeField] private GameObject losePanel;
+
+
     private int threeStarsRating;
     private int twoStarsRating;
     private bool NeedCheckConditions = false;
@@ -52,12 +57,12 @@ public class GameManager : MonoBehaviour
         {
             // Victory
             PlayerStats.Singleton.SaveLevelProgress(1);
-            MenuManager.Singleton.EnablePanel("Victory Panel");
+            MenuManager.Singleton.EnablePanel(victoryPanel);
         }
         else if (CubesCanMove == 0 && FilledFrames != FramesAmount || CubesAmount < FramesAmount)
         {
             // Lose
-            MenuManager.Singleton.EnablePanel("Lose Panel");
+            MenuManager.Singleton.EnablePanel(losePanel);
         }
     }
 

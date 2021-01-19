@@ -1,9 +1,11 @@
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] private GameObject initialPanel;
+    [SerializeField] private Transform panelsContainer;
+
     public static MenuManager Singleton;
     private void Awake() => Singleton = this;
 
@@ -15,8 +17,15 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        foreach(Transform panel in panelsContainer)
+        {
+            panel.gameObject.SetActive(false);
+        }
+
         if (PlayerStats.Singleton.MenuToLoad != "")
-            EnablePanel(GameObject.Find(PlayerStats.Singleton.MenuToLoad));
+            EnablePanel(panelsContainer.Find(PlayerStats.Singleton.MenuToLoad).gameObject);
+        else
+            EnablePanel(initialPanel);
     }
 
     public void SetMenuToLoad(string menuName)
@@ -28,7 +37,8 @@ public class MenuManager : MonoBehaviour
     {
         if (panel != null)
         {
-            activePanel?.SetActive(false);
+            if(activePanel != null)
+                activePanel.SetActive(false);
             panel.SetActive(true);
             activePanel = panel;
         }

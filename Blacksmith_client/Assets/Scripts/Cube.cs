@@ -5,6 +5,7 @@ using System.Collections;
 public class Cube : MonoBehaviour
 {
     [Header("Settings")]
+    [SerializeField, ReadOnly] private int durability = 0;
     public float MinYCoord = 0f;
 
     [Header("Drag")]
@@ -16,15 +17,15 @@ public class Cube : MonoBehaviour
     private Vector3 direction;
 
     [Header("References")]
-    [SerializeField] private Material red;
-    [SerializeField] private Material green;
+    [SerializeField] private Material[] durabilityMaterials;
     [SerializeField] private LayerMask colliderPlaneLayer;
     [SerializeField] private LayerMask cubesLayer;
 
     private MeshRenderer myRend;
     private BoxCollider boxCollider;
 
-    public static Action<bool> OnDestroyEvent;
+    public Action<bool> OnDestroyEventLocal;
+    public static Action<bool> OnDestroyEventGlobal;
     public static Action<bool> OnStateChange;
     public static Action<Vector3> OnMouseMoving;
 
@@ -32,6 +33,8 @@ public class Cube : MonoBehaviour
     public bool CanMove { get; private set; } = true;
     private bool isMovingAllowed = true;
     private bool isCubeRated = false;
+    private bool canBreak = false;
+    private Material currentMaterial;
 
     private Vector3 halfCubeDimensions = new Vector3(0.2f, 0.2f, 0.2f); // fix this
 
@@ -67,17 +70,23 @@ public class Cube : MonoBehaviour
         {
             SetState(false);
             UpdateCubeAt(transform.position + Vector3.down);
-            OnDestroyEvent?.Invoke(isCubeRated);
+            OnDestroyEventGlobal?.Invoke(isCubeRated);
+            OnDestroyEventLocal?.Invoke(isCubeRated);
         }
     }
 
-    public void Init(Transform cPlane)
+    public void Init(Transform cPlane, int newDurability)
     {
-        isInitialized = true;
+        if(newDurability > 0)
+        {
+            durability = newDurability;
+            canBreak = true;
+        }
         gameObject.layer = LayerMaskToLayer(cubesLayer);
         boxCollider.enabled = true;
-        TurnRed();
         colliderPlane = cPlane;
+        UpdateMaterialByDurability();
+        isInitialized = true;
     }
 
     public void SetState(bool canMove)
@@ -112,7 +121,7 @@ public class Cube : MonoBehaviour
     }
 
     /// <summary>
-    /// compare two vectors
+    /// Compare two vectors
     /// </summary>
     /// <param name="a"></param>
     /// <param name="b"></param>
@@ -124,7 +133,6 @@ public class Cube : MonoBehaviour
 
     private IEnumerator MovingWithSpeed(Vector3 dir, Vector3 pos, Vector3 prevP)
     {
-
         isMovingAllowed = false;
         while (!V3Equal(pos, transform.position))
         {
@@ -137,6 +145,26 @@ public class Cube : MonoBehaviour
         UpdateCubeAt(transform.position + Vector3.down);
         boxCollider.enabled = true;
         isMovingAllowed = true;
+        if (canBreak)
+        {
+            durability--;
+            if (durability == 0)
+            {
+                GameManager.Singleton.AddCubeRated(1);
+                Kill();
+            }
+            UpdateMaterialByDurability();
+        }
+    }
+
+    private void UpdateMaterialByDurability()
+    {
+        int index = durability - 1;
+        if (index < 0) index = 0;
+        if (index > durabilityMaterials.Length - 1) index = durabilityMaterials.Length - 1;
+
+        currentMaterial = durabilityMaterials[index];
+        myRend.material = currentMaterial;
     }
 
     private void UpdateCubeAt(Vector3 position)
@@ -181,24 +209,6 @@ public class Cube : MonoBehaviour
             return true;
         }
         return false;
-    }
-
-    /// <summary>
-    /// change cube color when selected
-    /// </summary>
-    public void TurnGreen()
-    {
-        if (isInitialized)
-            myRend.material = green;
-    }
-
-    /// <summary>
-    /// return default cube color
-    /// </summary>
-    public void TurnRed()
-    {
-        if (isInitialized)
-            myRend.material = red;
     }
 
     private void OnMouseDown()

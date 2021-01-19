@@ -65,12 +65,13 @@
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Attributes\ReadOnlyAttribute.cs" />
     <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\WireframeBlank.cs" />
     <Compile Include="Assets\Scripts\ChooseCube.cs" />
     <Compile Include="Assets\Scripts\IngotDragAndDrop.cs" />
     <Compile Include="Assets\Scripts\Wireframe.cs" />
-    <Compile Include="Assets\Scripts\Attributes\ReadOnlyAttribute.cs" />
+    <Compile Include="Assets\Scripts\CubeSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

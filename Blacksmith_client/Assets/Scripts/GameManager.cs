@@ -33,14 +33,14 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         Wireframe.OnStateChange += OnWireframeStateChange;
-        Cube.OnDestroyEvent += OnCubeDestroy;
+        Cube.OnDestroyEventGlobal += OnCubeDestroy;
         Cube.OnStateChange += OnCubeStateChange;
     }
 
     private void OnDisable()
     {
         Wireframe.OnStateChange -= OnWireframeStateChange;
-        Cube.OnDestroyEvent -= OnCubeDestroy;
+        Cube.OnDestroyEventGlobal -= OnCubeDestroy;
         Cube.OnStateChange -= OnCubeStateChange;
     }
 
@@ -72,6 +72,11 @@ public class GameManager : MonoBehaviour
         if (isRated)
             CubesRated++;
         CheckWinLoseConditions();
+    }
+
+    public void AddCubeRated(int count = 1)
+    {
+        CubesRated += count;
     }
 
     private void OnCubeStateChange(bool canMove)

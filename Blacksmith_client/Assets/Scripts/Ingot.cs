@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Ingot : MonoBehaviour
 {
+    [Header("Material Settings")]
+    [SerializeField] private int durability;
+
     [Header("Ingot Size")]
     [SerializeField] private int width;
     [SerializeField] private int length;
@@ -13,6 +16,7 @@ public class Ingot : MonoBehaviour
     [SerializeField] private LayerMask cubeLayer;
     private BoxCollider boxCollider;
     private int OverlappedCubes = 0;
+
     public bool IsInit { get; private set; }
     public List<Cube> Cubes { get; private set; } = new List<Cube>();
 
@@ -46,7 +50,7 @@ public class Ingot : MonoBehaviour
             return false;
         boxCollider.enabled = false;
         foreach (Cube cube in Cubes)
-            cube.Init(GetComponent<IngotDragAndDrop>().colliderPlane);
+            cube.Init(GetComponent<IngotDragAndDrop>().colliderPlane, durability);
         foreach (Cube cube in Cubes)
             cube.UpdateMoveState();
         IsInit = true;

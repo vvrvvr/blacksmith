@@ -4,6 +4,7 @@ using UnityEngine;
 public class ChooseCube : MonoBehaviour
 {
     [SerializeField] private LayerMask clickableLayer;
+    [SerializeField] private CubeSelector cubeSelector;
     private Controls controlScript;
     private Cube currentCube;
 
@@ -24,12 +25,11 @@ public class ChooseCube : MonoBehaviour
                 {
                     if (currentCube != null)
                     {
-                        currentCube.TurnRed();
                         controlScript.ClickCounter = 0;
                     }
                     currentCube = rayHit.collider.gameObject.GetComponent<Cube>();
                     if(currentCube.CanMove)
-                        currentCube.TurnGreen();
+                        cubeSelector.SelectCube(currentCube);
                     controlScript.ObjectToControl = currentCube;
                     controlScript.ClickCounter++; //double tap functionality
                 }

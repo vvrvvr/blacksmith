@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 11bfea332ec5abb45bd2f67881a716b8, type: 2}
+  - {fileID: 2100000, guid: 743ae6d44bf803b46b11cdf7790c04a8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,11 +125,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5a78ee982c7d14b982ae641db89683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  durability: 0
   MinYCoord: 0
   deadZone: 1
   movementSpeed: 0.1
-  red: {fileID: 2100000, guid: bf1f9cc48a2d1f14e9299e168bb52110, type: 2}
-  green: {fileID: 2100000, guid: 9a8fd4ab1e7b92342a24fa0d811892ab, type: 2}
+  durabilityMaterials:
+  - {fileID: 2100000, guid: 85d19a17407caa74b945ac4d6e67cc33, type: 2}
+  - {fileID: 2100000, guid: 9f12b12d388b00a4ca079184dc8758a8, type: 2}
+  - {fileID: 2100000, guid: bf1f9cc48a2d1f14e9299e168bb52110, type: 2}
   colliderPlaneLayer:
     serializedVersion: 2
     m_Bits: 128

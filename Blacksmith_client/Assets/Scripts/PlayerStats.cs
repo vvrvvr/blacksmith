@@ -1,8 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    private const string LEVEL_SAVE_KEY = "save_level";
+    //private const string LEVEL_SAVE_KEY = "save_level";
 
     public static PlayerStats Singleton;
     private bool isSaveActive = false;
@@ -14,6 +15,8 @@ public class PlayerStats : MonoBehaviour
     public int Progress;
     #endregion
 
+    
+
     private void Awake()
     {
         if (Singleton != null)
@@ -24,31 +27,31 @@ public class PlayerStats : MonoBehaviour
         isSaveActive = true;
         Singleton = this;
         DontDestroyOnLoad(gameObject);
-        Progress = PlayerPrefs.GetInt(LEVEL_SAVE_KEY, 0);
+        //Progress = PlayerPrefs.GetInt(LEVEL_SAVE_KEY, 0);
     }
 
     private void OnDestroy()
     {
         if (!isSaveActive)
             return;
-        SaveProgress(Progress);
+        //SaveProgress(Progress);
     }
 
-    public void SaveProgress(int progress)
-    {
-        if(progress > Progress)
-            Progress = progress;
-        PlayerPrefs.SetInt(LEVEL_SAVE_KEY, progress);
-        PlayerPrefs.Save();
-    }
+    //public void SaveProgress(int progress)
+    //{
+    //    if(progress > Progress)
+    //        Progress = progress;
+    //    PlayerPrefs.SetInt(LEVEL_SAVE_KEY, progress);
+    //    PlayerPrefs.Save();
+    //}
 
-    public void SaveLevelProgress(int modifier = 0)
-    {
-        if (LoadedLevel + modifier > Progress)
-            Progress = LoadedLevel + modifier;
-        PlayerPrefs.SetInt(LEVEL_SAVE_KEY, Progress);
-        PlayerPrefs.Save();
-    }
+    //public void SaveLevelProgress(int modifier = 0)
+    //{
+    //    if (LoadedLevel + modifier > Progress)
+    //        Progress = LoadedLevel + modifier;
+    //    PlayerPrefs.SetInt(LEVEL_SAVE_KEY, Progress);
+    //    PlayerPrefs.Save();
+    //}
 
     public void SetLevelToLoad(int levelIndex)
     {

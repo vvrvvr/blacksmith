@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b843c7b6f30f804d8d19907de37c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ThreeStarsCubeAmount: 13
+  TwoStarsCubeAmount: 14
   Ingot: {fileID: 4881061150297853866}
   IngotDrag: {fileID: 4881061150297853871}
   WireframeBlank: {fileID: 4881061149048662333}
@@ -192,8 +194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd0e7162f2361544a12a2bf5d7391c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  durability: 7
   width: 3
-  length: 6
+  length: 7
   height: 2
   cubePrefab: {fileID: 6658731334641806482, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
   cubeLayer:
@@ -218,6 +221,7 @@ MonoBehaviour:
   ingotLayer:
     serializedVersion: 2
     m_Bits: 256
+  colliderPlane: {fileID: 0}
 --- !u!1001 &96307260859484019
 PrefabInstance:
   m_ObjectHideFlags: 0

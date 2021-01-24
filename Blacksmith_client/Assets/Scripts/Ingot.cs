@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class Ingot : MonoBehaviour
 {
-    [Header("Material Settings")]
-    [SerializeField] private int durability;
-
     [Header("Ingot Size")]
     [SerializeField] private int width;
     [SerializeField] private int length;
@@ -50,7 +47,7 @@ public class Ingot : MonoBehaviour
             return false;
         boxCollider.enabled = false;
         foreach (Cube cube in Cubes)
-            cube.Init(GetComponent<IngotDragAndDrop>().colliderPlane, durability);
+            cube.Init(GetComponent<IngotDragAndDrop>().colliderPlane);
         foreach (Cube cube in Cubes)
             cube.UpdateMoveState();
         IsInit = true;

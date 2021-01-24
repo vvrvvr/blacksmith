@@ -5,7 +5,7 @@ using System.Collections;
 public class Cube : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField, ReadOnly] private int durability = 0;
+    [SerializeField] private int durability = 0;
     public float MinYCoord = 0f;
 
     [Header("Drag")]
@@ -75,11 +75,10 @@ public class Cube : MonoBehaviour
         }
     }
 
-    public void Init(Transform cPlane, int newDurability)
+    public void Init(Transform cPlane)
     {
-        if(newDurability > 0)
+        if(durability > 0)
         {
-            durability = newDurability;
             canBreak = true;
         }
         gameObject.layer = LayerMaskToLayer(cubesLayer);

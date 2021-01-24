@@ -11,7 +11,8 @@ public class Ingot : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private Cube cubePrefab;
     [SerializeField] private LayerMask cubeLayer;
-    private BoxCollider boxCollider;
+    [SerializeField] private MeshRenderer _meshRenderer;
+    private BoxCollider _boxCollider;
     private int OverlappedCubes = 0;
 
     public bool IsInit { get; private set; }
@@ -20,10 +21,17 @@ public class Ingot : MonoBehaviour
     private void Awake()
     {
         IsInit = false;
-        boxCollider = GetComponent<BoxCollider>();
-        boxCollider.size = new Vector3(width - 0.1f, height - 0.1f, length - 0.1f);
+        _boxCollider = GetComponent<BoxCollider>();
+        Vector3 colliderSize = new Vector3(width - 0.1f, height - 0.1f, length - 0.1f);
+        _boxCollider.size = colliderSize;
+        _meshRenderer.transform.localScale = colliderSize;
+
         SpawnCubes();
-        boxCollider.center = new Vector3((width - 1) * 0.5f, (height - 1) * 0.5f, (length - 1) * 0.5f);
+
+        Vector3 colliderCenter = new Vector3((width - 1) * 0.5f, (height - 1) * 0.5f, (length - 1) * 0.5f);
+        _boxCollider.center = colliderCenter;
+        _meshRenderer.transform.position = colliderCenter;
+
     }
 
     private void SpawnCubes()
@@ -45,11 +53,12 @@ public class Ingot : MonoBehaviour
     {
         if (OverlappedCubes == 0)
             return false;
-        boxCollider.enabled = false;
+        _boxCollider.enabled = false;
         foreach (Cube cube in Cubes)
             cube.Init(GetComponent<IngotDragAndDrop>().colliderPlane);
         foreach (Cube cube in Cubes)
             cube.UpdateMoveState();
+        _meshRenderer.enabled = false;
         IsInit = true;
         return true;
     }

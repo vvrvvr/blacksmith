@@ -81,6 +81,7 @@ public class Cube : MonoBehaviour
         {
             canBreak = true;
         }
+        GetComponent<MeshRenderer>().enabled = true;
         gameObject.layer = LayerMaskToLayer(cubesLayer);
         boxCollider.enabled = true;
         colliderPlane = cPlane;

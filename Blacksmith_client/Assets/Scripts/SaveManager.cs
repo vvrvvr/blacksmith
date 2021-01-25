@@ -46,5 +46,11 @@ public class SaveManager : MonoBehaviour
             StarsTotal += stars;
         }
     }
-
+    private class SaveObject
+    {
+        public List<int> levelStats;
+        public int StarsTotal;
+    }
 }
+
+

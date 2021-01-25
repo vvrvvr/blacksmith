@@ -2,6 +2,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 [RequireComponent(typeof(Button))]
 public class LevelButton : MonoBehaviour
 {
@@ -9,7 +13,7 @@ public class LevelButton : MonoBehaviour
     //public int StageForOpen = 0;
     [Tooltip("Level index from LevelManager's Level Prefabs")]
     public int LevelIndex = 0;
-    [SerializeField] bool isFirstLevelInLine;
+    [SerializeField] private bool isFirstLevelInLine;
     [SerializeField] private int starsAmountToOpen;
 
     [Header("References")]
@@ -87,3 +91,4 @@ public class LevelButton : MonoBehaviour
         }
     }
 }
+

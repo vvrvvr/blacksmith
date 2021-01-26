@@ -10,7 +10,6 @@ using UnityEditor;
 public class LevelButton : MonoBehaviour
 {
     [Header("Settings")]
-    //public int StageForOpen = 0;
     [Tooltip("Level index from LevelManager's Level Prefabs")]
     public int LevelIndex = 0;
     [SerializeField] private bool isFirstLevelInLine;
@@ -33,12 +32,6 @@ public class LevelButton : MonoBehaviour
     {
         playerStats = PlayerStats.Singleton;
         saveManager = SaveManager.Singleton;
-
-        //if (playerStats.Progress >= LevelIndexForOpen)
-        //{
-        //    button.interactable = true;
-        //    closedImage.SetActive(false);
-        //}
         SetLevelStats();
     }
 
@@ -54,40 +47,38 @@ public class LevelButton : MonoBehaviour
         {
             button.interactable = true;
             closedImage.SetActive(false);
-            switch (saveManager.levelStats[LevelIndex])
+            if (saveManager.levelStats.Count > 0)
             {
-                case 1:
-                    oneStar.SetActive(true);
-                    break;
-                case 2:
-                    twoStars.SetActive(true);
-                    break;
-                case 3:
-                    threeStars.SetActive(true);
-                    break;
-                default:
-                    break;
+                SetStars(saveManager.levelStats[LevelIndex]);
             }
             return;
         }
-        if (starsAmountToOpen <= saveManager.StarsTotal && saveManager.levelStats[LevelIndex - 1] > 0)
+        if (saveManager.levelStats.Count > 0)
         {
-            button.interactable = true;
-            closedImage.SetActive(false);
-            switch (saveManager.levelStats[LevelIndex])
+            if (starsAmountToOpen <= saveManager.StarsTotal && LevelIndex > 0 && saveManager.levelStats[LevelIndex - 1] > 0)
             {
-                case 1:
-                    oneStar.SetActive(true);
-                    break;
-                case 2:
-                    twoStars.SetActive(true);
-                    break;
-                case 3:
-                    threeStars.SetActive(true);
-                    break;
-                default:
-                    break;
+                button.interactable = true;
+                closedImage.SetActive(false);
+                SetStars(saveManager.levelStats[LevelIndex]);
             }
+        }
+    }
+
+    private void SetStars(int i)
+    {
+        switch (i)
+        {
+            case 1:
+                oneStar.SetActive(true);
+                break;
+            case 2:
+                twoStars.SetActive(true);
+                break;
+            case 3:
+                threeStars.SetActive(true);
+                break;
+            default:
+                break;
         }
     }
 }

@@ -20,6 +20,7 @@ public class ShowRating : MonoBehaviour
         {
             saveManager.levelStats[playerStats.LoadedLevel] = rating;
             saveManager.RecalculateStars();
+            saveManager.SaveGame();
         }
         switch (rating)
         {

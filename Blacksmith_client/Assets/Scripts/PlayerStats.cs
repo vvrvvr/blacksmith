@@ -12,7 +12,7 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector] public string MenuToLoad;
     [HideInInspector] public int LoadedLevel;
     [HideInInspector] public int LevelToLoad;
-    public int Progress;
+    //public int Progress;
     #endregion
 
     

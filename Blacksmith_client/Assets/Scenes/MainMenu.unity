@@ -2269,12 +2269,24 @@ PrefabInstance:
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
+      propertyPath: isEpic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
       propertyPath: LevelIndex
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
       propertyPath: StageForOpen
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
+      propertyPath: indexOfLastLevelInLine
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
+      propertyPath: indexOfFirstLevelInLine
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6132273476401553941, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
       propertyPath: m_Pivot.x
@@ -3228,11 +3240,23 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
+      propertyPath: isEpic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
       propertyPath: LevelIndex
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
       propertyPath: StageForOpen
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
+      propertyPath: isFirstLevelInLine
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
+      propertyPath: indexOfLastLevelInLine
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6132273476401553941, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
@@ -5014,6 +5038,10 @@ PrefabInstance:
     - target: {fileID: 6132273476401553942, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
       propertyPath: m_Name
       value: LevelButon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132273476401553942, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}

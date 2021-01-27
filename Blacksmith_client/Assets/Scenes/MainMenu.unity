@@ -3257,7 +3257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
       propertyPath: indexOfLastLevelInLine
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6132273476401553941, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
       propertyPath: m_Pivot.x
@@ -3544,7 +3544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
       propertyPath: starsAmountToOpen
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
       propertyPath: isFirstLevelInLine

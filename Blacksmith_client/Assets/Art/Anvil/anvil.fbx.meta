@@ -1,38 +1,28 @@
 fileFormatVersion: 2
-guid: b03ae5d3263c8ab46be45b80b4e0abb0
+guid: 8335a50018909f4488c915fef9f02854
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -1085767487432433817
+    second: Anvil|Anvil.001|Anvil|AnvilAction|Anvil|AnvilAction
+  - first:
+      74: 2402272328913494357
+    second: Anvil|Anvil.001|Anvil|JointsAction|Anvil|JointsAction
+  - first:
+      74: 1893352321703223098
+    second: Anvil|Joints.001|Joints|AnvilAction|Joints|AnvilAction
+  - first:
+      74: 5690342255218268242
+    second: Anvil|Joints.001|Joints|JointsAction|Joints|JointsAction
+  - first:
+      74: 4317465319607214803
+    second: Anvil|JointsAction
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 3d29170cc4ce05b45a9ad81ac70ff990, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: 3d29170cc4ce05b45a9ad81ac70ff990, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert3
-    second: {fileID: 2100000, guid: 3d29170cc4ce05b45a9ad81ac70ff990, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert4
-    second: {fileID: 2100000, guid: 3d29170cc4ce05b45a9ad81ac70ff990, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert5
-    second: {fileID: 2100000, guid: 3d29170cc4ce05b45a9ad81ac70ff990, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert6
+      name: No Name
     second: {fileID: 2100000, guid: 3d29170cc4ce05b45a9ad81ac70ff990, type: 2}
   materials:
     materialImportMode: 2

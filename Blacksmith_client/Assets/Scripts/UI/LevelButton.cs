@@ -33,14 +33,12 @@ public class LevelButton : MonoBehaviour
 
 
     private PlayerStats playerStats;
-    private SaveManager saveManager;
 
     public void LoadScene(string name) => SceneManager.LoadScene(name);
 
     private void Start()
     {
         playerStats = PlayerStats.Singleton;
-        saveManager = SaveManager.Singleton;
         SetLevelStats();
     }
 
@@ -54,41 +52,41 @@ public class LevelButton : MonoBehaviour
     {
         if (isEpic)
         {
-            if (saveManager.levelStats.Count >= indexOfLastLevelInLine + 1)
+            if (playerStats.levelStats.Count >= indexOfLastLevelInLine + 1)
             {
                 bool condition = true;
                 for(int i = indexOfFirstLevelInLine; i <= indexOfLastLevelInLine; i++)
                 {
-                    if (saveManager.levelStats[i] != 3)
+                    if (playerStats.levelStats[i] != 3)
                         condition = false;
                 }
                 if(condition)
                 {
                     button.interactable = true;
                     closedImage.SetActive(false);
-                    SetStars(saveManager.levelStats[LevelIndex]);
+                    SetStars(playerStats.levelStats[LevelIndex]);
                 }
             }
         }
         else
         {
-            if (isFirstLevelInLine && starsAmountToOpen <= saveManager.StarsTotal)
+            if (isFirstLevelInLine && starsAmountToOpen <= playerStats.StarsTotal)
             {
                 button.interactable = true;
                 closedImage.SetActive(false);
-                if (saveManager.levelStats.Count > 0)
+                if (playerStats.levelStats.Count > 0)
                 {
-                    SetStars(saveManager.levelStats[LevelIndex]);
+                    SetStars(playerStats.levelStats[LevelIndex]);
                 }
                 return;
             }
-            if (saveManager.levelStats.Count > 0)
+            if (playerStats.levelStats.Count > 0)
             {
-                if (starsAmountToOpen <= saveManager.StarsTotal && LevelIndex > 0 && saveManager.levelStats[LevelIndex - 1] > 0)
+                if (starsAmountToOpen <= playerStats.StarsTotal && LevelIndex > 0 && playerStats.levelStats[LevelIndex - 1] > 0)
                 {
                     button.interactable = true;
                     closedImage.SetActive(false);
-                    SetStars(saveManager.levelStats[LevelIndex]);
+                    SetStars(playerStats.levelStats[LevelIndex]);
                 }
             }
         }

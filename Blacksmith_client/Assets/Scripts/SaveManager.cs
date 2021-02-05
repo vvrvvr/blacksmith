@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
-    [HideInInspector] public List<int> levelStats = new List<int>();
-    [HideInInspector] public int StarsTotal;
+   
 
     public static SaveManager Singleton;
+    private PlayerStats playerStats;
 
     private void Awake()
     {
@@ -18,17 +18,9 @@ public class SaveManager : MonoBehaviour
             return;
         }
         Singleton = this;
+        playerStats = PlayerStats.Singleton;
         DontDestroyOnLoad(gameObject);
         LoadGame();
-    }
-
-    public void RecalculateStars()
-    {
-        StarsTotal = 0;
-        foreach (int stars in levelStats)
-        {
-            StarsTotal += stars;
-        }
     }
 
     private class SaveObject
@@ -41,8 +33,8 @@ public class SaveManager : MonoBehaviour
     {
         SaveObject saveObject = new SaveObject
         {
-            StarsTotal = StarsTotal,
-            levelStats = levelStats,
+            StarsTotal = playerStats.StarsTotal,
+            levelStats = playerStats.levelStats,
         };
         string json = JsonUtility.ToJson(saveObject);
         File.WriteAllText(Application.dataPath + "/save.txt", json);
@@ -54,19 +46,8 @@ public class SaveManager : MonoBehaviour
         {
             string json = File.ReadAllText(Application.dataPath + "/save.txt");
             SaveObject saveObject = JsonUtility.FromJson<SaveObject>(json);
-            levelStats = saveObject.levelStats;
-            StarsTotal = saveObject.StarsTotal;
-        }
-    }
-
-    public void RefreshLevelStats(List<Level> levelPrefabs)
-    {
-        if (levelPrefabs.Count > levelStats.Count)
-        {
-            while (levelStats.Count < levelPrefabs.Count)
-            {
-                levelStats.Add(0);
-            }
+            playerStats.levelStats = saveObject.levelStats;
+            playerStats.StarsTotal = saveObject.StarsTotal;
         }
     }
 }

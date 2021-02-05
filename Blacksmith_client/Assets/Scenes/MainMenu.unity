@@ -4948,6 +4948,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1698098627}
     m_Modifications:
     - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
+      propertyPath: LevelIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132273476401553940, guid: e9f14b9543204f74d8d7fda2c948da3b, type: 3}
       propertyPath: isFirstLevelInLine
       value: 1
       objectReference: {fileID: 0}

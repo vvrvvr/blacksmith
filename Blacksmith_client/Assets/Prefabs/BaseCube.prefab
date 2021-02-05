@@ -139,3 +139,6 @@ MonoBehaviour:
   cubesLayer:
     serializedVersion: 2
     m_Bits: 64
+  handLayer:
+    serializedVersion: 2
+    m_Bits: 1024

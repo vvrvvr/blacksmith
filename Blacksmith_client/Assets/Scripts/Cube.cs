@@ -20,6 +20,7 @@ public class Cube : MonoBehaviour
     [SerializeField] private Material[] durabilityMaterials;
     [SerializeField] private LayerMask colliderPlaneLayer;
     [SerializeField] private LayerMask cubesLayer;
+    [SerializeField] private LayerMask handLayer;
 
     private MeshRenderer myRend;
     private BoxCollider boxCollider;
@@ -30,7 +31,7 @@ public class Cube : MonoBehaviour
     public static Action<Vector3> OnMouseMoving;
 
     public bool isInitialized { get; private set; } = false;
-    public bool CanMove { get; private set; } = true;
+    public bool CanMove { get; set; } = true;
     private bool isMovingAllowed = true;
     private bool isCubeRated = false;
     private bool canBreak = false;
@@ -207,6 +208,10 @@ public class Cube : MonoBehaviour
         if (Physics.CheckBox(position, halfCubeDimensions, Quaternion.identity, cubesLayer))
         {
             return true;
+        }
+        if(Physics.CheckBox(position, halfCubeDimensions, Quaternion.identity, handLayer)) //check if there is a sword hand on position
+        {
+            CanMove = false;
         }
         return false;
     }

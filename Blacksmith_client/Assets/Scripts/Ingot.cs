@@ -11,9 +11,11 @@ public class Ingot : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private Cube cubePrefab;
     [SerializeField] private LayerMask cubeLayer;
+    [SerializeField] private LayerMask handLayer;
     [SerializeField] private MeshRenderer _meshRenderer;
     private BoxCollider _boxCollider;
     private int OverlappedCubes = 0;
+    private bool isIntersectsHand;
 
     public bool IsInit { get; private set; }
     public List<Cube> Cubes { get; private set; } = new List<Cube>();
@@ -51,7 +53,7 @@ public class Ingot : MonoBehaviour
 
     public bool InitCubes()
     {
-        if (OverlappedCubes == 0)
+        if (OverlappedCubes == 0 || isIntersectsHand)
             return false;
         _boxCollider.enabled = false;
         foreach (Cube cube in Cubes)
@@ -65,14 +67,18 @@ public class Ingot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == LayerMaskToLayer(cubeLayer))
+        if (other.gameObject.layer == LayerMaskToLayer(cubeLayer))
             OverlappedCubes++;
+        if (other.gameObject.layer == LayerMaskToLayer(handLayer))
+            isIntersectsHand = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.layer == LayerMaskToLayer(cubeLayer))
             OverlappedCubes--;
+        if (other.gameObject.layer == LayerMaskToLayer(handLayer))
+            isIntersectsHand = false;
     }
 
     // Duplicated function....

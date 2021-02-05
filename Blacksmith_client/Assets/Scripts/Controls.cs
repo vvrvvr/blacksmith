@@ -68,14 +68,20 @@ public class Controls : MonoBehaviour
                     underplaceToCheck += new Vector3(0, -1, 0);
                 }
                 underplaceToCheck += new Vector3(0, 1, 0);
-                ObjectToControl.MoveTo(underplaceToCheck);
+                if (ObjectToControl.CanMove) // can be false if sword hand on cube's way
+                    ObjectToControl.MoveTo(underplaceToCheck);
+                else
+                    ObjectToControl.CanMove = true;
             }
             else //if place occupied by another cube - try to place ObjectToControl above
             {
                 Vector3 aboveplaceToCheck = placeToCheck + new Vector3(0, 1, 0);
                 if (!ObjectToControl.CheckCubeAt(aboveplaceToCheck))
                 {
-                    ObjectToControl.MoveTo(aboveplaceToCheck);
+                    if (ObjectToControl.CanMove) // can be false if sword hand on cube's way
+                        ObjectToControl.MoveTo(aboveplaceToCheck);
+                    else
+                        ObjectToControl.CanMove = true;
                 }
             }
         }

@@ -164,6 +164,9 @@ MonoBehaviour:
   cubeLayer:
     serializedVersion: 2
     m_Bits: 512
+  handLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   _meshRenderer: {fileID: 9113653339151103020}
 --- !u!114 &7434626153489644652
 MonoBehaviour:

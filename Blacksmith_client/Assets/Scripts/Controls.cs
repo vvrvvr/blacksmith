@@ -12,6 +12,12 @@ public class Controls : MonoBehaviour
     private float firstClickTime = 0f;
     public float TimeBetweenClicks;
     private bool coroutineAllowed = true;
+    private GameManager gamemanager;
+
+    private void Start()
+    {
+        gamemanager = GameManager.Singleton;
+    }
 
     private void OnEnable()
     {
@@ -22,6 +28,7 @@ public class Controls : MonoBehaviour
     {
         Cube.OnMouseMoving -= CheckAndMove;
     }
+
 
     void Update()
     {
@@ -57,7 +64,7 @@ public class Controls : MonoBehaviour
 
     public void CheckAndMove(Vector3 direction)
     {
-        if(ObjectToControl.CanMove)
+        if(ObjectToControl.CanMove && !gamemanager.isAllFramesFilled)
         {
             Vector3 placeToCheck = ObjectToControl.transform.position + direction;
             if (!ObjectToControl.CheckCubeAt(placeToCheck)) //if place to move not occupied by another cube
@@ -94,7 +101,10 @@ public class Controls : MonoBehaviour
         {
             if (ClickCounter == 2)
             {
-                if (!ObjectToControl.CheckCubeAt(ObjectToControl.transform.position + Vector3.up))
+                int framesAmount = gamemanager.FramesAmount;
+                int framesFilled = gamemanager.FilledFrames;
+                bool isCubeAbove = ObjectToControl.CheckCubeAt(ObjectToControl.transform.position + Vector3.up);
+                if (!isCubeAbove && (framesAmount == framesFilled))
                     ObjectToControl.Kill();
                 break;
             }

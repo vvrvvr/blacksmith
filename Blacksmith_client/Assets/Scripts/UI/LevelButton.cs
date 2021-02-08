@@ -31,7 +31,6 @@ public class LevelButton : MonoBehaviour
     [HideInInspector]
     public int indexOfLastLevelInLine;
 
-
     private PlayerStats playerStats;
 
     public void LoadScene(string name) => SceneManager.LoadScene(name);

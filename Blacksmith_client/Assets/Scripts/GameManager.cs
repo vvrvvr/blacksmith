@@ -5,9 +5,9 @@ public class GameManager : MonoBehaviour
 {
     [Header("Stats")]
     [SerializeField, ReadOnly] private int CubesAmount;
-    [SerializeField, ReadOnly] private int FramesAmount;
+    [ReadOnly] public int FramesAmount;
     [SerializeField, ReadOnly] private int CubesCanMove;
-    [SerializeField, ReadOnly] private int FilledFrames;
+    [ReadOnly] public int FilledFrames;
     [SerializeField, ReadOnly] private int CubesRated;
 
     [Header("References")]
@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     private int threeStarsRating;
     private int twoStarsRating;
     private bool NeedCheckConditions = false;
+    public bool isAllFramesFilled { get; private set; } = false;
 
     public static GameManager Singleton { get; private set; }
 
@@ -53,6 +54,10 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForFixedUpdate();
         NeedCheckConditions = false;
+        if (FilledFrames == FramesAmount)
+            isAllFramesFilled = true;
+        else
+            isAllFramesFilled = false;
         if (FilledFrames == FramesAmount && CubesAmount == FramesAmount)
         {
             // Victory

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private GameObject losePanel;
 
+    public static Action OnVictoryEvent;
+    public static Action OnLoseEvent;
 
     private int threeStarsRating;
     private int twoStarsRating;
@@ -60,15 +63,24 @@ public class GameManager : MonoBehaviour
             isAllFramesFilled = false;
         if (FilledFrames == FramesAmount && CubesAmount == FramesAmount)
         {
-            // Victory
-            //PlayerStats.Singleton.SaveLevelProgress(1);
-            MenuManager.Singleton.EnablePanel(victoryPanel);
+            Victory();
         }
         else if (CubesCanMove == 0 && FilledFrames != FramesAmount || CubesAmount < FramesAmount)
         {
-            // Lose
-            MenuManager.Singleton.EnablePanel(losePanel);
+            Lose();
         }
+    }
+
+    private void Victory()
+    {
+        OnVictoryEvent?.Invoke();
+        MenuManager.Singleton.EnablePanelWithDelay(victoryPanel, 1f);
+    }
+
+    private void Lose()
+    {
+        OnLoseEvent?.Invoke();
+        MenuManager.Singleton.EnablePanelWithDelay(losePanel, 1f);
     }
 
     private void OnCubeDestroy(bool isRated)
@@ -118,9 +130,7 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            MenuManager.Singleton.EnablePanel(victoryPanel);
+            Victory();
         }
     }
-
-
 }

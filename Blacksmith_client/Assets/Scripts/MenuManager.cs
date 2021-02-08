@@ -1,4 +1,5 @@
 using UnityEngine.SceneManagement;
+using System.Collections;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour
@@ -42,5 +43,12 @@ public class MenuManager : MonoBehaviour
             panel.SetActive(true);
             activePanel = panel;
         }
+    }
+
+    public void EnablePanelWithDelay(GameObject panel, float delay) => StartCoroutine(EnablePanelCoroutine(panel, delay));
+    private IEnumerator EnablePanelCoroutine(GameObject panel, float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        EnablePanel(panel);
     }
 }

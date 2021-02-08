@@ -13,5 +13,6 @@ public class Level : MonoBehaviour
     public IngotDragAndDrop IngotDrag;
     public WireframeBlank WireframeBlank;
 
-    
+    [Header("Final Product")]
+    public FinalProduct finalProduct;
 }

@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
     //for testing. delete if you see it
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.P))
         {
             Victory();
         }

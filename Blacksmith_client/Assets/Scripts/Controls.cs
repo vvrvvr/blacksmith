@@ -42,19 +42,19 @@ public class Controls : MonoBehaviour
             }
             #endregion
             #region input
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.D))
             {
                 CheckAndMove(Vector3.forward);
             }
-            else if (Input.GetKeyDown(KeyCode.S))
+            else if (Input.GetKeyDown(KeyCode.A))
             {
                 CheckAndMove(Vector3.back);
             }
-            else if (Input.GetKeyDown(KeyCode.D))
+            else if (Input.GetKeyDown(KeyCode.S))
             {
                 CheckAndMove(Vector3.right);
             }
-            else if (Input.GetKeyDown(KeyCode.A))
+            else if (Input.GetKeyDown(KeyCode.W))
             {
                 CheckAndMove(Vector3.left);
             }

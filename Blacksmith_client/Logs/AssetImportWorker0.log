@@ -1,17 +1,17 @@
 Using pre-set license
 Built from '2020.2/release' branch; Version is '2020.2.1f1 (270dd8c3da1c) revision 2559448'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10  (10.0.0) 64bit' Language: 'ru' Physical Memory: 16321 MB
+OS: 'Windows 10  (10.0.0) 64bit' Language: 'ru' Physical Memory: 32699 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-D:\UNITY\2020.2.1f1\Editor\Unity.exe
+D:\Unity\2020.2.1f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/git_repositories/blacksmith/Blacksmith_client
+D:/Projec_GameBox/Blacksmit/blacksmith/Blacksmith_client
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
@@ -22,15 +22,15 @@ Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 44.08 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
-[Subsystems] Discovering subsystems at path D:/UNITY/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/git_repositories/blacksmith/Blacksmith_client/Assets
+[Subsystems] Discovering subsystems at path D:/Unity/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Projec_GameBox/Blacksmit/blacksmith/Blacksmith_client/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Renderer: NVIDIA GeForce GTX 1050 Ti (ID=0x1c82)
     Vendor:   
-    VRAM:     4043 MB
-    Driver:   27.21.14.6079
+    VRAM:     4018 MB
+    Driver:   27.21.14.5671
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
 Mono path[0] = 'D:/UNITY/2020.2.1f1/Editor/Data/Managed'
@@ -55,6 +55,7 @@ Platform modules already initialized, skipping
 Registering precompiled user dll's ...
 Registered in 0.001334 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for Lumin target not found
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 45.20 ms, found 0 plugins.
@@ -102,10 +103,75 @@ Start importing Assets/Prefabs/Levels/Level_0_1.prefab using Guid(82154370532b26
   Import took 0.045802 seconds .
 
 ========================================================================
+Received Import Request.
+  Time since last request: 57.233724 seconds.
+  path: Assets/Prefabs/Levels/Level_0_1 1.prefab
+  artifactKey: Guid(9548c56912f1da4498456e439fd3ce90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level_0_1 1.prefab using Guid(9548c56912f1da4498456e439fd3ce90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b70824c002b8bde905207be04a82e1b1') in 0.012844 seconds
+  Import took 0.016805 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.658819 seconds.
+  path: Assets/Prefabs/Levels/Level_0_2.prefab
+  artifactKey: Guid(9548c56912f1da4498456e439fd3ce90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level_0_2.prefab using Guid(9548c56912f1da4498456e439fd3ce90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a463237f725d4c117a37fc6c3001e1e3') in 0.012783 seconds
+  Import took 0.016834 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.192829 seconds.
+  path: Assets/Prefabs/Products/Sword_Epic0.prefab
+  artifactKey: Guid(ff25b59bd30932b42acfa6a76f18e514) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Products/Sword_Epic0.prefab using Guid(ff25b59bd30932b42acfa6a76f18e514) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42a9d1e6e7767d4dd84706c7f0193424') in 0.015977 seconds
+  Import took 0.019280 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.537065 seconds.
+  path: Assets/Prefabs/BaseCube.prefab
+  artifactKey: Guid(a0561965cd7a6774dbd2edc87d72ba04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BaseCube.prefab using Guid(a0561965cd7a6774dbd2edc87d72ba04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1591199ceaae65cdab519645971315a4') in 0.024082 seconds
+  Import took 0.027450 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Prefabs/Ingot.prefab
+  artifactKey: Guid(f2e0e267f14c4ca4eb695c2353012ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Ingot.prefab using Guid(f2e0e267f14c4ca4eb695c2353012ce6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8477ecf903fc588fcff40f5c37975872') in 0.013770 seconds
+  Import took 0.016893 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Prefabs/BaseCube.prefab
+  artifactKey: Guid(a0561965cd7a6774dbd2edc87d72ba04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BaseCube.prefab using Guid(a0561965cd7a6774dbd2edc87d72ba04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1591199ceaae65cdab519645971315a4') in 0.012056 seconds
+  Import took 0.014757 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Prefabs/Cube_8hp.prefab
+  artifactKey: Guid(8cc8ca8b7ca144a4e9a035e6fa0d0ecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cube_8hp.prefab using Guid(8cc8ca8b7ca144a4e9a035e6fa0d0ecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5d6b1518123f0e9e7f2bb15d50b90f0') in 0.005903 seconds
+  Import took 0.008623 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.882326 seconds.
+  path: Assets/Prefabs/Levels/Level_0_2.prefab
+  artifactKey: Guid(9548c56912f1da4498456e439fd3ce90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level_0_2.prefab using Guid(9548c56912f1da4498456e439fd3ce90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b270488ac07a0c5ecf585d46a34a1f4e') in 0.016926 seconds
+  Import took 0.020439 seconds .
+
+========================================================================
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.001309 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for Lumin target not found
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.47 ms, found 0 plugins.

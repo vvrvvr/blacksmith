@@ -15,7 +15,7 @@ public class ShowRating : MonoBehaviour
     private void Awake()
     {
         previousRating = playerStats.levelStats[playerStats.LoadedLevel];
-        rating = GameManager.Singleton.CalculateRating();
+        rating = GameManager.Instance.CalculateRating();
         if(rating > previousRating)
         {
             playerStats.levelStats[playerStats.LoadedLevel] = rating;

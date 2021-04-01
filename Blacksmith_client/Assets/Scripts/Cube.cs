@@ -151,7 +151,7 @@ public class Cube : MonoBehaviour
             durability--;
             if (durability == 0)
             {
-                GameManager.Singleton.AddCubeRated(1);
+                GameManager.Instance.AddCubeRated(1);
                 Kill();
             }
             UpdateMaterialByDurability();

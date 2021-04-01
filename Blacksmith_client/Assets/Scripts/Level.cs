@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    [Header("Settings")]
+    public int TimerSec;
+
     [Header("Rating stats")]
     public int ThreeStarsCubeAmount;
     public int TwoStarsCubeAmount;

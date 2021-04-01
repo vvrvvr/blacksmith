@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private GameObject losePanel;
+    [SerializeField] private LevelManager levelManager;
 
     public static Action OnVictoryEvent;
     public static Action OnLoseEvent;
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
     private bool NeedCheckConditions = false;
     public bool isAllFramesFilled { get; private set; } = false;
 
-    public static GameManager Singleton { get; private set; }
+    public static GameManager Instance { get; private set; }
 
     public void SetLevelStats(Level level)
     {
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Singleton = this;
+        Instance = this;
     }
 
     private IEnumerator LateCheckConditions()
@@ -67,20 +68,27 @@ public class GameManager : MonoBehaviour
         }
         else if (CubesCanMove == 0 && FilledFrames != FramesAmount || CubesAmount < FramesAmount)
         {
-            Lose();
+            Defeat();
         }
     }
 
-    private void Victory()
+    public void Victory()
     {
         OnVictoryEvent?.Invoke();
-        MenuManager.Singleton.EnablePanelWithDelay(victoryPanel, 1f);
+        if(levelManager.currentLevel.finalProduct != null)
+        {
+            MenuManager.Singleton.EnablePanelWithDelay(victoryPanel, 1f);
+        }
+        else
+        {
+            MenuManager.Singleton.EnablePanel(victoryPanel);
+        }
     }
 
-    private void Lose()
+    public void Defeat()
     {
         OnLoseEvent?.Invoke();
-        MenuManager.Singleton.EnablePanelWithDelay(losePanel, 1f);
+        MenuManager.Singleton.EnablePanel(losePanel);
     }
 
     private void OnCubeDestroy(bool isRated)

@@ -16,7 +16,7 @@ public class Controls : MonoBehaviour
 
     private void Start()
     {
-        gamemanager = GameManager.Singleton;
+        gamemanager = GameManager.Instance;
     }
 
     private void OnEnable()

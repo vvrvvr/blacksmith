@@ -11,6 +11,8 @@ public class IngotDragAndDrop : MonoBehaviour
     public Transform colliderPlane;
     private Camera mainCamera;
 
+    public static System.Action<Ingot> OnIngotPlaced;
+
     #region DoubleClick
     private const float DoubleClickSpeed = 0.25f;
     private float doubleClickTime = 0f;
@@ -37,7 +39,10 @@ public class IngotDragAndDrop : MonoBehaviour
             if (doubleClickTime <= DoubleClickSpeed)
             {
                 if(ingot.InitCubes())
+                {
+                    OnIngotPlaced?.Invoke(ingot);
                     enabled = false;
+                }
             }
             doubleClickTime = 0f;
         }

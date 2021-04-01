@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform colliderPlane;
     [SerializeField] private List<Level> levelPrefabs;
 
+    public static System.Action<Level> OnLevelLoad;
+
     private void OnEnable() => GameManager.OnVictoryEvent += OnVictoryEvent;
     private void OnDisable() => GameManager.OnVictoryEvent -= OnVictoryEvent;
 
@@ -27,7 +29,8 @@ public class LevelManager : MonoBehaviour
         currentWireframe = currentLevel.WireframeBlank;
 
         PlayerStats.Singleton.LoadedLevel = Mathf.Min(index, levelPrefabs.Count - 1);
-        GameManager.Singleton.SetLevelStats(currentLevel);
+        GameManager.Instance.SetLevelStats(currentLevel);
+        OnLevelLoad?.Invoke(currentLevel);
     }
 
     private void OnVictoryEvent()

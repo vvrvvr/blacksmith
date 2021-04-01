@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b843c7b6f30f804d8d19907de37c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerSec: 0
   ThreeStarsCubeAmount: 1
   TwoStarsCubeAmount: 2
   Ingot: {fileID: 4881061150297853866}

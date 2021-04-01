@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7820341230127875349}
   - component: {fileID: 666359487783943529}
   m_Layer: 6
-  m_Name: Cube_8hp
+  m_Name: Cube_3hp
   m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5a78ee982c7d14b982ae641db89683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durability: 8
+  durability: 3
   MinYCoord: 0
   deadZone: 1
   movementSpeed: 0.1

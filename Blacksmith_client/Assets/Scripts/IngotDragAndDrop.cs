@@ -34,18 +34,6 @@ public class IngotDragAndDrop : MonoBehaviour
     {
         if (doubleClickTime < 1f)
             doubleClickTime += Time.deltaTime;
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (doubleClickTime <= DoubleClickSpeed)
-            {
-                if(ingot.InitCubes())
-                {
-                    OnIngotPlaced?.Invoke(ingot);
-                    enabled = false;
-                }
-            }
-            doubleClickTime = 0f;
-        }
     }
 
     private void OnMouseDown()
@@ -53,6 +41,18 @@ public class IngotDragAndDrop : MonoBehaviour
         if (!enabled) return;
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
+        //Double click functionality
+        if (doubleClickTime <= DoubleClickSpeed)
+        {
+            if(ingot.InitCubes())
+            {
+                OnIngotPlaced?.Invoke(ingot);
+                enabled = false;
+            }
+        }
+        doubleClickTime = 0f;
+
+        //Drag and drop init start position
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, ingotLayer))
         {

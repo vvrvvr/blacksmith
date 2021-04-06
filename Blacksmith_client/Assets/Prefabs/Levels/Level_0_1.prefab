@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerSec: 0
+  TutorialText: Place the ingot to fill the blueprint as much as possible
   ThreeStarsCubeAmount: 1
   TwoStarsCubeAmount: 2
   Ingot: {fileID: 4881061150297853866}

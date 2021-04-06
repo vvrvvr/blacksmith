@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 3990319050764039768}
   - component: {fileID: 4343966174243668744}
   m_Layer: 0
-  m_Name: Level_1_1
+  m_Name: Level_0_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,11 +59,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b843c7b6f30f804d8d19907de37c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerSec: 0
+  TutorialText: 'Try to do it yourself. Remember: less extra cubes  = more rating
+    stars.'
   ThreeStarsCubeAmount: 2
   TwoStarsCubeAmount: 3
   Ingot: {fileID: 4074131772132598039}
   IngotDrag: {fileID: 4074131772132598034}
   WireframeBlank: {fileID: 4881061149048662333}
+  finalProduct: {fileID: 0}
 --- !u!1 &4881061149048662332
 GameObject:
   m_ObjectHideFlags: 0

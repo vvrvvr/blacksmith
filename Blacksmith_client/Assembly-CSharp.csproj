@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\IngotDragAndDrop.cs" />
      <Compile Include="Assets\Scripts\UI\DisplayCurrentStarsAmount.cs" />
      <Compile Include="Assets\Scripts\UI\Timer.cs" />
+     <Compile Include="Assets\Scripts\UI\Tutorial.cs" />
      <None Include="Assets\save.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

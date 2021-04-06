@@ -6,6 +6,7 @@ public class Level : MonoBehaviour
 {
     [Header("Settings")]
     public int TimerSec;
+    [TextArea(2, 15)] public string TutorialText;
 
     [Header("Rating stats")]
     public int ThreeStarsCubeAmount;

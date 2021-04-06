@@ -67,25 +67,42 @@ public class Controls : MonoBehaviour
         if(ObjectToControl.CanMove && !gamemanager.isAllFramesFilled)
         {
             Vector3 placeToCheck = ObjectToControl.transform.position + direction;
-            if (!ObjectToControl.CheckCubeAt(placeToCheck)) //if place to move not occupied by another cube
+
+            //if place to move not occupied by another cube
+            if (!ObjectToControl.CheckCubeAt(placeToCheck)) 
             {
                 Vector3 underplaceToCheck = placeToCheck + new Vector3(0, -1, 0);
-                while (!ObjectToControl.CheckCubeAt(underplaceToCheck) && underplaceToCheck.y >= ObjectToControl.MinYCoord) // find  lowest cube, or floor (MinYCoord) 
+
+                // Check anvil borders
+                float distance = (ObjectToControl.transform.position - placeToCheck).magnitude;
+                if(Physics.CheckBox(placeToCheck, new Vector3(0.2f, 0.2f, 0.2f), Quaternion.identity))
+                {
+                    Debug.DrawLine(ObjectToControl.transform.position, placeToCheck, Color.green, 5f);
+                    ObjectToControl.CanMove = true;
+                    return;
+                }
+
+                // find  lowest cube, or floor (MinYCoord) 
+                while (!ObjectToControl.CheckCubeAt(underplaceToCheck) && underplaceToCheck.y >= ObjectToControl.MinYCoord) 
                 {
                     underplaceToCheck += new Vector3(0, -1, 0);
                 }
                 underplaceToCheck += new Vector3(0, 1, 0);
-                if (ObjectToControl.CanMove) // can be false if sword hand on cube's way
+
+                // can be false if sword hand on cube's way
+                if (ObjectToControl.CanMove) 
                     ObjectToControl.MoveTo(underplaceToCheck);
                 else
                     ObjectToControl.CanMove = true;
             }
-            else //if place occupied by another cube - try to place ObjectToControl above
+            //if place occupied by another cube - try to place ObjectToControl above
+            else 
             {
                 Vector3 aboveplaceToCheck = placeToCheck + new Vector3(0, 1, 0);
                 if (!ObjectToControl.CheckCubeAt(aboveplaceToCheck))
                 {
-                    if (ObjectToControl.CanMove) // can be false if sword hand on cube's way
+                    // can be false if sword hand on cube's way
+                    if (ObjectToControl.CanMove) 
                         ObjectToControl.MoveTo(aboveplaceToCheck);
                     else
                         ObjectToControl.CanMove = true;

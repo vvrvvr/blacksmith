@@ -10,6 +10,7 @@ public class IngotDragAndDrop : MonoBehaviour
     [SerializeField] private LayerMask ingotLayer;
     public Transform colliderPlane;
     private Camera mainCamera;
+    private bool _isDrag;
 
     public static System.Action<Ingot> OnIngotPlaced;
 
@@ -18,7 +19,7 @@ public class IngotDragAndDrop : MonoBehaviour
     private float doubleClickTime = 0f;
     #endregion
 
-    #region Dragging
+    #region Drag & Drop
     private Vector3 firstDragPos = Vector3.zero;
     private Vector3 currentPoint;
     private Vector3 baseIngotPos;
@@ -34,17 +35,33 @@ public class IngotDragAndDrop : MonoBehaviour
     {
         if (doubleClickTime < 1f)
             doubleClickTime += Time.deltaTime;
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            MouseDown();
+            _isDrag = true;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            MouseUp();
+            _isDrag = false;
+        }
+
+        if (_isDrag)
+        {
+            MouseDrag();
+        }
     }
 
-    private void OnMouseDown()
+    private void MouseDown()
     {
-        if (!enabled) return;
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
         //Double click functionality
         if (doubleClickTime <= DoubleClickSpeed)
         {
-            if(ingot.InitCubes())
+            if (ingot.InitCubes())
             {
                 OnIngotPlaced?.Invoke(ingot);
                 enabled = false;
@@ -63,11 +80,8 @@ public class IngotDragAndDrop : MonoBehaviour
         }
     }
 
-    private void OnMouseDrag()
+    private void MouseDrag()
     {
-        if (!enabled) return;
-        if (EventSystem.current.IsPointerOverGameObject()) return;
-
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, colliderPlaneLayer))
         {
@@ -83,14 +97,9 @@ public class IngotDragAndDrop : MonoBehaviour
         }
     }
 
-    private void OnMouseUp()
+    private void MouseUp()
     {
-        if (!enabled) return;
-        if (EventSystem.current.IsPointerOverGameObject()) return;
-
         firstDragPos = Vector3.zero;
         colliderPlane.gameObject.SetActive(false);
     }
-
-
 }

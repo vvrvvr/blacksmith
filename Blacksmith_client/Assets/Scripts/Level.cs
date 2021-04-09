@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour
 {
     [Header("Settings")]
     public int TimerSec;
+    public Transform RotationCenter = null;
     [TextArea(2, 15)] public string TutorialText;
 
     [Header("Rating stats")]

@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5a78ee982c7d14b982ae641db89683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durability: 3
+  durability: 8
   MinYCoord: 0
   deadZone: 1
   movementSpeed: 0.1

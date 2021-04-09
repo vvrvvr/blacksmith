@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3990319050764039768}
   - component: {fileID: 4343966174243668744}
   m_Layer: 0
-  m_Name: Level_1_EPIC
+  m_Name: Elven_Swordl_EPIC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,11 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b843c7b6f30f804d8d19907de37c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerSec: 0
   ThreeStarsCubeAmount: 13
   TwoStarsCubeAmount: 14
   Ingot: {fileID: 6898659862158351703}
   IngotDrag: {fileID: 6898659862158351698}
   WireframeBlank: {fileID: 4881061149048662333}
+  finalProduct: {fileID: 0}
 --- !u!1 &4881061149048662332
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +901,7 @@ PrefabInstance:
     - target: {fileID: 7434626153489644649, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
       propertyPath: cubePrefab
       value: 
-      objectReference: {fileID: 6658731334641806482, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
+      objectReference: {fileID: 666359487783943529, guid: 8cc8ca8b7ca144a4e9a035e6fa0d0ecc, type: 3}
     - target: {fileID: 7434626153489644651, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
       propertyPath: m_RootOrder
       value: 0

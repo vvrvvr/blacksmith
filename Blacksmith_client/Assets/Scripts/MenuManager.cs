@@ -45,6 +45,11 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void SwitchActivity(GameObject go)
+    {
+        go.SetActive(!go.activeSelf);
+    }
+
     public void EnablePanelWithDelay(GameObject panel, float delay) => StartCoroutine(EnablePanelCoroutine(panel, delay));
     private IEnumerator EnablePanelCoroutine(GameObject panel, float delay)
     {

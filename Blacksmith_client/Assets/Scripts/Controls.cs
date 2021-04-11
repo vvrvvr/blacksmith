@@ -30,7 +30,6 @@ public class Controls : MonoBehaviour
         Cube.OnMouseMoving -= CheckAndMove;
     }
 
-
     void Update()
     {
         if (ObjectToControl != null)

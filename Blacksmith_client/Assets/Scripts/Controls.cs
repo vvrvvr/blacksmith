@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Controls : MonoBehaviour
 {
-    [SerializeField] private LayerMask cubesLayer;
-    [SerializeField] private LayerMask wireframeLayer;
+    //[SerializeField] private LayerMask cubesLayer;
+    //[SerializeField] private LayerMask wireframeLayer;
+    [SerializeField] private LayerMask anvilBorder;
     [HideInInspector] public Cube ObjectToControl;
     [HideInInspector] public int ClickCounter = 0;
     private float firstClickTime = 0f;
@@ -75,7 +76,7 @@ public class Controls : MonoBehaviour
 
                 // Check anvil borders
                 float distance = (ObjectToControl.transform.position - placeToCheck).magnitude;
-                if(Physics.CheckBox(placeToCheck, new Vector3(0.2f, 0.2f, 0.2f), Quaternion.identity))
+                if(Physics.CheckBox(placeToCheck, new Vector3(0.2f, 0.2f, 0.2f), Quaternion.identity, anvilBorder))
                 {
                     Debug.DrawLine(ObjectToControl.transform.position, placeToCheck, Color.green, 5f);
                     ObjectToControl.CanMove = true;

@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour
         IngotDragAndDrop.OnIngotPlaced -= OnIngotPlaced;
     }
 
+    [SerializeField] private GameObject _timer;
     [SerializeField] private Text _text;
     [SerializeField] private Volume volume;
     private Bloom bloom;
@@ -38,11 +39,8 @@ public class Timer : MonoBehaviour
     {
         _baseRemainingTime = level.TimerSec;
         _remainingTime = level.TimerSec;
-        if(_remainingTime <= 0f)
-        {
-            gameObject.SetActive(false);
-        }
-
+        if(_remainingTime > 15 || _remainingTime <= 0)
+            _timer.SetActive(false);
         UpdateText();
     }
 
@@ -62,9 +60,13 @@ public class Timer : MonoBehaviour
         if(_ingotPlaced && _remainingTime > 0f)
         {
             _remainingTime -= Time.deltaTime;
+
+            if (_remainingTime <= 15)
+                _timer.SetActive(true);
+
             if(_remainingTime <= 0f)
             {
-                _remainingTime = 0f;
+                _remainingTime = 0;
                 GameManager.Instance.Defeat();
             }
 

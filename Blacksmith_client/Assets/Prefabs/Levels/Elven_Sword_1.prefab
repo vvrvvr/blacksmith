@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3990319050764039768}
   - component: {fileID: 4343966174243668744}
   m_Layer: 0
-  m_Name: Elven_Sword_1_4
+  m_Name: Elven_Sword_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerSec: 0
+  RotationCenter: {fileID: 0}
+  TutorialText: 
   ThreeStarsCubeAmount: 5
   TwoStarsCubeAmount: 6
   Ingot: {fileID: 7382538623193525184}

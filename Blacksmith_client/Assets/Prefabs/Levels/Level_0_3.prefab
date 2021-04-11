@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerSec: 0
+  RotationCenter: {fileID: 0}
   TutorialText: Delete the extra cubes after you filling the blueprint
   ThreeStarsCubeAmount: 10
   TwoStarsCubeAmount: 11

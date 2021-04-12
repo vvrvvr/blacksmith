@@ -6,16 +6,18 @@ public class ChooseCube : MonoBehaviour
     [SerializeField] private LayerMask clickableLayer;
     [SerializeField] private CubeSelector cubeSelector;
     private Controls controlScript;
+    private GameManager gamemanager;
     private Cube currentCube;
 
     private void Start()
     {
         controlScript = GetComponent<Controls>();
+        gamemanager = GameManager.Instance;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && gamemanager.CanChooseCube)
         {
             if (EventSystem.current.IsPointerOverGameObject()) return;
             RaycastHit rayHit;

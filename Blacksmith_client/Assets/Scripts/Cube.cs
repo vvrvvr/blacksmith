@@ -5,16 +5,16 @@ using System.Collections;
 public class Cube : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private int durability = 0;
+    public int durability = 0;
     public float MinYCoord = 0f;
 
     [Header("Drag")]
-    [SerializeField] private float deadZone = 0.6f;
-    [SerializeField] private float movementSpeed;
+   // [SerializeField] private float deadZone = 0.6f;
+    public float movementSpeed;
     private Transform colliderPlane;
     private Vector3 firstDragPos = Vector3.zero;
     private Vector3 currentPoint;
-    private Vector3 direction;
+    //private Vector3 direction;
 
     [Header("References")]
     [SerializeField] private Material[] durabilityMaterials;
@@ -23,7 +23,7 @@ public class Cube : MonoBehaviour
     [SerializeField] private LayerMask handLayer;
 
     private MeshRenderer myRend;
-    private BoxCollider boxCollider;
+    public BoxCollider BoxCollider;
 
     public Action<bool> OnDestroyEventLocal;
     public static Action<bool> OnDestroyEventGlobal;
@@ -32,17 +32,23 @@ public class Cube : MonoBehaviour
 
     public bool isInitialized { get; private set; } = false;
     public bool CanMove { get; set; } = true;
-    private bool isMovingAllowed = true;
+    public bool IsMovingAllowed = true;
     private bool isCubeRated = false;
-    private bool canBreak = false;
+    public bool canBreak = false;
     private Material currentMaterial;
 
     private Vector3 halfCubeDimensions = new Vector3(0.2f, 0.2f, 0.2f); // fix this
 
+    //cube movement
+    private Vector3 pointerDirection;
+    private Vector3 pathDir = Vector3.zero;
+    private int steps = 0;
+    private bool isTrajectoryShown;
+
     private void Start()
     {
         myRend = GetComponent<MeshRenderer>();
-        boxCollider = GetComponent<BoxCollider>();
+        BoxCollider = GetComponent<BoxCollider>();
     }
 
     /// <summary>
@@ -84,7 +90,7 @@ public class Cube : MonoBehaviour
         }
         GetComponent<MeshRenderer>().enabled = true;
         gameObject.layer = LayerMaskToLayer(cubesLayer);
-        boxCollider.enabled = true;
+        BoxCollider.enabled = true;
         colliderPlane = cPlane;
         UpdateMaterialByDurability();
         isInitialized = true;
@@ -110,55 +116,46 @@ public class Cube : MonoBehaviour
         return layerNumber - 1;
     }
 
-    public void MoveTo(Vector3 position)
-    {
-        if (isMovingAllowed)
-        {
-            Vector3 prevPos = transform.position;
-            Vector3 direction = position - transform.position;
-            boxCollider.enabled = false;
-            StartCoroutine(MovingWithSpeed(direction, position, prevPos));
-        }
-    }
+    //public void MoveTo(Vector3 position)
+    //{
+    //    if (isMovingAllowed)
+    //    {
+    //        Vector3 prevPos = transform.position;
+    //        Vector3 direction = position - transform.position;
+    //        boxCollider.enabled = false;
+    //        StartCoroutine(MovingWithSpeed(direction, position, prevPos));
+    //    }
+    //}
 
-    /// <summary>
-    /// Compare two vectors
-    /// </summary>
-    /// <param name="a"></param>
-    /// <param name="b"></param>
-    /// <returns></returns>
-    public bool V3Equal(Vector3 a, Vector3 b)
-    {
-        return Vector3.SqrMagnitude(a - b) < 0.0001;
-    }
+   
 
-    private IEnumerator MovingWithSpeed(Vector3 dir, Vector3 pos, Vector3 prevP)
-    {
-        isMovingAllowed = false;
-        while (!V3Equal(pos, transform.position))
-        {
-            transform.Translate(dir * movementSpeed);
-            yield return new WaitForEndOfFrame();
-        }
-        transform.position = pos;
-        UpdateMoveState();
-        UpdateCubeAt(prevP + Vector3.down);
-        UpdateCubeAt(transform.position + Vector3.down);
-        boxCollider.enabled = true;
-        isMovingAllowed = true;
-        if (canBreak)
-        {
-            durability--;
-            if (durability == 0)
-            {
-                GameManager.Instance.AddCubeRated(1);
-                Kill();
-            }
-            UpdateMaterialByDurability();
-        }
-    }
+    //private IEnumerator MovingWithSpeed(Vector3 dir, Vector3 pos, Vector3 prevP)
+    //{
+    //    isMovingAllowed = false;
+    //    while (!V3Equal(pos, transform.position))
+    //    {
+    //        transform.Translate(dir * movementSpeed);
+    //        yield return new WaitForEndOfFrame();
+    //    }
+    //    transform.position = pos;
+    //    UpdateMoveState();
+    //    UpdateCubeAt(prevP + Vector3.down);
+    //    UpdateCubeAt(transform.position + Vector3.down);
+    //    boxCollider.enabled = true;
+    //    isMovingAllowed = true;
+    //    if (canBreak)
+    //    {
+    //        durability--;
+    //        if (durability == 0)
+    //        {
+    //            GameManager.Instance.AddCubeRated(1);
+    //            Kill();
+    //        }
+    //        UpdateMaterialByDurability();
+    //    }
+    //}
 
-    private void UpdateMaterialByDurability()
+    public void UpdateMaterialByDurability()
     {
         int index = durability - 1;
         if (index < 0) index = 0;
@@ -168,7 +165,7 @@ public class Cube : MonoBehaviour
         myRend.material = currentMaterial;
     }
 
-    private void UpdateCubeAt(Vector3 position)
+    public void UpdateCubeAt(Vector3 position)
     {
         if (Physics.Raycast(position + Vector3.up, Vector3.down, out RaycastHit hit, 1f, cubesLayer))
         {
@@ -218,8 +215,9 @@ public class Cube : MonoBehaviour
 
     private void OnMouseDown()
     {
+        steps = 0;
         RaycastHit rayHit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, cubesLayer))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, cubesLayer) && GameManager.Instance.CanChooseCube)
         {
             colliderPlane.position = transform.position;
             firstDragPos = transform.position;
@@ -231,33 +229,77 @@ public class Cube : MonoBehaviour
     private void OnMouseDrag()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, colliderPlaneLayer))
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, colliderPlaneLayer) && GameManager.Instance.CanChooseCube)
         {
             currentPoint = hit.point;
-            direction = currentPoint - firstDragPos;
-            direction.y = 0f;
-            if (direction.magnitude > deadZone)
+            pointerDirection = currentPoint - firstDragPos;
+            pointerDirection.y = 0f;
+
+            if (pointerDirection.magnitude > 0.1f)
             {
-                if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
+                if (Mathf.Abs(pointerDirection.x) > Mathf.Abs(pointerDirection.z))
                 {
-                    direction = new Vector3(Mathf.Sign(direction.x), 0, 0);
+                    if (pointerDirection.x < 0)
+                        pointerDirection = new Vector3(Mathf.Ceil(pointerDirection.x), 0, 0);
+                    else
+                        pointerDirection = new Vector3(Mathf.Floor(pointerDirection.x), 0, 0);
                 }
                 else
-                    direction = new Vector3(0, 0, Mathf.Sign(direction.z));
+                {
+                    if (pointerDirection.z < 0)
+                        pointerDirection = new Vector3(0, 0, Mathf.Ceil(pointerDirection.z));
+                    else
+                        pointerDirection = new Vector3(0, 0, Mathf.Floor(pointerDirection.z));
+                }
             }
             else
             {
-                direction = Vector3.zero;
+                pointerDirection = Vector3.zero;
             }
+            var currentSteps = (int)pointerDirection.magnitude;
+            var currentPathDir = pointerDirection.normalized;
+
+
+            if (currentSteps >= 1)
+            {
+                isTrajectoryShown = true;
+                if ((currentSteps != steps) || !V3Equal(pathDir, currentPathDir))
+                {
+                    steps = currentSteps;
+                    Trajectory.Instance.HandleTrajectory(pointerDirection, transform.position);
+                }
+            }
+            else
+            {
+                if (isTrajectoryShown)
+                {
+                    isTrajectoryShown = false;
+                    Trajectory.Instance.Hide();
+                }
+            }
+            pathDir = currentPathDir;
         }
     }
 
     private void OnMouseUp()
     {
-        if (direction != Vector3.zero)
-            OnMouseMoving?.Invoke(direction);
-        firstDragPos = Vector3.zero;
-        direction = Vector3.zero;
+        if (pointerDirection != Vector3.zero && GameManager.Instance.CanChooseCube)
+        {
+            OnMouseMoving?.Invoke(pointerDirection);
+            Trajectory.Instance.Hide();
+        }
+        pointerDirection = Vector3.zero;
         colliderPlane.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// Compare two vectors
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public bool V3Equal(Vector3 a, Vector3 b)
+    {
+        return Vector3.SqrMagnitude(a - b) < 0.0001;
     }
 }

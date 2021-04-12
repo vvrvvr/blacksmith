@@ -14,6 +14,9 @@ public class Controls : MonoBehaviour
     public float TimeBetweenClicks;
     private bool coroutineAllowed = true;
     private GameManager gamemanager;
+    private bool isCanMoveNextStep;
+    private Coroutine swipeCoroutine;
+    private bool crRunning;
 
     private void Start()
     {
@@ -22,12 +25,12 @@ public class Controls : MonoBehaviour
 
     private void OnEnable()
     {
-        Cube.OnMouseMoving += CheckAndMove;
+        Cube.OnMouseMoving += SwipeMove;
     }
 
     private void OnDisable()
     {
-        Cube.OnMouseMoving -= CheckAndMove;
+        Cube.OnMouseMoving -= SwipeMove;
     }
 
     void Update()
@@ -59,6 +62,11 @@ public class Controls : MonoBehaviour
                 CheckAndMove(Vector3.left);
             }
             #endregion
+            if (!ObjectToControl.CanMove && crRunning) //kill coroutine if cube cant move
+            {
+                KillCoroutine();
+                //Debug.Log("killed");
+            }
         }
     }
 
@@ -79,21 +87,23 @@ public class Controls : MonoBehaviour
                 {
                     Debug.DrawLine(ObjectToControl.transform.position, placeToCheck, Color.green, 5f);
                     ObjectToControl.CanMove = true;
-                    return;
+                    return; /////////////////
                 }
 
                 // find  lowest cube, or floor (MinYCoord) 
-                while (!ObjectToControl.CheckCubeAt(underplaceToCheck) && underplaceToCheck.y >= ObjectToControl.MinYCoord) 
+                while (!ObjectToControl.CheckCubeAt(underplaceToCheck) && underplaceToCheck.y >= ObjectToControl.MinYCoord)
                 {
                     underplaceToCheck += new Vector3(0, -1, 0);
                 }
                 underplaceToCheck += new Vector3(0, 1, 0);
-
-                // can be false if sword hand on cube's way
-                if (ObjectToControl.CanMove) 
-                    ObjectToControl.MoveTo(underplaceToCheck);
-                else
+                if (ObjectToControl.CanMove) // can be false if sword hand on cube's way
+                    MoveTo(underplaceToCheck);
+                else //sword hand on the way
+                {
                     ObjectToControl.CanMove = true;
+                    KillCoroutine();
+                    // Debug.Log("cant move sword hand");
+                }
             }
             //if place occupied by another cube - try to place ObjectToControl above
             else 
@@ -101,14 +111,99 @@ public class Controls : MonoBehaviour
                 Vector3 aboveplaceToCheck = placeToCheck + new Vector3(0, 1, 0);
                 if (!ObjectToControl.CheckCubeAt(aboveplaceToCheck))
                 {
-                    // can be false if sword hand on cube's way
-                    if (ObjectToControl.CanMove) 
-                        ObjectToControl.MoveTo(aboveplaceToCheck);
+                    if (ObjectToControl.CanMove) // can be false if sword hand on cube's way
+                        MoveTo(aboveplaceToCheck);
                     else
+                    {
                         ObjectToControl.CanMove = true;
+                        KillCoroutine();
+                    }
+                }
+                else //cube cant move above 
+                {
+                    KillCoroutine();
+                    // Debug.Log("cant move above");
                 }
             }
         }
+    }
+    public void MoveTo(Vector3 position)
+    {
+        if (ObjectToControl.IsMovingAllowed)
+        {
+            Vector3 prevPos = ObjectToControl.transform.position;
+            Vector3 direction = position - ObjectToControl.transform.position;
+            ObjectToControl.BoxCollider.enabled = false;
+            StartCoroutine(MovingWithSpeed(direction, position, prevPos));
+        }
+    }
+
+    /// <summary>
+    /// Compare two vectors
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public bool V3Equal(Vector3 a, Vector3 b)
+    {
+        return Vector3.SqrMagnitude(a - b) < 0.0001;
+    }
+
+    private IEnumerator MovingWithSpeed(Vector3 dir, Vector3 pos, Vector3 prevP)
+    {
+        ObjectToControl.IsMovingAllowed = false;
+        while (!V3Equal(pos, ObjectToControl.transform.position))
+        {
+            ObjectToControl.transform.Translate(dir * ObjectToControl.movementSpeed);
+            yield return new WaitForEndOfFrame();
+        }
+        ObjectToControl.transform.position = pos;
+        ObjectToControl.UpdateMoveState();
+        ObjectToControl.UpdateCubeAt(prevP + Vector3.down);
+        ObjectToControl.UpdateCubeAt(ObjectToControl.transform.position + Vector3.down);
+        ObjectToControl.BoxCollider.enabled = true;
+        ObjectToControl.IsMovingAllowed = true;
+        if (ObjectToControl.canBreak)
+        {
+            ObjectToControl.durability--;
+            if (ObjectToControl.durability == 0)
+            {
+                gamemanager.AddCubeRated(1);
+                ObjectToControl.Kill();
+                gamemanager.CanChooseCube = true;
+            }
+            ObjectToControl.UpdateMaterialByDurability();
+        }
+        isCanMoveNextStep = true;
+    }
+    private void KillCoroutine()
+    {
+        StopCoroutine(swipeCoroutine);
+        crRunning = false;
+        gamemanager.CanChooseCube = true;
+    }
+
+    private void SwipeMove(Vector3 pointerDir)
+    {
+        swipeCoroutine = StartCoroutine(SwipeMovement(pointerDir));
+    }
+    private IEnumerator SwipeMovement(Vector3 pointerDirection)
+    {
+        crRunning = true;
+        gamemanager.CanChooseCube = false;
+        int steps = (int)pointerDirection.magnitude;
+        Vector3 dir = pointerDirection.normalized;
+        while (steps > 0)
+        {
+            //Debug.Log(steps);
+            isCanMoveNextStep = false;
+            CheckAndMove(dir);
+            yield return new WaitUntil(() => isCanMoveNextStep);
+            steps--;
+        }
+        //Debug.Log("done");
+        gamemanager.CanChooseCube = true;
+        crRunning = false;
     }
 
     private IEnumerator DoubleClickDetection()

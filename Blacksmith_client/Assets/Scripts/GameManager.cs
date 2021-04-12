@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private int threeStarsRating;
     private int twoStarsRating;
     private bool NeedCheckConditions = false;
+    public bool CanChooseCube = true;
     public bool isAllFramesFilled { get; private set; } = false;
 
     public static GameManager Instance { get; private set; }

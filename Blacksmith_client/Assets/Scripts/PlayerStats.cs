@@ -9,7 +9,8 @@ public class PlayerStats : MonoBehaviour
     #region Stats
     [HideInInspector] public string MenuToLoad;
     [HideInInspector] public int LoadedLevel;
-    [HideInInspector] public int LevelToLoad;
+   // [HideInInspector] 
+    public int LevelToLoad;
     [HideInInspector] public List<int> levelStats = new List<int>();
     [HideInInspector] public int StarsTotal;
     #endregion

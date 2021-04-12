@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\WireframeBlank.cs" />
     <Compile Include="Assets\Scripts\ChooseCube.cs" />
     <Compile Include="Assets\Scripts\Wireframe.cs" />
+    <Compile Include="Assets\Scripts\Trajectory.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Level.cs" />
     <Compile Include="Assets\Scripts\UI\ShowRating.cs" />
@@ -78,7 +79,6 @@
     <Compile Include="Assets\Scripts\UI\DisplayCurrentStarsAmount.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
-    <Compile Include="Assets\Scripts\Trajectory.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\save.txt" />

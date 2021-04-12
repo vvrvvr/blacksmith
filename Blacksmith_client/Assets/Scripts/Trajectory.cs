@@ -4,29 +4,26 @@ using UnityEngine;
 
 public class Trajectory : MonoBehaviour
 {
-    [SerializeField] private List<Vector3> pathPointsList = new List<Vector3>();
-    [SerializeField] private List<GameObject> dotsList = new List<GameObject>();
+    
     [SerializeField] private GameObject[] dotArray = new GameObject[40];
-    [SerializeField] private GameObject dotPrefab;
     [SerializeField] private LayerMask cubesLayer;
     [SerializeField] private LayerMask handLayer;
+    private List<Vector3> pathPointsList = new List<Vector3>();
     private Vector3 currentPos = Vector3.zero;
     private Vector3 dotPosToAdd = Vector3.zero;
     private Vector3 currentDir = Vector3.zero;
     private int currentSteps = 0;
-    //private int pathLenghtTemp = 0;
     private bool isSwordHandOnTheWay;
-    //private bool isPathEnd;
-
     private Vector3 halfCubeDimensions = new Vector3(0.2f, 0.2f, 0.2f); // fix this
 
-
     public static Trajectory Instance { get; private set; }
+
+    //private int pathLenghtTemp = 0;
+    //private bool isPathEnd;
 
     void Awake()
     {
         Instance = this;
-
     }
 
     public void HandleTrajectory(Vector3 pointerDir, Vector3 startPos)
@@ -71,7 +68,7 @@ public class Trajectory : MonoBehaviour
         //здесь имеем лист с координатами ключевых точек и начинаем строить
         for (int i = 0; i < pathPointsList.Count; i++)
         {
-            if (i >= dotArray.Length) //если координат точек будет больше, чем префабов точек 
+            if (i >= dotArray.Length) //на случай, если координат точек будет больше, чем префабов точек 
                 break;
             dotArray[i].SetActive(true);
             dotArray[i].transform.position = pathPointsList[i];

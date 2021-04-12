@@ -59,7 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b843c7b6f30f804d8d19907de37c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerSec: 40
+  TimerSec: 100
+  RotationCenter: {fileID: 0}
+  TutorialText: 
   ThreeStarsCubeAmount: 3
   TwoStarsCubeAmount: 4
   Ingot: {fileID: 2512468073812242885}

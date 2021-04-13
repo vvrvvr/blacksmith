@@ -20,15 +20,15 @@ public class LevelButton : MonoBehaviour
     [Header("Settings")]
     [Tooltip("Level index from LevelManager's Level Prefabs")]
     public int LevelIndex = 0;
-    [HideInInspector]
+    //[HideInInspector]
     public bool isFirstLevelInLine;
-    [HideInInspector]
+    //[HideInInspector]
     public int starsAmountToOpen;
-    [HideInInspector]
+   // [HideInInspector]
     public bool isEpic;
-    [HideInInspector]
+   // [HideInInspector]
     public int indexOfFirstLevelInLine;
-    [HideInInspector]
+   // [HideInInspector]
     public int indexOfLastLevelInLine;
 
     private PlayerStats playerStats;
@@ -109,31 +109,31 @@ public class LevelButton : MonoBehaviour
         }
     }
 
-#if UNITY_EDITOR
-    [CustomEditor(typeof(LevelButton))]
-    public class RandomScript_Editor : Editor
-    {
-        public override void OnInspectorGUI()
-        {
-            DrawDefaultInspector();
+//#if UNITY_EDITOR
+//    [CustomEditor(typeof(LevelButton))]
+//    public class RandomScript_Editor : Editor
+//    {
+//        public override void OnInspectorGUI()
+//        {
+//            DrawDefaultInspector();
 
-            LevelButton script = (LevelButton)target;
-            if (!script.isEpic)
-                script.isFirstLevelInLine = EditorGUILayout.Toggle("Is first level in line", script.isFirstLevelInLine);
-            if (script.isFirstLevelInLine)
-            {
-                script.starsAmountToOpen = EditorGUILayout.IntField("Stars amount to open", script.starsAmountToOpen);   
-            }
-            if (!script.isFirstLevelInLine)
-                script.isEpic = EditorGUILayout.Toggle("Is epic", script.isEpic);
-            if (script.isEpic)
-            {
-                script.indexOfFirstLevelInLine = EditorGUILayout.IntField("Index of first level in line", script.indexOfFirstLevelInLine);
-                script.indexOfLastLevelInLine = EditorGUILayout.IntField("Index of last level in line", script.indexOfLastLevelInLine);
-            } 
-        }
-    }
-#endif
+//            LevelButton script = (LevelButton)target;
+//            if (!script.isEpic)
+//                script.isFirstLevelInLine = EditorGUILayout.Toggle("Is first level in line", script.isFirstLevelInLine);
+//            if (script.isFirstLevelInLine)
+//            {
+//                script.starsAmountToOpen = EditorGUILayout.IntField("Stars amount to open", script.starsAmountToOpen);   
+//            }
+//            if (!script.isFirstLevelInLine)
+//                script.isEpic = EditorGUILayout.Toggle("Is epic", script.isEpic);
+//            if (script.isEpic)
+//            {
+//                script.indexOfFirstLevelInLine = EditorGUILayout.IntField("Index of first level in line", script.indexOfFirstLevelInLine);
+//                script.indexOfLastLevelInLine = EditorGUILayout.IntField("Index of last level in line", script.indexOfLastLevelInLine);
+//            } 
+//        }
+//    }
+//#endif
 }
 
 

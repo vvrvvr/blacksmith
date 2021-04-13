@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerSec: 0
+  RotationCenter: {fileID: 0}
   TutorialText: "This is the EPIC level. It\u2019s a special bonus for players who\u2019s
     got three stars in all levels of this branch. Enjoy it!"
   ThreeStarsCubeAmount: 3

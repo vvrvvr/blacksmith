@@ -242,3 +242,463 @@ System memory in use after: 113.5 MB.
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2900.
 Total: 2.938900 ms (FindLiveObjects: 0.377000 ms CreateObjectMapping: 0.273800 ms MarkObjects: 2.248500 ms  DeleteObjects: 0.038200 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 603.268447 seconds.
+  path: Assets/Art/Hands
+  artifactKey: Guid(6ca58a226fb056d4aa817d9b15540653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands using Guid(6ca58a226fb056d4aa817d9b15540653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e99323a6bf08cbc75ce588e881bceeca') in 0.029833 seconds
+  Import took 0.035018 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.960050 seconds.
+  path: Assets/Art/Hands/1
+  artifactKey: Guid(32c7c381f81e2b8429609dff76aba6d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/1 using Guid(32c7c381f81e2b8429609dff76aba6d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e841479e34eed01ae00c959ac02c3f25') in 0.009715 seconds
+  Import took 0.013787 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.676729 seconds.
+  path: Assets/Art/Hands/1/One.obj
+  artifactKey: Guid(21a80206f87cb984a889491407b7714b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/1/One.obj using Guid(21a80206f87cb984a889491407b7714b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23b887383f6c9e4b487f1f05803b7a6a') in 0.252079 seconds
+  Import took 0.256471 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.659754 seconds.
+  path: Assets/Art/Hands/1/One.mtl
+  artifactKey: Guid(02b049ff777b47a47b9f860177e65bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/1/One.mtl using Guid(02b049ff777b47a47b9f860177e65bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e290483ea3dd78753af60e203acf8440') in 0.007871 seconds
+  Import took 0.012946 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Art/Hands/1/One.mtl
+  artifactKey: Guid(02b049ff777b47a47b9f860177e65bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/1/One.mtl using Guid(02b049ff777b47a47b9f860177e65bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e290483ea3dd78753af60e203acf8440') in 0.004587 seconds
+  Import took 0.009646 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.487698 seconds.
+  path: Assets/Art/Hands/NewBehaviourScript.cs
+  artifactKey: Guid(cdcf2097f539f5541917fe3c1fa3e7fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/NewBehaviourScript.cs using Guid(cdcf2097f539f5541917fe3c1fa3e7fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57dc0fa419da4afd4955349a4af49046') in 0.012819 seconds
+  Import took 0.017393 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001509 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.961 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2289 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.0 MB.
+System memory in use after: 114.2 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2975.
+Total: 2.328600 ms (FindLiveObjects: 0.233400 ms CreateObjectMapping: 0.110000 ms MarkObjects: 1.960600 ms  DeleteObjects: 0.023700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001391 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.966 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2288 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.0 MB.
+System memory in use after: 114.2 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2976.
+Total: 2.771100 ms (FindLiveObjects: 0.436400 ms CreateObjectMapping: 0.247500 ms MarkObjects: 2.041100 ms  DeleteObjects: 0.044700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.650390 seconds.
+  path: Assets/Art/Hands/Goblin knifes
+  artifactKey: Guid(e6c8e183642357b488ffcd587301adb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes using Guid(e6c8e183642357b488ffcd587301adb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78d69aa96cf2986d4a66f811ac8f2181') in 0.012065 seconds
+  Import took 0.016706 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 43.787457 seconds.
+  path: Assets/Art/Hands/Goblin knifes/1/One.obj
+  artifactKey: Guid(e21ce55220c9f0348a2cdac04210ea54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/1/One.obj using Guid(e21ce55220c9f0348a2cdac04210ea54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '975c20eee342a583dc228ab28c0aafdb') in 0.223032 seconds
+  Import took 0.227601 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.220075 seconds.
+  path: Assets/Art/Hands/Goblin knifes/2/Two3.obj
+  artifactKey: Guid(06f74d8220c86a449b458b47933a0cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/2/Two3.obj using Guid(06f74d8220c86a449b458b47933a0cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80d7885859e678cc5ca022d8cfe012c1') in 0.034935 seconds
+  Import took 0.039055 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.770046 seconds.
+  path: Assets/Art/Hands/Goblin knifes/2/Two3.mtl
+  artifactKey: Guid(0866d2c5a4195ac4a833a989d778f4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/2/Two3.mtl using Guid(0866d2c5a4195ac4a833a989d778f4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f47d13a4e634e44e4ee9a1b548617b12') in 0.007303 seconds
+  Import took 0.012686 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.700975 seconds.
+  path: Assets/Art/Hands/Goblin knifes/2
+  artifactKey: Guid(d8a3e0102613446409d28f8db3d39a23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/2 using Guid(d8a3e0102613446409d28f8db3d39a23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc68fc56d5b725e0d59ad77290982854') in 0.009074 seconds
+  Import took 0.013263 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.185667 seconds.
+  path: Assets/Art/Hands/Goblin knifes/2/Textures/Two.json
+  artifactKey: Guid(e09e7186c2bc6c04fa2b51fbbf0b58a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/2/Textures/Two.json using Guid(e09e7186c2bc6c04fa2b51fbbf0b58a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c56fb85008bbd689365240e0d510efe3') in 0.011730 seconds
+  Import took 0.017053 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.751296 seconds.
+  path: Assets/Art/Hands/Goblin knifes/2/Textures/Two3_None_MetallicSmoothness.png
+  artifactKey: Guid(26712ac509b2c904a93e7b6c0d1c9201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/2/Textures/Two3_None_MetallicSmoothness.png using Guid(26712ac509b2c904a93e7b6c0d1c9201) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd38835357d2f6ef99c03001d9cf784b0') in 0.060497 seconds
+  Import took 0.064661 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 206.409429 seconds.
+  path: Assets/Art/Hands/Goblin knifes/2/Textures
+  artifactKey: Guid(721987449b214f645b836038db1a9893) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/2/Textures using Guid(721987449b214f645b836038db1a9893) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09803c9a6e68ebbe3aa8cc15f249731e') in 0.027290 seconds
+  Import took 0.032092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 57.143200 seconds.
+  path: Assets/Art/Hands/Goblin knifes/2/Two3.prefab
+  artifactKey: Guid(5e8f14126a3e08b4a9cda85d8856e6e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/2/Two3.prefab using Guid(5e8f14126a3e08b4a9cda85d8856e6e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '930ea193b303000dfe58b24fd8bbd258') in 0.023605 seconds
+  Import took 0.033580 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.070552 seconds.
+  path: Assets/Art/Hands/Hand1/hand_1.fbx
+  artifactKey: Guid(468f82423581918419e9228c8033b31a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Hand1/hand_1.fbx using Guid(468f82423581918419e9228c8033b31a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f2c5436e45642a70716470b8f5ca2ca') in 0.088131 seconds
+  Import took 0.092574 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.288275 seconds.
+  path: Assets/Art/Hands/Hand1/hand1_textura.png
+  artifactKey: Guid(6f2038c67c13bfd4abdefb0d5daf25b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Hand1/hand1_textura.png using Guid(6f2038c67c13bfd4abdefb0d5daf25b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a06bc3c2fec2393f9cbce8c6f9e38c7b') in 0.021569 seconds
+  Import took 0.025972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001068 seconds.
+  path: Assets/Art/Hands/Hand1/hand1_textura.png
+  artifactKey: Guid(6f2038c67c13bfd4abdefb0d5daf25b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Hand1/hand1_textura.png using Guid(6f2038c67c13bfd4abdefb0d5daf25b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a06bc3c2fec2393f9cbce8c6f9e38c7b') in 0.011044 seconds
+  Import took 0.015174 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 304.399255 seconds.
+  path: Assets/Art/Hands/Goblin knifes/2/Three1.obj
+  artifactKey: Guid(d152c7fa1b93f43449f1277492995208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/2/Three1.obj using Guid(d152c7fa1b93f43449f1277492995208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9cd701fb4d39c1db0d5a63c9f59637b') in 0.037488 seconds
+  Import took 0.042432 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.359766 seconds.
+  path: Assets/Art/Hands/Goblin knifes/3/Three1.obj
+  artifactKey: Guid(1a8ff0b2896ad37468696f21259d3f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/3/Three1.obj using Guid(1a8ff0b2896ad37468696f21259d3f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4decbd227c5dc61a5749974e9ba3172') in 0.031648 seconds
+  Import took 0.036801 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 58.496060 seconds.
+  path: Assets/Art/Hands/Goblin knifes/2/Two3.obj
+  artifactKey: Guid(06f74d8220c86a449b458b47933a0cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/2/Two3.obj using Guid(06f74d8220c86a449b458b47933a0cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1509b13e3060b06e92f06d5e0c6fbaa') in 0.033794 seconds
+  Import took 0.039146 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.605909 seconds.
+  path: Assets/Art/Hands/Goblin knifes/1
+  artifactKey: Guid(77e36a2aaea495c42916d5b55777bbb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/1 using Guid(77e36a2aaea495c42916d5b55777bbb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86a28377eddb804b29e0601aca401b5a') in 0.009859 seconds
+  Import took 0.015107 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 69.644405 seconds.
+  path: Assets/Art/Hands/Goblin knifes/1/One.prefab
+  artifactKey: Guid(c27def9870b1f3542b6f12299f608f69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/1/One.prefab using Guid(c27def9870b1f3542b6f12299f608f69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85b1afe8e81f8a506a93a5ef0e6a4bb7') in 0.024055 seconds
+  Import took 0.028433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.141172 seconds.
+  path: Assets/Art/Hands/Goblin knifes/1/goblin_knife_1.prefab
+  artifactKey: Guid(c27def9870b1f3542b6f12299f608f69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/1/goblin_knife_1.prefab using Guid(c27def9870b1f3542b6f12299f608f69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bf065a8c71ac8e80680af6dded45049') in 0.024843 seconds
+  Import took 0.029597 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.899392 seconds.
+  path: Assets/Art/Hands/Goblin knifes/2/goblin_knife_2_prefab.prefab
+  artifactKey: Guid(5e8f14126a3e08b4a9cda85d8856e6e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/2/goblin_knife_2_prefab.prefab using Guid(5e8f14126a3e08b4a9cda85d8856e6e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c366f5c4c6ebfaedb5f3c51627d35dea') in 0.054149 seconds
+  Import took 0.058445 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.388192 seconds.
+  path: Assets/Art/Hands/Goblin knifes/1/goblin_knife_1_prefab.prefab
+  artifactKey: Guid(c27def9870b1f3542b6f12299f608f69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/1/goblin_knife_1_prefab.prefab using Guid(c27def9870b1f3542b6f12299f608f69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '237edad0cc72e85e21367a385eebfa7f') in 0.025058 seconds
+  Import took 0.029780 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 333.506101 seconds.
+  path: Assets/Art/Hands/Goblin knifes/3
+  artifactKey: Guid(6664b34257257b041b81632856d84a1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/3 using Guid(6664b34257257b041b81632856d84a1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41c685cc90e87c224b57e009ab523be9') in 0.011739 seconds
+  Import took 0.018099 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 63.506950 seconds.
+  path: Assets/Art/Hands/Goblin knifes/3/goblin_knife_3_prefab.prefab
+  artifactKey: Guid(3d58d76650d402e49b42e17f4be953e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/3/goblin_knife_3_prefab.prefab using Guid(3d58d76650d402e49b42e17f4be953e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd93701c1ab7e402b5a847a4eca453530') in 0.037609 seconds
+  Import took 0.048811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.136095 seconds.
+  path: Assets/Art/Hands/Goblin knifes/4
+  artifactKey: Guid(4c3bbb444ffd8eb4398a01791c613e09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/4 using Guid(4c3bbb444ffd8eb4398a01791c613e09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a4de09d4df66e3c88eb6ccc0f1e1329') in 0.010011 seconds
+  Import took 0.014716 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 89.982163 seconds.
+  path: Assets/Art/Hands/Goblin knifes/4/goblin_knife_4_prefab.prefab
+  artifactKey: Guid(bc98adcb39ad0a04d88665b4cc760803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/4/goblin_knife_4_prefab.prefab using Guid(bc98adcb39ad0a04d88665b4cc760803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7cb53c94824a0ffac6f3db3c6a13225') in 0.036589 seconds
+  Import took 0.048354 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.854818 seconds.
+  path: Assets/Art/Hands/Goblin knifes/5
+  artifactKey: Guid(805636c5fbbdaeb4d897447002a3bda7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/5 using Guid(805636c5fbbdaeb4d897447002a3bda7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '644242c6e323a885343f20d3b66fb887') in 0.009710 seconds
+  Import took 0.015048 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 78.141671 seconds.
+  path: Assets/Art/Hands/Goblin knifes/5/goblin_knife_5_prefab.prefab
+  artifactKey: Guid(ed6c4e3c604c1604fae0591a373d58ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/5/goblin_knife_5_prefab.prefab using Guid(ed6c4e3c604c1604fae0591a373d58ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9541f308997608c3a51283d7d48e79e') in 0.031515 seconds
+  Import took 0.037512 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003774 seconds.
+  path: Assets/Art/Hands/Goblin knifes/5/goblin_knife_5_prefab.prefab
+  artifactKey: Guid(ed6c4e3c604c1604fae0591a373d58ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Goblin knifes/5/goblin_knife_5_prefab.prefab using Guid(ed6c4e3c604c1604fae0591a373d58ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9541f308997608c3a51283d7d48e79e') in 0.021012 seconds
+  Import took 0.026911 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.647821 seconds.
+  path: Assets/Art/Hands/Hand2/hand_2.fbx
+  artifactKey: Guid(eeb8918bbfc1b7d459292b8dd09aa65c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Hands/Hand2/hand_2.fbx using Guid(eeb8918bbfc1b7d459292b8dd09aa65c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ef758114f9c901b6555bba7bd42f576') in 0.031503 seconds
+  Import took 0.036238 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.853143 seconds.
+  path: Assets/Art/Products/Sword_Epic0.fbx
+  artifactKey: Guid(3e5f24f6a85467e46b6e643fc4a4f78f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Products/Sword_Epic0.fbx using Guid(3e5f24f6a85467e46b6e643fc4a4f78f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b363612be340927c686522bc7dbf3a81') in 0.058971 seconds
+  Import took 0.063564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 116.684367 seconds.
+  path: Assets/Art/Stump/26168455691666b9183e8901d8125f75.jpg
+  artifactKey: Guid(91d5054a2acf2ff45b852f767cb7ddbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stump/26168455691666b9183e8901d8125f75.jpg using Guid(91d5054a2acf2ff45b852f767cb7ddbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64c425e5d8ab385823a54e5dbf5ad6d7') in 0.035359 seconds
+  Import took 0.040258 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.186815 seconds.
+  path: Assets/Art/Stump/penyok.fbx
+  artifactKey: Guid(8ff2a2b70c114ea40ae118af7ee6ba81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stump/penyok.fbx using Guid(8ff2a2b70c114ea40ae118af7ee6ba81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d9d192ff45ee77b45b7312deca5aaf0') in 0.037257 seconds
+  Import took 0.042481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.793980 seconds.
+  path: Assets/Art/Stump/tree-rings.jpg
+  artifactKey: Guid(96074e947c657944489338c2fd97db87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stump/tree-rings.jpg using Guid(96074e947c657944489338c2fd97db87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34a2c43b37809cebe0c1f1d3c8c99f65') in 0.026671 seconds
+  Import took 0.033674 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005637 seconds.
+  path: Assets/Art/Stump/tree-rings.jpg
+  artifactKey: Guid(96074e947c657944489338c2fd97db87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Stump/tree-rings.jpg using Guid(96074e947c657944489338c2fd97db87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34a2c43b37809cebe0c1f1d3c8c99f65') in 0.014864 seconds
+  Import took 0.019853 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 822.370509 seconds.
+  path: Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab
+  artifactKey: Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab using Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88569a0f575e72a9ed91d0d355b3be19') in 0.055607 seconds
+  Import took 0.061096 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.717536 seconds.
+  path: Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab
+  artifactKey: Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab using Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0374bd5a0d703256b631455bfcee7d1f') in 0.045469 seconds
+  Import took 0.050678 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.067124 seconds.
+  path: Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab
+  artifactKey: Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab using Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0374bd5a0d703256b631455bfcee7d1f') in 0.020836 seconds
+  Import took 0.026322 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.043421 seconds.
+  path: Assets/Prefabs/Levels/Level_0_EPIC.prefab
+  artifactKey: Guid(1cd1bf52eeb2d6f4eb502eacf4fd4214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level_0_EPIC.prefab using Guid(1cd1bf52eeb2d6f4eb502eacf4fd4214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ccf985c0ac4873e2dc358ed384b6a1e') in 0.026822 seconds
+  Import took 0.031961 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005219 seconds.
+  path: Assets/Prefabs/Levels/Level_0_EPIC.prefab
+  artifactKey: Guid(1cd1bf52eeb2d6f4eb502eacf4fd4214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Level_0_EPIC.prefab using Guid(1cd1bf52eeb2d6f4eb502eacf4fd4214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ccf985c0ac4873e2dc358ed384b6a1e') in 0.024971 seconds
+  Import took 0.030227 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.257161 seconds.
+  path: Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab
+  artifactKey: Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab using Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '890ac20341feeb466c0986a286cab8b3') in 0.032571 seconds
+  Import took 0.037391 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001594 seconds.
+  path: Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab
+  artifactKey: Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab using Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '890ac20341feeb466c0986a286cab8b3') in 0.025184 seconds
+  Import took 0.029824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 34.181340 seconds.
+  path: Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab
+  artifactKey: Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Levels/Goblin_Knife_1_1.prefab using Guid(eaf9e53209eaa754a922a7bead5ec482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f05b43de5b3e548e0dcfdd47dfbc9831') in 0.022429 seconds
+  Import took 0.027159 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.884442 seconds.
+  path: Assets/Scenes/MainMenu.unity
+  artifactKey: Guid(7cf2ffa9f764ac64ea4280bb45e762c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/MainMenu.unity using Guid(7cf2ffa9f764ac64ea4280bb45e762c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc37432ba522e5cbe21b952a7e8f9a3b') in 0.007836 seconds
+  Import took 0.012430 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001476 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.063 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2288 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.4 MB.
+System memory in use after: 114.6 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 3016.
+Total: 2.769200 ms (FindLiveObjects: 0.403700 ms CreateObjectMapping: 0.235200 ms MarkObjects: 2.103500 ms  DeleteObjects: 0.025900 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

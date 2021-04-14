@@ -17,10 +17,12 @@ public class Controls : MonoBehaviour
     private bool isCanMoveNextStep;
     private Coroutine swipeCoroutine;
     private bool crRunning;
+    private AudioSource audioS;
 
     private void Start()
     {
         gamemanager = GameManager.Instance;
+        audioS = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -186,6 +188,17 @@ public class Controls : MonoBehaviour
     private void SwipeMove(Vector3 pointerDir)
     {
         swipeCoroutine = StartCoroutine(SwipeMovement(pointerDir));
+        if (audioS.isPlaying)
+        {
+            audioS.pitch = Random.Range(0.7f, 1.2f);
+            audioS.Stop();
+            audioS.Play();
+        }
+        else
+        {
+            audioS.pitch = Random.Range(0.7f, 1.2f);
+            audioS.Play();
+        }
     }
     private IEnumerator SwipeMovement(Vector3 pointerDirection)
     {

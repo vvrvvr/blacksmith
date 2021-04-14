@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     private int twoStarsRating;
     private bool NeedCheckConditions = false;
     public bool CanChooseCube = true;
+    private AudioSource audioS;
     public bool isAllFramesFilled { get; private set; } = false;
 
     public static GameManager Instance { get; private set; }
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        audioS = GetComponent<AudioSource>();
     }
 
     private IEnumerator LateCheckConditions()
@@ -94,6 +96,17 @@ public class GameManager : MonoBehaviour
 
     private void OnCubeDestroy(bool isRated)
     {
+        if (audioS.isPlaying)
+        {
+            audioS.pitch = UnityEngine.Random.Range(0.7f, 1.2f);
+            audioS.Stop();
+            audioS.Play();
+        }
+        else
+        {
+            audioS.pitch = UnityEngine.Random.Range(0.7f, 1.2f);
+            audioS.Play();
+        }
         CubesAmount--;
         if (isRated)
             CubesRated++;

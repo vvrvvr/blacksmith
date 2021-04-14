@@ -17,6 +17,7 @@ public class IngotDragAndDrop : MonoBehaviour
     #region DoubleClick
     private const float DoubleClickSpeed = 0.25f;
     private float doubleClickTime = 0f;
+    private AudioSource audioS;
     #endregion
 
     #region Drag & Drop
@@ -25,6 +26,10 @@ public class IngotDragAndDrop : MonoBehaviour
     private Vector3 baseIngotPos;
     #endregion
 
+    private void Awake()
+    {
+        audioS = GetComponent<AudioSource>();
+    }
     public void Init(Transform _colliderPlane)
     {
         colliderPlane = _colliderPlane;
@@ -65,6 +70,7 @@ public class IngotDragAndDrop : MonoBehaviour
             {
                 OnIngotPlaced?.Invoke(ingot);
                 enabled = false;
+                audioS.Play();
             }
         }
         doubleClickTime = 0f;

@@ -27,7 +27,7 @@ public class Ingot : MonoBehaviour
         Vector3 colliderSize = new Vector3(width + 0.1f, height + 0.1f, length + 0.1f);
         Vector3 meshSize = new Vector3(width - 0.1f, height - 0.1f, length - 0.1f);
         _boxCollider.size = colliderSize;
-        _meshRenderer.transform.localScale = meshSize;
+        _meshRenderer.transform.localScale = meshSize;  
 
         SpawnCubes();
 

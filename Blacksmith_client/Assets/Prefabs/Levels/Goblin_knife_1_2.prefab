@@ -31,6 +31,7 @@ Transform:
   - {fileID: 174194456820284817}
   - {fileID: 4881061149048662334}
   - {fileID: 6196809194488943965}
+  - {fileID: 7323309678072111662}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,12 +48,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerSec: 45
+  RotationCenter: {fileID: 0}
+  TutorialText: 
   ThreeStarsCubeAmount: 2
   TwoStarsCubeAmount: 4
   Ingot: {fileID: 174194456820284819}
   IngotDrag: {fileID: 174194456820284822}
   WireframeBlank: {fileID: 4881061149048662333}
-  finalProduct: {fileID: 0}
+  finalProduct: {fileID: 894917116616956276}
 --- !u!1 &4881061149048662332
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +135,101 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3055561, y: 0.04864876, z: 0.2456115}
   m_Center: {x: 0, y: 0.008985764, z: 0.13115123}
+--- !u!114 &894917116616956276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7992288409372293268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65b318f0d038ac4c960ab4897e641fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &416786837579700675
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3990319050764039768}
+    m_Modifications:
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.000000059424963
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.707107
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000006705523
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720003866374463831, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_Name
+      value: goblin_knife_2_prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720003866374463831, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+--- !u!4 &7323309678072111662 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6947125894998932461, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+  m_PrefabInstance: {fileID: 416786837579700675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7992288409372293268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7720003866374463831, guid: 5e8f14126a3e08b4a9cda85d8856e6e3, type: 3}
+  m_PrefabInstance: {fileID: 416786837579700675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &654524118104701887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1135,14 +1233,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeb8918bbfc1b7d459292b8dd09aa65c, type: 3}
---- !u!1 &6824270159710195687 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eeb8918bbfc1b7d459292b8dd09aa65c, type: 3}
-  m_PrefabInstance: {fileID: 5941871183419814582}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6196809194488943965 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eeb8918bbfc1b7d459292b8dd09aa65c, type: 3}
+  m_PrefabInstance: {fileID: 5941871183419814582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6824270159710195687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eeb8918bbfc1b7d459292b8dd09aa65c, type: 3}
   m_PrefabInstance: {fileID: 5941871183419814582}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6692329289697685766

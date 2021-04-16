@@ -74,7 +74,7 @@ public class Controls : MonoBehaviour
 
     public void CheckAndMove(Vector3 direction)
     {
-        if(ObjectToControl.CanMove && !gamemanager.isAllFramesFilled)
+	    if(ObjectToControl != null && ObjectToControl.CanMove && !gamemanager.isAllFramesFilled)
         {
             Vector3 placeToCheck = ObjectToControl.transform.position + direction;
 

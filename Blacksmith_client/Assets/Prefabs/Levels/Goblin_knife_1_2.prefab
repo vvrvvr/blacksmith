@@ -56,6 +56,7 @@ MonoBehaviour:
   IngotDrag: {fileID: 174194456820284822}
   WireframeBlank: {fileID: 4881061149048662333}
   finalProduct: {fileID: 894917116616956276}
+  ProductHandle: {fileID: 6824270159710195687}
 --- !u!1 &4881061149048662332
 GameObject:
   m_ObjectHideFlags: 0

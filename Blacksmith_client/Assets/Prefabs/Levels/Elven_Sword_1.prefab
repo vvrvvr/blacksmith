@@ -55,6 +55,7 @@ MonoBehaviour:
   IngotDrag: {fileID: 7382538623193525189}
   WireframeBlank: {fileID: 4881061149048662333}
   finalProduct: {fileID: 0}
+  ProductHandle: {fileID: 4784415769945365398}
 --- !u!65 &6110235646719862481
 BoxCollider:
   m_ObjectHideFlags: 0

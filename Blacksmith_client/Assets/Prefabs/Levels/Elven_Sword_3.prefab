@@ -60,12 +60,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerSec: 0
+  RotationCenter: {fileID: 0}
+  TutorialText: 
   ThreeStarsCubeAmount: 2
   TwoStarsCubeAmount: 3
   Ingot: {fileID: 2989022734566688231}
   IngotDrag: {fileID: 2989022734566688226}
   WireframeBlank: {fileID: 4881061149048662333}
   finalProduct: {fileID: 0}
+  ProductHandle: {fileID: 349760289767103503}
 --- !u!1 &4881061149048662332
 GameObject:
   m_ObjectHideFlags: 0

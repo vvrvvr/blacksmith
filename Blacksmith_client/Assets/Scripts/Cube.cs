@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class Cube : MonoBehaviour
@@ -227,7 +228,8 @@ public class Cube : MonoBehaviour
     }
 
     private void OnMouseDrag()
-    {
+	{
+		if (EventSystem.current.IsPointerOverGameObject()) return;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, colliderPlaneLayer) && GameManager.Instance.CanChooseCube)
         {

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Level : MonoBehaviour
 {
@@ -17,5 +17,6 @@ public class Level : MonoBehaviour
     public WireframeBlank WireframeBlank;
 
     [Header("Final Product")]
-    public FinalProduct finalProduct;
+	public FinalProduct finalProduct;
+	public GameObject ProductHandle;
 }

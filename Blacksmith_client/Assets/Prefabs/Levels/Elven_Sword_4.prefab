@@ -47,12 +47,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerSec: 0
+  RotationCenter: {fileID: 0}
+  TutorialText: 
   ThreeStarsCubeAmount: 4
   TwoStarsCubeAmount: 5
   Ingot: {fileID: 8604914152879043755}
   IngotDrag: {fileID: 8604914152879043758}
   WireframeBlank: {fileID: 4881061149048662333}
   finalProduct: {fileID: 0}
+  ProductHandle: {fileID: 4544939149624028390}
 --- !u!65 &2642030287876903023
 BoxCollider:
   m_ObjectHideFlags: 0

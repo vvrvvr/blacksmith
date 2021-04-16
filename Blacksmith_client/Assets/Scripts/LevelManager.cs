@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -37,7 +37,9 @@ public class LevelManager : MonoBehaviour
     {
         if(currentLevel.finalProduct != null)
         {
-            currentLevel.finalProduct.Activate();
+	        currentLevel.finalProduct.Activate();
+	        if(currentLevel.ProductHandle != null)
+	        	currentLevel.ProductHandle.SetActive(false);
             currentLevel.Ingot.gameObject.SetActive(false);
             currentLevel.WireframeBlank.gameObject.SetActive(false);
         }

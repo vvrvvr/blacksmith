@@ -19,7 +19,7 @@ public class ChooseCube : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && gamemanager.CanChooseCube)
         {
-            if (EventSystem.current.IsPointerOverGameObject()) return;
+	        if (EventSystem.current.IsPointerOverGameObject()) return;
             RaycastHit rayHit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, clickableLayer))
             {

@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerSec: 0
+  RotationCenter: {fileID: 0}
   TutorialText: 'Try to do it yourself. Remember: less extra cubes  = more rating
     stars.'
   ThreeStarsCubeAmount: 2
@@ -68,6 +69,7 @@ MonoBehaviour:
   IngotDrag: {fileID: 4074131772132598034}
   WireframeBlank: {fileID: 4881061149048662333}
   finalProduct: {fileID: 0}
+  ProductHandle: {fileID: 2495878931975206792}
 --- !u!1 &4881061149048662332
 GameObject:
   m_ObjectHideFlags: 0

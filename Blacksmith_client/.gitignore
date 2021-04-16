@@ -10,10 +10,12 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
-[Aa]ssets/SuperEditor/
-
-# Never ignore Asset meta data
+# Never ignore Asset meta data, except editor
 !/[Aa]ssets/**/*.meta
+
+# SuperEditor files
+[Aa]ssets/SuperEditor/
+[Aa]ssets/SuperEditor.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*

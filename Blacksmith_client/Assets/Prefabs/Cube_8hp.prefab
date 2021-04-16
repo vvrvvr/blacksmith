@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7820341230127875349}
   - component: {fileID: 666359487783943529}
   m_Layer: 6
-  m_Name: Cube_3hp
+  m_Name: Cube_8hp
   m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654750387333326851}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 743ae6d44bf803b46b11cdf7790c04a8, type: 2}
+  - {fileID: 2100000, guid: 8102408341bc39e408b7ea3539435da1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +93,7 @@ BoxCollider:
   m_GameObject: {fileID: 1654750387333326851}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.95, y: 0.95, z: 0.95}
   m_Center: {x: 0, y: 0, z: 0}
@@ -127,12 +127,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durability: 8
   MinYCoord: 0
-  deadZone: 1
   movementSpeed: 0.1
   durabilityMaterials:
   - {fileID: 2100000, guid: 85d19a17407caa74b945ac4d6e67cc33, type: 2}
-  - {fileID: 2100000, guid: 9f12b12d388b00a4ca079184dc8758a8, type: 2}
-  - {fileID: 2100000, guid: bf1f9cc48a2d1f14e9299e168bb52110, type: 2}
+  - {fileID: 2100000, guid: 66ae4adf4dede264a8fe5df51cff4710, type: 2}
+  - {fileID: 2100000, guid: 87b2948b49720e34eabe698e3bb0cb16, type: 2}
+  - {fileID: 2100000, guid: bc91046ea308e934890cefa81d43aec0, type: 2}
+  - {fileID: 2100000, guid: ace09d3af323b8d4e955c23941dd2dce, type: 2}
+  - {fileID: 2100000, guid: a26440d36f437b5489271da68f63476f, type: 2}
+  - {fileID: 2100000, guid: b066aca89cdcea34e9063bdf08e99e09, type: 2}
+  - {fileID: 2100000, guid: 8102408341bc39e408b7ea3539435da1, type: 2}
   colliderPlaneLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -142,3 +146,6 @@ MonoBehaviour:
   handLayer:
     serializedVersion: 2
     m_Bits: 1024
+  BoxCollider: {fileID: 0}
+  IsMovingAllowed: 1
+  canBreak: 0

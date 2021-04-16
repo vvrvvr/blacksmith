@@ -127,12 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durability: 0
   MinYCoord: 0
-  deadZone: 1
   movementSpeed: 0.1
   durabilityMaterials:
-  - {fileID: 2100000, guid: 85d19a17407caa74b945ac4d6e67cc33, type: 2}
-  - {fileID: 2100000, guid: 9f12b12d388b00a4ca079184dc8758a8, type: 2}
-  - {fileID: 2100000, guid: bf1f9cc48a2d1f14e9299e168bb52110, type: 2}
+  - {fileID: 2100000, guid: 8102408341bc39e408b7ea3539435da1, type: 2}
   colliderPlaneLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -142,3 +139,6 @@ MonoBehaviour:
   handLayer:
     serializedVersion: 2
     m_Bits: 1024
+  BoxCollider: {fileID: 0}
+  IsMovingAllowed: 1
+  canBreak: 0

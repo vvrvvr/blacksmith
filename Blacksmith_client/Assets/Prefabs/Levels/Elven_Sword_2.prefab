@@ -49,8 +49,8 @@ MonoBehaviour:
   TimerSec: 0
   RotationCenter: {fileID: 0}
   TutorialText: 
-  ThreeStarsCubeAmount: 3
-  TwoStarsCubeAmount: 4
+  ThreeStarsCubeAmount: 6
+  TwoStarsCubeAmount: 7
   Ingot: {fileID: 6000540157355412760}
   IngotDrag: {fileID: 6000540157355412765}
   WireframeBlank: {fileID: 4881061149048662333}

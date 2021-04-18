@@ -3,45 +3,43 @@ using UnityEngine;
 
 public class ChooseCube : MonoBehaviour
 {
-    [SerializeField] LayerMask clickableLayer;
-    [SerializeField] GameObject PlayerController;
-    
+    [SerializeField] private LayerMask clickableLayer;
+    [SerializeField] private CubeSelector cubeSelector;
     private Controls controlScript;
-    private GameObject currentCube;
-
-    
+    private GameManager gamemanager;
+    private Cube currentCube;
 
     private void Start()
     {
-        controlScript = PlayerController.GetComponent<Controls>();
+        controlScript = GetComponent<Controls>();
+        gamemanager = GameManager.Instance;
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && gamemanager.CanChooseCube)
         {
-            if (EventSystem.current.IsPointerOverGameObject()) return;
+	        if (EventSystem.current.IsPointerOverGameObject()) return;
             RaycastHit rayHit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, Mathf.Infinity, clickableLayer))
             {
-                if (currentCube != rayHit.collider.gameObject)
+                if(currentCube == null || currentCube != null && currentCube.gameObject != rayHit.collider.gameObject)
                 {
                     if (currentCube != null)
                     {
-                        currentCube.GetComponent<Cube>().TurnRed();
                         controlScript.ClickCounter = 0;
                     }
-                    currentCube = rayHit.collider.gameObject;
-                    currentCube.GetComponent<Cube>().TurnGreen();
-                    controlScript.ObjectToControl = currentCube.GetComponent<Cube>();
+                    currentCube = rayHit.collider.gameObject.GetComponent<Cube>();
+                    if(currentCube.CanMove)
+                        cubeSelector.SelectCube(currentCube);
+                    controlScript.ObjectToControl = currentCube;
                     controlScript.ClickCounter++; //double tap functionality
                 }
                 else
                 {
-                    if (currentCube != null)
+                    if (currentCube.gameObject != null)
                     {
                         controlScript.ClickCounter++; //double tap functionality
-                        
                     }
                 }
             }

@@ -1,17 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    private const string LEVEL_SAVE_KEY = "save_level";
-
     public static PlayerStats Singleton;
     private bool isSaveActive = false;
 
     #region Stats
     [HideInInspector] public string MenuToLoad;
     [HideInInspector] public int LoadedLevel;
+   // [HideInInspector] 
     public int LevelToLoad;
-    public int Progress;
+    [HideInInspector] public List<int> levelStats = new List<int>();
+    [HideInInspector] public int StarsTotal;
     #endregion
 
     private void Awake()
@@ -24,35 +25,37 @@ public class PlayerStats : MonoBehaviour
         isSaveActive = true;
         Singleton = this;
         DontDestroyOnLoad(gameObject);
-        Progress = PlayerPrefs.GetInt(LEVEL_SAVE_KEY, 0);
     }
 
     private void OnDestroy()
     {
         if (!isSaveActive)
             return;
-        SaveProgress(Progress);
-    }
-
-    public void SaveProgress(int progress)
-    {
-        if(progress > Progress)
-            Progress = progress;
-        PlayerPrefs.SetInt(LEVEL_SAVE_KEY, progress);
-        PlayerPrefs.Save();
-    }
-
-    public void SaveLevelProgress(int modifier = 0)
-    {
-        if (LoadedLevel + modifier > Progress)
-            Progress = LoadedLevel + modifier;
-        PlayerPrefs.SetInt(LEVEL_SAVE_KEY, Progress);
-        PlayerPrefs.Save();
     }
 
     public void SetLevelToLoad(int levelIndex)
     {
         LevelToLoad = levelIndex;
         LoadedLevel = levelIndex;
+    }
+
+    public void RecalculateStars()
+    {
+        StarsTotal = 0;
+        foreach (int stars in levelStats)
+        {
+            StarsTotal += stars;
+        }
+    }
+
+    public void RefreshLevelStats(List<Level> levelPrefabs)
+    {
+        if (levelPrefabs.Count > levelStats.Count)
+        {
+            while (levelStats.Count < levelPrefabs.Count)
+            {
+                levelStats.Add(0);
+            }
+        }
     }
 }

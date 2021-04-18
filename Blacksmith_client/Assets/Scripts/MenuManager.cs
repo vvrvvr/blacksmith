@@ -1,13 +1,16 @@
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.Collections;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> panels;
+    [SerializeField] private GameObject initialPanel;
+    [SerializeField] private Transform panelsContainer;
 
     public static MenuManager Singleton;
     private void Awake() => Singleton = this;
+
+    private GameObject activePanel = null;
 
     public void ExitGame() => Application.Quit();
     public void LoadScene(string name) => SceneManager.LoadScene(name);
@@ -15,8 +18,15 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        foreach(Transform panel in panelsContainer)
+        {
+            panel.gameObject.SetActive(false);
+        }
+
         if (PlayerStats.Singleton.MenuToLoad != "")
-            EnablePanel(PlayerStats.Singleton.MenuToLoad);
+            EnablePanel(panelsContainer.Find(PlayerStats.Singleton.MenuToLoad).gameObject);
+        else
+            EnablePanel(initialPanel);
     }
 
     public void SetMenuToLoad(string menuName)
@@ -26,27 +36,24 @@ public class MenuManager : MonoBehaviour
 
     public void EnablePanel(GameObject panel)
     {
-        DisableAllPanel();
-        panel.SetActive(true);
-    }
-
-    public void EnablePanel(string name)
-    {
-        DisableAllPanel();
-        foreach(var p in panels)
+        if (panel != null)
         {
-            if(p.name == name)
-            {
-                p.SetActive(true);
-                return;
-            }
+            if(activePanel != null)
+                activePanel.SetActive(false);
+            panel.SetActive(true);
+            activePanel = panel;
         }
-        Debug.LogWarning($"Panel [{name}] not registered!");
     }
 
-    private void DisableAllPanel()
+    public void SwitchActivity(GameObject go)
     {
-        foreach (var p in panels)
-            p.SetActive(false);
+        go.SetActive(!go.activeSelf);
+    }
+
+    public void EnablePanelWithDelay(GameObject panel, float delay) => StartCoroutine(EnablePanelCoroutine(panel, delay));
+    private IEnumerator EnablePanelCoroutine(GameObject panel, float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        EnablePanel(panel);
     }
 }

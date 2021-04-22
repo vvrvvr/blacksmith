@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class CubeSelector : MonoBehaviour
 {
-    private Cube selectedCube;
+    [HideInInspector] public Cube selectedCube;
+    public event System.Action OnSelect;
+    public event System.Action OnDeselect;
 
     public void SelectCube(Cube cube)
     {
@@ -10,6 +12,7 @@ public class CubeSelector : MonoBehaviour
         selectedCube = cube;
         selectedCube.OnDestroyEventLocal += DeselectCube;
         transform.position = cube.transform.position;
+        OnSelect?.Invoke();
     }
 
     private void Update()
@@ -29,5 +32,6 @@ public class CubeSelector : MonoBehaviour
     {
         gameObject.SetActive(false);
         selectedCube = null;
+        OnDeselect?.Invoke();
     }
 }

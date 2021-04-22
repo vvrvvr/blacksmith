@@ -45,6 +45,11 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void SetTimeScale(float scale)
+    {
+        Time.timeScale = scale;
+    }
+
     public void SwitchActivity(GameObject go)
     {
         go.SetActive(!go.activeSelf);

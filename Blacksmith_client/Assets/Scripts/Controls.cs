@@ -17,7 +17,10 @@ public class Controls : MonoBehaviour
     private bool isCanMoveNextStep;
     private Coroutine swipeCoroutine;
     private bool crRunning;
+    private bool isMoveBlocked;
     private AudioSource audioS;
+
+    public event System.Action<Cube> OnCubeMove;
 
     private void Start()
     {
@@ -138,6 +141,10 @@ public class Controls : MonoBehaviour
             ObjectToControl.BoxCollider.enabled = false;
             StartCoroutine(MovingWithSpeed(direction, position, prevPos));
         }
+        else
+        {
+            isMoveBlocked = true;
+        }
     }
 
     /// <summary>
@@ -168,6 +175,7 @@ public class Controls : MonoBehaviour
         if (ObjectToControl.canBreak)
         {
             ObjectToControl.durability--;
+            OnCubeMove?.Invoke(ObjectToControl);
             if (ObjectToControl.durability == 0)
             {
                 gamemanager.AddCubeRated(1);
@@ -210,8 +218,9 @@ public class Controls : MonoBehaviour
         {
             //Debug.Log(steps);
             isCanMoveNextStep = false;
+            isMoveBlocked = false;
             CheckAndMove(dir);
-            yield return new WaitUntil(() => isCanMoveNextStep);
+            yield return new WaitUntil(() => isCanMoveNextStep || isMoveBlocked);
             steps--;
         }
         //Debug.Log("done");

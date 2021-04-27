@@ -61,10 +61,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 0
   RotationCenter: {fileID: 0}
-  TutorialText: 'Try to do it yourself. Remember: less extra cubes  = more rating
-    stars.'
-  ThreeStarsCubeAmount: 2
-  TwoStarsCubeAmount: 3
+  TutorialText: 'Try to do it yourself. Remember: less extra cubes  = more money.
+    If you want to rotate the camera press the "eye@ botton/'
+  ThreeStarsCubeAmount: 4
+  TwoStarsCubeAmount: 5
   Ingot: {fileID: 4074131772132598039}
   IngotDrag: {fileID: 4074131772132598034}
   WireframeBlank: {fileID: 4881061149048662333}
@@ -962,6 +962,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3990319050764039768}
     m_Modifications:
+    - target: {fileID: 7434626153489644649, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
+      propertyPath: height
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7434626153489644649, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
       propertyPath: length
       value: 3

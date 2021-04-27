@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 0
   RotationCenter: {fileID: 0}
-  TutorialText: 
+  TutorialText: Now try to work with the Elven Glass weapons. The Elven Glass is
+    very fragile material. You'll got not more, than 8 movement of each cube.
   ThreeStarsCubeAmount: 5
   TwoStarsCubeAmount: 6
   Ingot: {fileID: 7382538623193525184}
@@ -233,6 +234,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7434626153489644649, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
       propertyPath: width
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434626153489644649, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
+      propertyPath: height
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7434626153489644649, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class Controls : MonoBehaviour
 {
     //[SerializeField] private LayerMask cubesLayer;
     //[SerializeField] private LayerMask wireframeLayer;
     [SerializeField] private LayerMask anvilBorder;
+    [SerializeField] private bool isDebug;
     [HideInInspector] public Cube ObjectToControl;
     [HideInInspector] public int ClickCounter = 0;
     private float firstClickTime = 0f;
@@ -19,6 +21,7 @@ public class Controls : MonoBehaviour
     private bool crRunning;
     private bool isMoveBlocked;
     private AudioSource audioS;
+
 
     public event System.Action<Cube> OnCubeMove;
 
@@ -70,7 +73,8 @@ public class Controls : MonoBehaviour
             if (!ObjectToControl.CanMove && crRunning) //kill coroutine if cube cant move
             {
                 KillCoroutine();
-                //Debug.Log("killed");
+                if(isDebug)
+                    Debug.Log("killed");
             }
         }
     }
@@ -107,7 +111,8 @@ public class Controls : MonoBehaviour
                 {
                     ObjectToControl.CanMove = true;
                     KillCoroutine();
-                    // Debug.Log("cant move sword hand");
+                    if (isDebug)
+                        Debug.Log("cant move sword hand");
                 }
             }
             //if place occupied by another cube - try to place ObjectToControl above
@@ -127,7 +132,8 @@ public class Controls : MonoBehaviour
                 else //cube cant move above 
                 {
                     KillCoroutine();
-                    // Debug.Log("cant move above");
+                    if (isDebug)
+                     Debug.Log("cant move above");
                 }
             }
         }
@@ -223,7 +229,8 @@ public class Controls : MonoBehaviour
             yield return new WaitUntil(() => isCanMoveNextStep || isMoveBlocked);
             steps--;
         }
-        //Debug.Log("done");
+        if (isDebug)
+            Debug.Log("done");
         gamemanager.CanChooseCube = true;
         crRunning = false;
     }

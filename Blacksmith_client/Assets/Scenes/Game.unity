@@ -5491,7 +5491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuToLoad: 
   LoadedLevel: 0
-  LevelToLoad: 4
+  LevelToLoad: 10
   levelStats: 
   StarsTotal: 0
 --- !u!4 &1209413664
@@ -5950,6 +5950,7 @@ MonoBehaviour:
   - {fileID: 621274757}
   - {fileID: 1022743958}
   - {fileID: 298598595}
+  controls: {fileID: 1684829435}
   cubesLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -7586,12 +7587,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc63b4358617214aa848b0156b6f306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anvilBorder:
-    serializedVersion: 2
-    m_Bits: 1024
-  isDebug: 1
   ObjectToControl: {fileID: 0}
   ClickCounter: 0
+  PathPointsList: []
   TimeBetweenClicks: 0.5
 --- !u!4 &1684829436
 Transform:

@@ -29,7 +29,7 @@ public class Cube : MonoBehaviour
     public Action<bool> OnDestroyEventLocal;
     public static Action<bool> OnDestroyEventGlobal;
     public static Action<bool> OnStateChange;
-    public static Action<Vector3> OnMouseMoving;
+    public static Action OnMouseMoving;
 
     public bool isInitialized { get; private set; } = false;
     public bool CanMove { get; set; } = true;
@@ -250,7 +250,7 @@ public class Cube : MonoBehaviour
     {
         if (pointerDirection != Vector3.zero && GameManager.Instance.CanChooseCube)
         {
-            OnMouseMoving?.Invoke(pointerDirection);
+            OnMouseMoving?.Invoke();
             Trajectory.Instance.Hide();
         }
         pointerDirection = Vector3.zero;

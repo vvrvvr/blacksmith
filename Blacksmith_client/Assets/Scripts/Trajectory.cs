@@ -6,6 +6,7 @@ public class Trajectory : MonoBehaviour
 {
     
     [SerializeField] private GameObject[] dotArray = new GameObject[40];
+    [SerializeField] private Controls controls;
     [SerializeField] private LayerMask cubesLayer;
     [SerializeField] private LayerMask handLayer;
     private List<Vector3> pathPointsList = new List<Vector3>();
@@ -64,6 +65,8 @@ public class Trajectory : MonoBehaviour
                 break;
             currentSteps--;
         }
+        controls.PathPointsList.Clear();
+        controls.PathPointsList = pathPointsList;
         pathPointsList = pathPointsList.Distinct().ToList();
         //здесь имеем лист с координатами ключевых точек и начинаем строить
         for (int i = 0; i < pathPointsList.Count; i++)

@@ -117,44 +117,7 @@ public class Cube : MonoBehaviour
         return layerNumber - 1;
     }
 
-    //public void MoveTo(Vector3 position)
-    //{
-    //    if (isMovingAllowed)
-    //    {
-    //        Vector3 prevPos = transform.position;
-    //        Vector3 direction = position - transform.position;
-    //        boxCollider.enabled = false;
-    //        StartCoroutine(MovingWithSpeed(direction, position, prevPos));
-    //    }
-    //}
-
-   
-
-    //private IEnumerator MovingWithSpeed(Vector3 dir, Vector3 pos, Vector3 prevP)
-    //{
-    //    isMovingAllowed = false;
-    //    while (!V3Equal(pos, transform.position))
-    //    {
-    //        transform.Translate(dir * movementSpeed);
-    //        yield return new WaitForEndOfFrame();
-    //    }
-    //    transform.position = pos;
-    //    UpdateMoveState();
-    //    UpdateCubeAt(prevP + Vector3.down);
-    //    UpdateCubeAt(transform.position + Vector3.down);
-    //    boxCollider.enabled = true;
-    //    isMovingAllowed = true;
-    //    if (canBreak)
-    //    {
-    //        durability--;
-    //        if (durability == 0)
-    //        {
-    //            GameManager.Instance.AddCubeRated(1);
-    //            Kill();
-    //        }
-    //        UpdateMaterialByDurability();
-    //    }
-    //}
+    
 
     public void UpdateMaterialByDurability()
     {

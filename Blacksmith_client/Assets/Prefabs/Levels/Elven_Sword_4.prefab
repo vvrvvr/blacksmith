@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b843c7b6f30f804d8d19907de37c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerSec: 0
+  TimerSec: 110
   RotationCenter: {fileID: 0}
   TutorialText: 
   ThreeStarsCubeAmount: 4

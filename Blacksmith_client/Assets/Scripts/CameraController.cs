@@ -1,4 +1,4 @@
-using UnityEngine.EventSystems;
+﻿using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour, IDragHandler
@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour, IDragHandler
     }
 
     public void OnDrag(PointerEventData eventData)
-    {
+	{
         if (RotationCenter != null)
         {
             _cameraHolder.RotateAround(RotationCenter.position, Vector3.up, eventData.delta.x * Time.deltaTime * _speed);

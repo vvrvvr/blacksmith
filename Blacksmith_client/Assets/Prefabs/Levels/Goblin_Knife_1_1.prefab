@@ -71,7 +71,7 @@ MonoBehaviour:
   IngotDrag: {fileID: 7682639994021419511}
   WireframeBlank: {fileID: 4881061149048662333}
   finalProduct: {fileID: 596970133238829656}
-  ProductHandle: {fileID: 272420315205224274}
+  ProductHandle: {fileID: 0}
 --- !u!114 &596970133238829656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,11 +860,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9050572918053973144, guid: c27def9870b1f3542b6f12299f608f69, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 9050572918053973144, guid: c27def9870b1f3542b6f12299f608f69, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.26
+      value: -1.67
       objectReference: {fileID: 0}
     - target: {fileID: 9050572918053973144, guid: c27def9870b1f3542b6f12299f608f69, type: 3}
       propertyPath: m_LocalPosition.y

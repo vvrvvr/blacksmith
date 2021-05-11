@@ -11,11 +11,16 @@ public class GameManager : MonoBehaviour
     [ReadOnly] public int FilledFrames;
     [SerializeField, ReadOnly] private int CubesRated;
     [SerializeField] private float VictoryDelay = 2f;
+    [SerializeField] private AudioClip _backgroundMusic;
 
     [Header("References")]
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private LevelManager levelManager;
+    [SerializeField] private AudioClip _loseMusic;
+    [SerializeField] private AudioClip _victoryMusic1;
+    [SerializeField] private AudioClip _victoryMusic2;
+    [SerializeField] private AudioClip _victoryMusic3;
 
     public static Action OnVictoryEvent;
     public static Action OnLoseEvent;
@@ -58,6 +63,11 @@ public class GameManager : MonoBehaviour
         audioS = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        MusicManager.Instance.PlayMusic(_backgroundMusic);
+    }
+
     private IEnumerator LateCheckConditions()
     {
         yield return new WaitForFixedUpdate();
@@ -87,12 +97,29 @@ public class GameManager : MonoBehaviour
         {
             MenuManager.Singleton.EnablePanel(victoryPanel);
         }
+
+        int stars = CalculateRating();
+        switch(stars)
+        {
+            case 1:
+                MusicManager.Instance.PlaySound(_victoryMusic1);
+                break;
+            case 2:
+                MusicManager.Instance.PlaySound(_victoryMusic2);
+                break;
+            case 3:
+                MusicManager.Instance.PlaySound(_victoryMusic3);
+                break;
+            default:
+                break;
+        }
     }
 
     public void Defeat()
     {
         OnLoseEvent?.Invoke();
         MenuManager.Singleton.EnablePanel(losePanel);
+        MusicManager.Instance.PlaySound(_loseMusic);
     }
 
     private void OnCubeDestroy(bool isRated)

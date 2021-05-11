@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject initialPanel;
     [SerializeField] private Transform panelsContainer;
+    [SerializeField] private AudioClip _backgroundMusic;
 
     public static MenuManager Singleton;
     private void Awake() => Singleton = this;
@@ -27,6 +28,7 @@ public class MenuManager : MonoBehaviour
             EnablePanel(panelsContainer.Find(PlayerStats.Singleton.MenuToLoad).gameObject);
         else
             EnablePanel(initialPanel);
+        MusicManager.Instance.PlayMusic(_backgroundMusic);
     }
 
     public void SetMenuToLoad(string menuName)

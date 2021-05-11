@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    [SerializeField] private AudioClip _clockSound;
+
     private void OnEnable() 
     {
         LevelManager.OnLevelLoad += OnLevelLoad;
@@ -39,8 +41,14 @@ public class Timer : MonoBehaviour
     {
         _baseRemainingTime = level.TimerSec;
         _remainingTime = level.TimerSec;
-        if(_remainingTime > 15 || _remainingTime <= 0)
+        if (_remainingTime > 15 || _remainingTime <= 0)
+        {
             _timer.SetActive(false);
+        }
+        else
+        {
+            MusicManager.Instance.PlayMusic(_clockSound);
+        }
         UpdateText();
     }
 
@@ -57,15 +65,19 @@ public class Timer : MonoBehaviour
     }
 
     private void Update() {
-        if(_ingotPlaced && _remainingTime > 0f)
+        if (_ingotPlaced && _remainingTime > 0f)
         {
             _remainingTime -= Time.deltaTime;
 
-            if (_remainingTime <= 15)
+            if (_timer.activeSelf == false && _remainingTime <= 15)
+            {
+                MusicManager.Instance.PlayMusic(_clockSound);
                 _timer.SetActive(true);
+            }
 
             if(_remainingTime <= 0f)
             {
+                MusicManager.Instance.PlayPrevMusic();
                 _remainingTime = 0;
                 GameManager.Instance.Defeat();
             }

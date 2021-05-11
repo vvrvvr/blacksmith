@@ -7,11 +7,14 @@ using DG.Tweening;
 public class Controls : MonoBehaviour
 {
     public event System.Action<Cube> OnCubeMove;
+
     [HideInInspector] public Cube ObjectToControl;
     [HideInInspector] public int ClickCounter = 0;
     [HideInInspector] public List<Vector3> PathPointsList;
+    [SerializeField] private AudioClip[] _dragStopSounds;
+    [SerializeField] private AudioClip[] _dragSounds;
     private GameManager gamemanager;
-    private AudioSource audioS;
+    //private AudioSource audioS;
     private float firstClickTime = 0f;
     public float TimeBetweenClicks;
     private float timeBetweenSteps = 0.1f;
@@ -23,7 +26,6 @@ public class Controls : MonoBehaviour
     private void Start()
     {
         gamemanager = GameManager.Instance;
-        audioS = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -59,6 +61,9 @@ public class Controls : MonoBehaviour
             gamemanager.CanChooseCube = false;
             ObjectToControl.BoxCollider.enabled = false;
             var time = timeBetweenSteps * path.Length;
+
+            MusicManager.Instance.PlaySound(_dragSounds[Random.Range(0, _dragSounds.Length)], true);
+
             ObjectToControl.transform.DOPath(path, time)
                 .OnWaypointChange(CheckStep)
                 .OnComplete(UpdatePositions)
@@ -67,17 +72,17 @@ public class Controls : MonoBehaviour
     }
     private void CheckStep(int waypointIndex)
     {
-        if (audioS.isPlaying)
-        {
-            audioS.pitch = Random.Range(0.7f, 1.2f);
-            audioS.Stop();
-            audioS.Play();
-        }
-        else
-        {
-            audioS.pitch = Random.Range(0.7f, 1.2f);
-            audioS.Play();
-        }
+        //if (audioS.isPlaying)
+        //{
+        //    audioS.pitch = Random.Range(0.7f, 1.2f);
+        //    audioS.Stop();
+        //    audioS.Play();
+        //}
+        //else
+        //{
+        //    audioS.pitch = Random.Range(0.7f, 1.2f);
+        //    audioS.Play();
+        //}
 
         //проверить, передвигался ли куб по x и z, чтобы вычитать прочность (передвижение по y не считается) 
         if (waypointIndex == 0)
@@ -127,6 +132,7 @@ public class Controls : MonoBehaviour
         ObjectToControl.UpdateMoveState();
         ObjectToControl.UpdateCubeAt(startPos + Vector3.down);
         ObjectToControl.UpdateCubeAt(ObjectToControl.transform.position + Vector3.down);
+        MusicManager.Instance.PlaySound(_dragStopSounds[Random.Range(0, _dragStopSounds.Length)]);
     }
    
     //двойной клик и удаление кубов. можно не трогать

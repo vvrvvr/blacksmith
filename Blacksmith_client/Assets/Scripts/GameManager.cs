@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField, ReadOnly] private int CubesCanMove;
     [ReadOnly] public int FilledFrames;
     [SerializeField, ReadOnly] private int CubesRated;
+    [SerializeField] private float VictoryDelay = 2f;
 
     [Header("References")]
     [SerializeField] private GameObject victoryPanel;
@@ -80,7 +81,7 @@ public class GameManager : MonoBehaviour
         OnVictoryEvent?.Invoke();
         if(levelManager.currentLevel.finalProduct != null)
         {
-            MenuManager.Singleton.EnablePanelWithDelay(victoryPanel, 1f);
+            MenuManager.Singleton.EnablePanelWithDelay(victoryPanel, VictoryDelay);
         }
         else
         {

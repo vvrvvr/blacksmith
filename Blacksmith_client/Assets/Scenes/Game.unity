@@ -403,7 +403,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: cfcb6f9341b622740829c30d6f5cc4d2, type: 3}
+    m_Font: {fileID: 12800000, guid: ad29a99a8f3a87346926107f0d0159e8, type: 3}
     m_FontSize: 268
     m_FontStyle: 0
     m_BestFit: 1
@@ -1723,7 +1723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &280320511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2787,6 +2787,7 @@ MonoBehaviour:
   CubesCanMove: 0
   FilledFrames: 0
   CubesRated: 0
+  VictoryDelay: 2
   victoryPanel: {fileID: 1227921261}
   losePanel: {fileID: 280320510}
   levelManager: {fileID: 1043513507}
@@ -3012,7 +3013,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3681667, y: 0.34188887}
   m_AnchorMax: {x: 0.3681667, y: 0.42048153}
-  m_AnchoredPosition: {x: 2, y: 0.5}
+  m_AnchoredPosition: {x: 21, y: 27}
   m_SizeDelta: {x: 1193.729, y: 118.66797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &543944201
@@ -3036,7 +3037,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 775c4d05077c3b048800eb75874e8fcd, type: 3}
+    m_Font: {fileID: 12800000, guid: ad29a99a8f3a87346926107f0d0159e8, type: 3}
     m_FontSize: 96
     m_FontStyle: 0
     m_BestFit: 1
@@ -7359,7 +7360,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: cfcb6f9341b622740829c30d6f5cc4d2, type: 3}
+    m_Font: {fileID: 12800000, guid: ad29a99a8f3a87346926107f0d0159e8, type: 3}
     m_FontSize: 255
     m_FontStyle: 0
     m_BestFit: 1

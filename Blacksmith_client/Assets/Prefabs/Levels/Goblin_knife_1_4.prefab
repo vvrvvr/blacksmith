@@ -48,7 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 110
   RotationCenter: {fileID: 0}
-  TutorialText: 
+  TutorialText: 'Mazzzzterrrr... i''ve got some troublzzzzz. Theezzzze elves...khhhm...
+    chikenzzzz are stolen my knievvvvv!!!!!
+
+    -Kkkrzzzsemelllk - Ggggoblin chieffff'
   ThreeStarsCubeAmount: 5
   TwoStarsCubeAmount: 6
   Ingot: {fileID: 1661731206721445917}

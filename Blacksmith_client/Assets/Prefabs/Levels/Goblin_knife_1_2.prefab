@@ -48,7 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 90
   RotationCenter: {fileID: 0}
-  TutorialText: 
+  TutorialText: 'OOOOrrrr, thxxxx. I wazzzz a goood knieevvvveee  for my battle boarrrrr) 
+    And whhhhat about my guardddd?
+
+    - Kkkrzzzsemelllk - Ggggoblin chieffff'
   ThreeStarsCubeAmount: 2
   TwoStarsCubeAmount: 4
   Ingot: {fileID: 174194456820284819}

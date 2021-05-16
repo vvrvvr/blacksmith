@@ -60,7 +60,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 110
   RotationCenter: {fileID: 0}
-  TutorialText: 
+  TutorialText: 'Greetings, milodr. Your blade is incomparable. But we need something
+    special against... an armed goblin boar! Can you do something in the near future?
+
+    -
+    Entar'
   ThreeStarsCubeAmount: 6
   TwoStarsCubeAmount: 7
   Ingot: {fileID: 6000540157355412760}

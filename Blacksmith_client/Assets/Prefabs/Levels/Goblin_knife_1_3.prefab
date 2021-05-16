@@ -48,7 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 100
   RotationCenter: {fileID: 0}
-  TutorialText: 
+  TutorialText: 'ohhhh.... Mazzzzterrrrr. Your ritual knivvvzzzz are great! We kilzzzz
+    fivvvve elves.....khmm.... chikkkenzzzzz... i sssaid elves???
+
+    -Kkkrzzzsemelllk
+    - Ggggoblin chieffff'
   ThreeStarsCubeAmount: 3
   TwoStarsCubeAmount: 4
   Ingot: {fileID: 2512468073812242885}

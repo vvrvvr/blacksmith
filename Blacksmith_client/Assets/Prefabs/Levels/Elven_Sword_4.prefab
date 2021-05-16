@@ -60,7 +60,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 110
   RotationCenter: {fileID: 0}
-  TutorialText: 
+  TutorialText: 'Mylodr, we have reinforcements. Special squad "White tights". Please
+    do some swords for them.
+
+    -Entar'
   ThreeStarsCubeAmount: 4
   TwoStarsCubeAmount: 5
   Ingot: {fileID: 8604914152879043755}

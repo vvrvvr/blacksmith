@@ -47,10 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b843c7b6f30f804d8d19907de37c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerSec: 0
+  TimerSec: 90
   RotationCenter: {fileID: 0}
   TutorialText: "This is the EPIC level. It\u2019s a special bonus for players who\u2019s
-    got three stars in all levels of this branch. Enjoy it!"
+    got three coins in all levels of this branch. Enjoy it!"
   ThreeStarsCubeAmount: 3
   TwoStarsCubeAmount: 4
   Ingot: {fileID: 1964618440468117529}
@@ -1873,6 +1873,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3990319050764039768}
     m_Modifications:
+    - target: {fileID: 7434626153489644649, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
+      propertyPath: cubePrefab
+      value: 
+      objectReference: {fileID: 666359487783943529, guid: 8f0e120d7f6cd37448f5749f3f106759, type: 3}
     - target: {fileID: 7434626153489644651, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
       propertyPath: m_RootOrder
       value: 0

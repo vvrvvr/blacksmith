@@ -48,9 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 85
   RotationCenter: {fileID: 0}
-  TutorialText: 'You''ve got a special order from the Goblins. They want to have
-    some new ritual knives. Unfortunately Goblin''s iron cools down very quickly
-    and not very durable. '
+  TutorialText: HElloooooh mmmaster. I'm Kkkrzzzsemelllk - Ggggoblin chieffff. I'd
+    like to some knivvvvzzz for some waaaarrrr..... khmmm... rituals. Do it plzzzzzz
   ThreeStarsCubeAmount: 3
   TwoStarsCubeAmount: 4
   Ingot: {fileID: 7682639994021419506}

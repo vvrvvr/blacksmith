@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 120
   RotationCenter: {fileID: 0}
-  TutorialText: 
+  TutorialText: Sir! We win these battle, and there no more any Godlins... and chikens...
+    ! We want to get a special order, as "Victory sword". Would you kindly...
   ThreeStarsCubeAmount: 13
   TwoStarsCubeAmount: 14
   Ingot: {fileID: 6898659862158351703}

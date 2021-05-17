@@ -2793,9 +2793,9 @@ MonoBehaviour:
   losePanel: {fileID: 280320510}
   levelManager: {fileID: 1043513507}
   _loseMusic: {fileID: 8300000, guid: bae92ecf70e90b54686589c5959a5f83, type: 3}
-  _victoryMusic1: {fileID: 8300000, guid: 5b5e2bc38c242884882cc3db1ffdd82d, type: 3}
-  _victoryMusic2: {fileID: 8300000, guid: 504a8ea0ea3d7ea45920c1d1dc26d17a, type: 3}
-  _victoryMusic3: {fileID: 8300000, guid: c70b117f18edc654f92775cf6056e7b6, type: 3}
+  _victoryMusic1: {fileID: 8300000, guid: b1ceafd828f08ab419fd43866b730da1, type: 3}
+  _victoryMusic2: {fileID: 8300000, guid: 726cddd23e2563d4fb08b394e2919bf2, type: 3}
+  _victoryMusic3: {fileID: 8300000, guid: 22c10c5e47cce0e43a05a6d6d07b9bb9, type: 3}
   CanChooseCube: 1
 --- !u!82 &505969052
 AudioSource:
@@ -5514,7 +5514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 31effa60f9c749e468023b19ea293784, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f18a4128539fb384a8640ff2ab74f12c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7820341230127875349}
   - component: {fileID: 666359487783943529}
   m_Layer: 6
-  m_Name: Cube_10hp
+  m_Name: Cube_11hp
   m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1654750387333326851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.3817611, y: -2.4725637, z: 1.2844524}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.98, y: 0.98, z: 0.98}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

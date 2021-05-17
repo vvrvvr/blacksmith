@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494056058967640746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.44, y: 0, z: -2.34}
+  m_LocalPosition: {x: -1.44, y: 0, z: -1.3399999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3990319050764039768}
@@ -80,7 +80,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 0
   RotationCenter: {fileID: 8435612314493573781}
-  TutorialText: Place the ingot to fill the blueprint as much as possible
+  TutorialText: 'Tutorial 1
+
+    Place the ingot and replace the cubes one bu one
+    to close the blueprint cage. '
   ThreeStarsCubeAmount: 1
   TwoStarsCubeAmount: 2
   Ingot: {fileID: 4881061150297853866}
@@ -332,11 +335,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7434626153489644649, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
       propertyPath: height
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7434626153489644649, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
       propertyPath: length
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7434626153489644651, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
       propertyPath: m_RootOrder

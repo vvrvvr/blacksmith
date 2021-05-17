@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 130
   RotationCenter: {fileID: 0}
-  TutorialText: 
+  TutorialText: Mazzzzterrr! Kkkrzzzsemelllik want a sameeee special gift... for
+    my mommmy!
   ThreeStarsCubeAmount: 3
   TwoStarsCubeAmount: 4
   Ingot: {fileID: 7682639994021419506}

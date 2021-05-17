@@ -47,10 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b843c7b6f30f804d8d19907de37c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerSec: 0
+  TimerSec: 90
   RotationCenter: {fileID: 0}
-  TutorialText: 'Try to do it yourself. Remember: less extra cubes  = more money.
-    If you want to rotate the camera press the "eye@ botton/'
+  TutorialText: 'Tutorial 4
+
+    Ok, this is your exam. You should know^ less extra
+    cubes- more money. If you would like to rotate the camera- swipe out side the
+    ingot!'
   ThreeStarsCubeAmount: 4
   TwoStarsCubeAmount: 5
   Ingot: {fileID: 4074131772132598039}
@@ -903,7 +906,7 @@ PrefabInstance:
     - target: {fileID: 7434626153489644649, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
       propertyPath: cubePrefab
       value: 
-      objectReference: {fileID: 6658731334641806482, guid: a0561965cd7a6774dbd2edc87d72ba04, type: 3}
+      objectReference: {fileID: 666359487783943529, guid: 8f0e120d7f6cd37448f5749f3f106759, type: 3}
     - target: {fileID: 7434626153489644651, guid: f2e0e267f14c4ca4eb695c2353012ce6, type: 3}
       propertyPath: m_RootOrder
       value: 0

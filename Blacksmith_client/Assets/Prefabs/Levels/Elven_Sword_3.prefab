@@ -48,7 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerSec: 110
   RotationCenter: {fileID: 0}
-  TutorialText: 
+  TutorialText: 'Mylodr, those nasty goblins poisoned the springs of our camp with
+    chicken soup, and while my army was being treated, they were able to steal the
+    trident knife on which we impaled their severed heads! How can we fight them
+    if we have nowhere to put their heads?
+
+    -Entar'
   ThreeStarsCubeAmount: 2
   TwoStarsCubeAmount: 3
   Ingot: {fileID: 2989022734566688231}

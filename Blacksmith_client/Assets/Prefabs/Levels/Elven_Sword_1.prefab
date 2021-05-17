@@ -46,11 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b843c7b6f30f804d8d19907de37c745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerSec: 20
+  TimerSec: 90
   RotationCenter: {fileID: 0}
-  TutorialText: Now try to work with the Elven Glass weapons. The Elven Glass is
-    very fragile material. You'll got not more, than 8 movement of each cube. And
-    remember about cooling ;)
+  TutorialText: Greetings, milodr. I am Entar, the guard of the Elves. We've been
+    having some trouble with the goblins lately, they're very well armed. We need
+    to get the best weapons to fight them, and as I know there is no better master
+    in these parts!
   ThreeStarsCubeAmount: 5
   TwoStarsCubeAmount: 6
   Ingot: {fileID: 7382538623193525184}
